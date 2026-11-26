@@ -245,8 +245,10 @@ def main():
                 medidos[p.relative_to(RAIZ).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
     if anterior:
         firma=json.loads((destino/'firma_fuentes.json').read_text(encoding='utf8'))
-        assert all(hashlib.sha256((RAIZ/n).read_bytes()).hexdigest()==h for n,h in firma.items()),'Cambio de fuentes desde la ejecución anterior'
-        medidos=firma
+        limpieza=RAIZ/'bitacora/a3/limpieza_entrega.json'
+        retirados=json.loads(limpieza.read_text(encoding='utf8'))['archivos_retirados'] if limpieza.exists() else {}
+        assert all((not (RAIZ/n).exists() and n in retirados) or hashlib.sha256((RAIZ/n).read_bytes()).hexdigest()==h for n,h in firma.items()),'Cambio de fuentes desde la ejecución anterior'
+        medidos={n:h for n,h in firma.items() if (RAIZ/n).exists()}
         guardar(destino/'reanudacion.json',dict(fecha_utc=datetime.now(timezone.utc).isoformat(),motivo='Corrección del cierre del lanzador Windows; fuentes de API y pruebas conservadas',
                 sha256_script=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),pruebas_anteriores_preservadas=True))
     else:guardar(destino/'firma_fuentes.json',medidos)

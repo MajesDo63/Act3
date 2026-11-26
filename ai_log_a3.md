@@ -35,3 +35,7 @@ Gemini 3.1 Flash-Lite respondió a dos entradas reales del endpoint protegido:
 Las respuestas y las trazas se conservan completas. El parche de `usuarios.py` propone introducir `bcrypt`; no se incorporó ni ejecutó en esta entrega. Que el proveedor responda correctamente no valida automáticamente sus parches, ni demuestra cobertura completa de defectos. La autenticación implementada usa PBKDF2 de la biblioteca estándar y sus resultados se comprueban por separado.
 
 Las capturas son del panel generado a partir de los registros reales de pytest y HTTP. Se identifican como panel de evidencias, no como capturas de Swagger ni de una conversación externa. La llave de Gemini, el secreto de los tokens y los tokens de sesión están excluidos de los archivos de entrega.
+
+## Depuración de la entrega
+
+Por solicitud del estudiante se retiraron las entregas y bitácoras de actividades anteriores y el ejemplo de solicitudes de cambio de la A2. Se conservan la API, el motor y las pruebas relacionadas. La ejecución original de 159 casos se mantiene íntegra como evidencia; al retirar cuatro casos exclusivos de la A2, la suite actual reúne 155. El inventario de archivos retirados está en `bitacora/a3/limpieza_entrega.json`.

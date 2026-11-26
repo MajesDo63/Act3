@@ -23,7 +23,7 @@ Destino: **https://github.com/MajesDo63/Act3**. Etiqueta de entrega: **a3-MajesD
 - Checkpoint de autenticación: **4 aprobadas, 0 omitidas**.
 - Laboratorio: **12 aprobadas, 0 omitidas**.
 - A3: **49 aprobadas, 0 omitidas**.
-- Regresión completa: **159 aprobadas, 0 omitidas**. Incluye las anteriores; no se suman los grupos.
+- Regresión completa: **159 aprobadas, 0 omitidas** antes de depurar la entrega. Al retirar cuatro pruebas exclusivas del ejemplo de la A2 quedan 155 casos relacionados con la A3 y su motor. No se suman los grupos.
 - HTTP real con proveedor `fake`: registro 201, login 200, rechazo 401, validación 422 y bloqueo 429; dos entradas del revisor 200.
 - HTTP real con Gemini 3.1 Flash-Lite: `usuarios.py` 200, tres hallazgos SEC-06; `limites.py` 200, sin hallazgos. Ambas respuestas: `demo=false` y `abstuvo=false`.
 
@@ -62,7 +62,7 @@ Para otra corrida completa con JUnit, HTTP real y capturas:
 
 ## Alcance, procedencia y límites
 
-La base del equipo procede de `alanrivera066/Project_v2_TSTI`, commit `81a1dd0bec2a6350d750f9440fbdcbaa2af05b63`. `README_BASE_AVANCE1.md`, los registros del Avance 1 y las autorías se conservan como antecedentes. No son nuevas mediciones de A3. El motor compartido mantiene detectar, explicar, parche y dictamen. La autenticación, el endpoint específico, las tres versiones y su documentación corresponden a esta entrega.
+La base del equipo procede de `alanrivera066/Project_v2_TSTI`, commit `81a1dd0bec2a6350d750f9440fbdcbaa2af05b63`. El origen y la autoría se documentan en `PROCEDENCIA_BASE.md`. Se retiraron los informes y registros de actividades anteriores; se conservan el motor y sus recursos y pruebas relacionados. El motor compartido mantiene detectar, explicar, parche y dictamen. La autenticación, el endpoint específico, las tres versiones y su documentación corresponden a esta entrega.
 
 El token HMAC del kit es `payload.firma`, no JWT ni OAuth 2.0 completo. La vigencia máxima es 900 s. Tras cinco fallos consecutivos se bloquea temporalmente el login; las rutas protegidas tienen un límite local de 30 solicitudes por minuto y usuario. Este límite vive en memoria. El prototipo local utiliza HTTP; una exposición externa requiere HTTPS y gestión de secretos adecuada. Los componentes de referencia de A4 se conservan, pero no se presenta una A4 individual terminada.
 

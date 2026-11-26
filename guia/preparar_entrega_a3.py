@@ -18,9 +18,17 @@ omitir={'.git','.venv','__pycache__','.pytest_cache','privado','tmp'}
 excluidas={'.env'}
 ext={'.pyc','.pyo','.db','.sqlite','.sqlite3','.npy','.pem','.key'}
 manifest={}
+excluir_raices={'Actividad 2','avance1','entregables','README_BASE_AVANCE1.md'}
+excluir_guias={'a2_dictamen.py','a2_flujo_variante.py','s2_flujo_cambios.py','av1_reanudar_gemini31.py','verificar_evidencias.py'}
 for src in sorted(ROOT.rglob('*')):
     if not src.is_file():continue
     rel=src.relative_to(ROOT)
+    if rel.parts[0] in excluir_raices:continue
+    if rel.parts[0]=='bitacora' and (len(rel.parts)<2 or rel.parts[1]!='a3'):continue
+    if rel.parts[0]=='guia' and src.name in excluir_guias:continue
+    if rel.parts[:2]==('datos','lab2_complemento'):continue
+    if rel.as_posix()=='tests/test_a2_pipeline.py':continue
+    if rel.parts[0]=='prompts' and src.name.startswith('cambio_'):continue
     if any(p in omitir or p.endswith('.egg-info') for p in rel.parts):continue
     if src.name in excluidas or src.suffix.lower() in ext or '.db-' in src.name:continue
     if src.name.startswith('.env.') and not src.name.endswith('example'):continue
@@ -32,14 +40,16 @@ for src in sorted(ROOT.rglob('*')):
     manifest[rel.as_posix()]=hashlib.sha256(data).hexdigest()
 expected=set(manifest)
 for p in DEST.rglob('*'):
-    if not p.is_file() or '.git' in p.relative_to(DEST).parts:continue
+    if not p.is_file():continue
+    if any(part in omitir or part.endswith('.egg-info') for part in p.relative_to(DEST).parts):continue
+    if p.suffix.lower() in ext:continue
     name=p.relative_to(DEST).as_posix()
     assert name in expected or name=='CONTENIDO_SHA256.json',f'Archivo adicional de una preparación anterior: {name}'
 (DEST/'CONTENIDO_SHA256.json').write_text(json.dumps({'destino_github':'https://github.com/MajesDo63/Act3.git','archivos':manifest},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 archive=DEST.parent/'Actividad3_Cesar_Entrega.zip'
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
-    for p in sorted(DEST.rglob('*')):
-        if p.is_file() and '.git' not in p.relative_to(DEST).parts:z.write(p,'Act3/'+p.relative_to(DEST).as_posix())
+    for nombre in [*manifest,'CONTENIDO_SHA256.json']:
+        z.write(DEST/nombre,'Act3/'+nombre)
     helper=DEST.parent/'PUBLICAR_ACT3.ps1'
     if helper.exists():z.write(helper,helper.name)
 with zipfile.ZipFile(archive) as z:

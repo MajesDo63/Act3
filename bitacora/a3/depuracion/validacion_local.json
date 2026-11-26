@@ -1,0 +1,10 @@
+{
+  "directorio_ejecucion": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\output\\actividad3_entrega\\Act3",
+  "comando": "python -m pytest tests -q --ignore=tests/test_a3_api.py --ignore=tests/test_lab_producto.py --junitxml=bitacora/a3/depuracion_sin_http.xml",
+  "resultado": "130 passed in 6.04s",
+  "omitidas": 0,
+  "alcance": "Pruebas sin HTTP del paquete depurado. Los 25 casos HTTP se conservan sin cambios y se verifican en la publicacion y en GitHub Actions.",
+  "suite_actual": 155,
+  "a3_conservadas": 49,
+  "api_motor_sin_cambios": true
+}

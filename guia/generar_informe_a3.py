@@ -20,7 +20,9 @@ EVI = Path(json.loads((ROOT/'bitacora/a3/ultima_ejecucion.json').read_text(encod
 state = json.loads((EVI/'estado.json').read_text(encoding='utf8'))
 assert state['estado'] == 'completo', 'Se requieren las evidencias completas antes de componer la entrega'
 fingerprint = json.loads((EVI/'firma_fuentes.json').read_text(encoding='utf8'))
-assert all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest() == h for n,h in fingerprint.items())
+cleanup_path=ROOT/'bitacora/a3/limpieza_entrega.json'
+removed=json.loads(cleanup_path.read_text(encoding='utf8'))['archivos_retirados'] if cleanup_path.exists() else {}
+assert all((not (ROOT/n).exists() and n in removed) or hashlib.sha256((ROOT/n).read_bytes()).hexdigest() == h for n,h in fingerprint.items())
 gemini = json.loads((EVI/'http_gemini.json').read_text(encoding='utf8'))['eventos']
 real = [e for e in gemini if e['etiqueta'].startswith('revisor_')]
 assert len(real) == 2 and all(e['estado_http']==200 and e['respuesta']['demo'] is False for e in real)
@@ -46,7 +48,7 @@ table(c,['Dato','Identificación'],[
  ['Modelo real','Gemini 3.1 Flash-Lite · embeddings gemini-embedding-001'],
  ['Evidencias','bitacora/a3/20261126T020719Z/'],
 ], [1.55,4.95])
-p(c,'Partí del motor compartido del equipo en alanrivera066/Project_v2_TSTI, commit 81a1dd0bec2a6350d750f9440fbdcbaa2af05b63. Conservé su autoría y su documentación como antecedente; las mediciones del Avance 1 no son resultados de esta actividad. El repositorio nuevo permite entregar la A3 por separado.')
+p(c,'Partí del motor compartido del equipo en alanrivera066/Project_v2_TSTI, commit 81a1dd0bec2a6350d750f9440fbdcbaa2af05b63. Documenté su origen y autoría en PROCEDENCIA_BASE.md. La entrega conserva el motor y sus recursos y pruebas relacionados, y excluye los informes y bitácoras de actividades anteriores.')
 table(c,['Componente','Responsabilidad'],[
  ['api/auth.py','Registro, PBKDF2, emisión y validación de tokens, intentos y bloqueo.'],
  ['api/producto.py','POST /v1/revisor, validación, autenticación, límite y errores HTTP.'],
@@ -107,7 +109,7 @@ table(c,['Grupo','Aprobadas','Omitidas','Qué comprueba'],[
  ['Actividad 3','49','0','Autenticación, endpoint propio y tres versiones.'],
  ['Regresión completa','159','0','Suite completa; incluye los grupos anteriores.'],
 ], [1.5,.75,.75,3.5])
-p(c,'Los grupos se solapan: no se suman como pruebas distintas. Las tres pruebas oficiales verifican acceso, contraseña incorrecta y usuario inexistente. Añadí, entre otros, sal aleatoria, token expirado/alterado, bloqueo persistente, SQL malicioso, concurrencia, entrada extra y errores sin datos internos. El detalle está en tests/test_a3_*.py y a3/critica_pruebas.md.')
+p(c,'Los grupos se solapan: no se suman como pruebas distintas. Los 159 casos son la regresión original: al excluir cuatro casos exclusivos del ejemplo A2 quedan 155. Los 49 de A3 se conservan. Las tres pruebas oficiales verifican acceso, contraseña incorrecta y usuario inexistente. Añadí sal aleatoria, token expirado/alterado, bloqueo persistente, SQL malicioso, concurrencia, campos extra y errores sin datos internos.')
 picture(c,'captura_pruebas.png','Figura 2. Captura del registro real de pytest. Los XML y la salida completa de cada grupo acompañan la entrega.',4.85)
 table(c,['Entrada real','HTTP / tiempo','Resultado observado'],[
  ['usuarios.py',f"200 / {real[0]['duracion_ms']/1000:.2f} s",'3 hallazgos SEC-06: MD5, random y comparación ==; fuente sec-06#0.'],
@@ -140,7 +142,7 @@ table(c,['Comprobación','Archivo o comando'],[
  ['Interfaz de API','http://127.0.0.1:8000/docs · registrar, login, Authorize y /v1/revisor.'],
  ['Registro de dónde y cómo','estado.json: directorio, Python, plataforma y comandos; http_*.json: URL, solicitud saneada y respuesta.'],
 ], [1.6,4.9])
-p(c,'El primer intento terminó al limpiar una base temporal bloqueada por el lanzador de Windows. Corregí el cierre del proceso y reanudé solo Gemini: los cuatro grupos aprobados se conservaron. estado_interrupcion_original.json, reanudacion.json y firma_fuentes.json documentan el incidente y los 108 archivos de código, pruebas y documentación que permanecieron intactos.')
+p(c,'El primer intento terminó al limpiar una base temporal bloqueada por el lanzador de Windows. Corregí el cierre y reanudé solo Gemini, conservando los grupos aprobados. Las firmas registran los 108 archivos medidos. La posterior limpieza retiró únicamente materiales ajenos a la A3; limpieza_entrega.json identifica las exclusiones. La API y el motor mantienen los mismos bytes que en las pruebas y consultas reales.')
 p(c,'Fuentes: MANUAL_ALUMNO.md, sección 4, y Presentacion_Actividades_A3_A4.pptx, diapositivas 3–7, del kit lsca2318-lab-a3-a4-main.zip; reglas SEC del corpus e ing-02/ing-07. Base del equipo: Project_v2_TSTI, commit 81a1dd0bec2a6350d750f9440fbdcbaa2af05b63. El registro ai_log_a3.md identifica el apoyo de IA. El Word oficial de instrucciones no estuvo disponible; seguí el manual y las presentaciones entregadas.')
 
 pdfmetrics.registerFont(TTFont('ArialA3',r'C:\Windows\Fonts\arial.ttf'))
