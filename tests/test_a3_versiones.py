@@ -61,3 +61,33 @@ def test_mantenible_admite_proveedor_inyectado_sin_base_real():
             return "token-simulado-del-proveedor"
     resultado = login_mantenible.login("identidad", "entrada", servicio=login_mantenible.ServicioLogin(ProveedorPrueba()))
     assert resultado["acceso"] and resultado["token"] == "token-simulado-del-proveedor"
+
+
+def test_eficiencia_lote_perezoso_verifica_cada_intento(tmp_path, monkeypatch):
+    from unittest.mock import patch
+    monkeypatch.setenv("TOKEN_SECRET", "s" * 64)
+    with login_eficiencia.LoginEficiente(str(tmp_path / "lote.db")) as servicio:
+        servicio.autenticador.registrar("ana@finnorte.mx", "Segura123!")
+        with patch.object(servicio.autenticador, "login", wraps=servicio.autenticador.login) as verificar:
+            resultados = servicio.autenticar_lote(iter([
+                ("ana@finnorte.mx", "Segura123!"), ("ana@finnorte.mx", "Incorrecta123")]))
+            assert verificar.call_count == 0
+            correcto = next(resultados)
+            assert verificar.call_count == 1 and validar_token(correcto["token"]) == "ana@finnorte.mx"
+            incorrecto = next(resultados)
+            assert verificar.call_count == 2 and incorrecto["status"] == 401 and "token" not in incorrecto
+            assert list(resultados) == []
+
+
+def test_eficiencia_cierra_conexion_si_falla_iterador(tmp_path, monkeypatch):
+    import sqlite3
+    monkeypatch.setenv("TOKEN_SECRET", "s" * 64)
+    def intentos():
+        yield "nadie@finnorte.mx", "Incorrecta123"
+        raise ValueError("Fallo sintético del productor")
+    servicio = login_eficiencia.LoginEficiente(str(tmp_path / "cierre.db"))
+    with pytest.raises(ValueError, match="productor"):
+        with servicio:
+            list(servicio.autenticar_lote(intentos()))
+    with pytest.raises(sqlite3.ProgrammingError):
+        servicio.autenticador.db.execute("SELECT 1")

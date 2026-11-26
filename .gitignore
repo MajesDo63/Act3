@@ -18,3 +18,8 @@ bitacora/demo_dictamen/
 *.sqlite
 *.sqlite3
 
+
+# Diagnosticos privados del control de la interfaz; no son evidencias de entrega.
+bitacora/a3/**/swagger_diagnostico.txt
+bitacora/a3/**/swagger_ajuste_error.txt
+bitacora/a3/**/captura_error.txt

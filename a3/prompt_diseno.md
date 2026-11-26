@@ -12,3 +12,7 @@ Además, analiza el login oficial de la diapositiva 4 y desarrolla tres variante
 - SEC-01, SEC-04, SEC-05, SEC-06, SEC-08, SEC-10, ing-02 e ing-07.
 
 Este archivo registra el encargo de diseño usado en la elaboración asistida de esta entrega. No representa una llamada adicional a Gemini; las llamadas de Gemini para las entradas del endpoint se registran aparte.
+
+## Consulta nueva de revisión
+
+El texto anterior conserva el encargo inicial, no una respuesta literal del asistente. La consulta real nueva y su respuesta están en bitacora/a3/propuesta_20261126T024927Z/: prompt.txt, solicitud.json, respuesta_api.json y respuesta_asistente.txt. Su evaluación cita líneas verificables y explica la utilidad del contexto y los oráculos. Esta consulta posterior no se presenta como la conversación original.

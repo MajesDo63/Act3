@@ -130,10 +130,15 @@ def servidor(destino, proveedor):
         log.close();temporal.cleanup()
 
 
-def evidencias_api(destino, proveedor, incluir_seguridad=False):
+def evidencias_api(destino, proveedor, incluir_seguridad=False, continuar=False):
     import requests
-    eventos=[]
+    archivo=destino/('http_'+proveedor+'.json')
+    previo=json.loads(archivo.read_text(encoding='utf8')) if continuar and archivo.exists() else {}
+    eventos=previo.get('eventos',[])
+    for evento in eventos:evento.setdefault('base_url',previo.get('base_url'))
+    sesiones=previo.get('sesiones',([{'base_url':previo['base_url'],'comando':previo['comando']}] if previo else []))
     with servidor(destino,proveedor) as (base,env,comando):
+        sesiones.append({'base_url':base,'comando':comando})
         token=None
         def pedir(etiqueta, metodo, ruta, cuerpo=None, autorizado=True, token_distinto=None):
             pase=token_distinto if token_distinto is not None else token
@@ -145,8 +150,8 @@ def evidencias_api(destino, proveedor, incluir_seguridad=False):
             eventos.append(dict(etiqueta=etiqueta,proveedor=proveedor,fecha_utc=datetime.now(timezone.utc).isoformat(),
                                 metodo=metodo,ruta=ruta,solicitud=sanear(cuerpo),estado_http=r.status_code,
                                 tipo_contenido=r.headers.get('content-type'),retry_after=r.headers.get('retry-after'),
-                                duracion_ms=round((time.perf_counter()-inicio)*1000,2),respuesta=sanear(datos)))
-            guardar(destino/('http_'+proveedor+'.json'),dict(base_url=base,comando=comando,eventos=eventos))
+                                duracion_ms=round((time.perf_counter()-inicio)*1000,2),respuesta=sanear(datos),base_url=base))
+            guardar(archivo,dict(base_url=base,comando=comando,sesiones=sesiones,eventos=eventos))
             print(proveedor,etiqueta,r.status_code,flush=True)
             return r,datos
         pedir('salud','GET','/salud',autorizado=False)
@@ -171,6 +176,9 @@ def evidencias_api(destino, proveedor, incluir_seguridad=False):
                 else:os.environ['TOKEN_SECRET']=previo
             r,_=pedir('token_expirado','POST','/v1/revisor',{'codigo':'x=1'},token_distinto=expirado);assert r.status_code==401
             r,_=pedir('entrada_invalida','POST','/v1/revisor',{'codigo':' '});assert r.status_code==422
+            for etiqueta,archivo in [('generica_relativa','.env'),('generica_traversal','../.env'),('generica_absoluta','C:/ruta-inexistente-a3')]:
+                r,_=pedir(etiqueta,'POST','/v1/variante',{'entrada':{'archivo':archivo}});assert r.status_code==404
+            r,_=pedir('archivo_en_revisor','POST','/v1/revisor',{'archivo':'.env'});assert r.status_code==422
             bloqueado={'email':'bloqueo@finnorte.mx','contrasena':'Segura123!'}
             pedir('registro_para_bloqueo','POST','/auth/registro',bloqueado,False)
             for intento in range(5):
@@ -179,6 +187,9 @@ def evidencias_api(destino, proveedor, incluir_seguridad=False):
             r,_=pedir('bloqueo','POST','/auth/login',bloqueado,False);assert r.status_code==429
         for nombre in ('usuarios.py','limites.py'):
             codigo=(RAIZ/'datos/v2-revisor/codigo'/nombre).read_text(encoding='utf8')
+            if continuar and any(e['etiqueta']=='revisor_'+nombre and e['estado_http']==200 and e['solicitud']=={'codigo':codigo} and e['respuesta'].get('demo') is False for e in eventos):
+                print(proveedor,'revisor_'+nombre,'respuesta aprobada conservada',flush=True)
+                continue
             r,salida=pedir('revisor_'+nombre,'POST','/v1/revisor',{'codigo':codigo})
             if r.status_code!=200:raise RuntimeError('No se completo la entrada '+nombre+' con '+proveedor+'; se guardo el resultado HTTP')
             if proveedor=='gemini' and salida.get('demo',True):raise RuntimeError('La respuesta no acredita el motor real con Gemini')

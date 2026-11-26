@@ -1,0 +1,47 @@
+{
+  "base_url": "http://127.0.0.1:62839",
+  "capturas": [
+    {
+      "archivo": "swagger_sin_token.png",
+      "ruta": "/v1/revisor",
+      "http_status": 401,
+      "tipo": "Captura directa de la tabla Server response en Swagger UI",
+      "texto_visible": "Code\tDetails\n401\nUndocumented\n\t\n\nError: Unauthorized\n\nResponse body\nDownload\n{\n  \"type\": \"https://docs.finnorte.mx/errores/401\",\n  \"title\": \"No autorizado\",\n  \"status\": 401,\n  \"detail\": \"Falta la cabecera Authorization: Bearer <token>\",\n  \"trace_id\": \"8de0babb9dbf\"\n}\nResponse headers\n cache-control: no-store \n content-length: 169 \n content-type: application/problem+json \n date: Thu,26 Nov 2026 03:06:50 GMT \n server: uvicorn \n x-content-type-options: nosniff "
+    },
+    {
+      "archivo": "swagger_token_alterado.png",
+      "ruta": "/v1/revisor",
+      "http_status": 401,
+      "tipo": "Captura directa de la tabla Server response en Swagger UI",
+      "texto_visible": "Code\tDetails\n401\nUndocumented\n\t\n\nError: Unauthorized\n\nResponse body\nDownload\n{\n  \"type\": \"https://docs.finnorte.mx/errores/401\",\n  \"title\": \"No autorizado\",\n  \"status\": 401,\n  \"detail\": \"Token inválido\",\n  \"trace_id\": \"4ee37103d101\"\n}\nResponse headers\n cache-control: no-store \n content-length: 137 \n content-type: application/problem+json \n date: Thu,26 Nov 2026 03:06:51 GMT \n server: uvicorn \n x-content-type-options: nosniff "
+    },
+    {
+      "archivo": "swagger_entrada_invalida.png",
+      "ruta": "/v1/revisor",
+      "http_status": 422,
+      "tipo": "Captura directa de la tabla Server response en Swagger UI",
+      "texto_visible": "Code\tDetails\n422\t\n\nError: Unprocessable Content\n\nResponse body\nDownload\n{\n  \"type\": \"https://docs.finnorte.mx/errores/422\",\n  \"title\": \"Entrada inválida\",\n  \"status\": 422,\n  \"detail\": \"codigo: Value error, El código debe contener texto y no puede incluir caracteres nulos; archivo: Extra inputs are not permitted\",\n  \"trace_id\": \"d3fab0ee85a9\"\n}\nResponse headers\n cache-control: no-store \n content-length: 254 \n content-type: application/problem+json \n date: Thu,26 Nov 2026 03:06:52 GMT \n server: uvicorn \n x-content-type-options: nosniff "
+    },
+    {
+      "archivo": "swagger_contrasena_incorrecta.png",
+      "ruta": "/auth/login",
+      "http_status": 401,
+      "tipo": "Captura directa de la tabla Server response en Swagger UI",
+      "texto_visible": "Code\tDetails\n401\nUndocumented\n\t\n\nError: Unauthorized\n\nResponse body\nDownload\n{\n  \"type\": \"https://docs.finnorte.mx/errores/401\",\n  \"title\": \"No autorizado\",\n  \"status\": 401,\n  \"detail\": \"Correo o contraseña incorrectos\",\n  \"trace_id\": \"d610d5c4ce9f\"\n}\nResponse headers\n cache-control: no-store \n content-length: 154 \n content-type: application/problem+json \n date: Thu,26 Nov 2026 03:06:53 GMT \n server: uvicorn \n x-content-type-options: nosniff "
+    },
+    {
+      "archivo": "swagger_usuario_inexistente.png",
+      "ruta": "/auth/login",
+      "http_status": 401,
+      "tipo": "Captura directa de la tabla Server response en Swagger UI",
+      "texto_visible": "Code\tDetails\n401\nUndocumented\n\t\n\nError: Unauthorized\n\nResponse body\nDownload\n{\n  \"type\": \"https://docs.finnorte.mx/errores/401\",\n  \"title\": \"No autorizado\",\n  \"status\": 401,\n  \"detail\": \"Correo o contraseña incorrectos\",\n  \"trace_id\": \"d7a01079929e\"\n}\nResponse headers\n cache-control: no-store \n content-length: 154 \n content-type: application/problem+json \n date: Thu,26 Nov 2026 03:06:54 GMT \n server: uvicorn \n x-content-type-options: nosniff "
+    },
+    {
+      "archivo": "swagger_bloqueo.png",
+      "ruta": "/auth/login",
+      "http_status": 429,
+      "tipo": "Captura directa de la tabla Server response en Swagger UI",
+      "texto_visible": "Code\tDetails\n429\nUndocumented\n\t\n\nError: Too Many Requests\n\nResponse body\nDownload\n{\n  \"type\": \"https://docs.finnorte.mx/errores/429\",\n  \"title\": \"Demasiadas solicitudes\",\n  \"status\": 429,\n  \"detail\": \"Demasiados intentos. Intenta más tarde\",\n  \"trace_id\": \"0d8cbf706ea6\"\n}\nResponse headers\n cache-control: no-store \n content-length: 170 \n content-type: application/problem+json \n date: Thu,26 Nov 2026 03:06:56 GMT \n retry-after: 900 \n server: uvicorn \n x-content-type-options: nosniff "
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "fecha_utc": "2026-11-26T02:51:02.815536+00:00",
+  "modelo": "gemini-3.1-flash-lite",
+  "http_status": 200,
+  "duracion_s": 94.866,
+  "tipo": "Propuesta nueva para revisión de la versión corregida; no es la respuesta original de la primera entrega.",
+  "sha256_antes_de_revision": {
+    "api/auth.py": "2fafeb7f7f37bd3a2c822886248b768422f837d9e9a08350e1a6c9e1c90efb19",
+    "api/producto.py": "9b9cd97ad03376af8e228d65330e1092c58f16bc78fd08b8859d9b95c4861a11",
+    "a3/login_original.py": "16bc57e5e55f15cee58c51a74610f171454515f336956095452a252bc8985e5b",
+    "a3/login_seguridad.py": "0af4a3c80f9de143916a5e528946c35622f9e0aa9746fc36bdb68a577af4b5e3",
+    "a3/login_eficiencia.py": "02a9f7b9016b0b4d310852443b76fb2b1b7f0ba8b565be62d855304b486d9011",
+    "a3/login_mantenible.py": "95ca072cd76eb5b263fdcc9da06f4810aabe6c54bc2d0739aa4f430402b0d70c"
+  },
+  "captura_respuesta_real": true
+}

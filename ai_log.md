@@ -1,41 +1,33 @@
-# Registro de asistencia de IA · Actividad 3
+# Registro de IA · Actividad 3, revisión corregida
 
-**Estudiante:** Cesar Eduardo Valdez Pinto · **GitHub:** MajesDo63 · **Destino:** MajesDo63/Act3.
+**Cesar Eduardo Valdez Pinto · MajesDo63 · MajesDo63/Act3.**
 
-## Alcance de la asistencia
+## Intervenciones y fuentes
 
-Utilicé ChatGPT para analizar el kit del profesor, diseñar y preparar la autenticación, el endpoint específico, tres refactorizaciones, pruebas y documentación. El prompt de diseño quedó registrado en `a3/prompt_diseno.md`. Los archivos de crítica documentan el juicio sobre las propuestas, sus límites y las decisiones; no son una transcripción inventada de una llamada al proveedor.
+ChatGPT ayudó a preparar la implementación, las pruebas y el informe. El estudiante ejecutó los scripts en PowerShell normal. El motor procede del Avance 1 del equipo; no se atribuye a la A3 todo su desarrollo.
 
-El motor de cuatro etapas pertenece al Avance 1 del equipo. Su copia y autoría están identificadas en `bitacora/a3/base_repositorio.json`; el informe no atribuye su desarrollo completo a esta actividad individual.
+Una revisión externa en Claude identificó que /v1/variante seguía exponiendo la entrada archivo del motor. Acepté el hallazgo: validar solo /v1/revisor era insuficiente. Se retiraron ruta, modelo y fallback y se actualizó el cliente. Se añadieron regresiones con token válido y un archivo sintético que nunca debe abrirse.
 
-## Decisiones
+## Propuesta nueva verificable
 
-| Propuesta | Decisión | Motivo y evidencia |
-| --- | --- | --- |
-| PBKDF2, sal aleatoria, HMAC y secreto por variable de entorno | Aceptada | Requisitos del manual; `api/auth.py` y pruebas de hash/token. |
-| SQLite parametrizado y registro de intentos | Aceptada con correcciones | Confirmar el intento antes de lanzar la excepción; bloqueo persistente comprobado. |
-| Vigencia configurable y manejo del reloj | Modificada | Rango 1–900; distinguir cero de None; probar expiración exacta y emisión futura. |
-| Entrada genérica que acepta rutas del servidor | Rechazada para el endpoint propio | Solo `codigo`, con campos extra prohibidos. |
-| Texto de errores internos en respuestas públicas | Rechazado | 503 genérico y solo clase del error en traza. |
-| Acelerar omitiendo derivaciones o guardando tokens/contraseñas en caché | Rechazada | V2 reutiliza recursos y conserva PBKDF2 en cada login. |
-| Tres escenarios funcionales como única evidencia de seguridad | Insuficiente | El ejemplo inseguro también los aprueba; se añaden pruebas de límites, abuso y persistencia. |
-| Motor demo en lugar del revisor real | Rechazado | `/v1/revisor` llama al motor del equipo; respuesta Gemini `demo=false`. |
+La consulta Gemini de `propuesta_20261126T024927Z` conserva el prompt real, la solicitud sin credenciales, la respuesta original, HTTP 200 y una captura del texto recibido. Es posterior a la primera entrega; no reemplaza ni reconstruye la conversación original. No se ejecutó ni copió el código de la propuesta.
 
-## Ejecución y revisión de resultados
+| Elemento de la respuesta | Decisión y fundamento |
+| --- | --- |
+| PBKDF2, sal, HMAC y separación de responsabilidades | Aceptados; se conservan los controles implementados y probados. |
+| Secreto de respaldo literal, L10 | Rechazado: vulnera el requisito de secreto externo; la falta de configuración debe fallar. |
+| Token sin iat, L29–36 | Modificado: se conserva sub/iat/exp y validación de duración y emisión futura. |
+| Contador sin expiración/commit explícito, L39 | Modificado: ventana de 900 s, reinicio y persistencia confirmada. |
+| compare_digest como eficiencia, L57 | Rechazado: es seguridad, no una medición de velocidad. |
+| Tiempos idénticos como oráculo, L72 | Rechazado: no es reproducible; se comprueban mensajes y efectos observables. |
+| payload: dict y ausencia de cierre de ruta genérica, L84–87 | Modificado: entrada estricta y ruta alternativa eliminada. |
 
-Ejecuté el script preparado en PowerShell normal desde Windows. Los cuatro grupos aprobaron: 4, 12, 49 y 159 pruebas, sin omitidas. Son grupos solapados. Los comandos, entorno y duración quedaron registrados en `bitacora/a3/20261126T020719Z/estado.json` y sus JUnit XML.
+El prompt resultó útil por delimitar rol, requisitos, motor compartido, riesgos y pruebas; aun así el modelo incumplió condiciones explícitas. La evaluación completa cita líneas del archivo íntegro en a3/propuesta_y_evaluacion.md.
 
-La primera ejecución se interrumpió al limpiar un SQLite temporal mantenido abierto por un proceso hijo del lanzador de Windows. Se corrigió el script de ejecución y se reanudó solo la integración Gemini. Los 108 archivos de código, pruebas y documentación medidos conservaron sus SHA-256. El incidente se conserva en `estado_interrupcion_original.json` y `reanudacion.json`; no se borró un fallo de las evidencias.
+## Eficiencia y pruebas
 
-Gemini 3.1 Flash-Lite respondió a dos entradas reales del endpoint protegido:
+V2 incorpora lote perezoso y cierre mediante contexto. La comparación actual incluye inicialización, N logins y cierre para todas las versiones, N=1/10 y cinco repeticiones. No atribuye a la ausencia de controles de V0 una ventaja aceptable. No se cachean contraseñas ni tokens para evitar verificaciones.
 
-- `usuarios.py`: HTTP 200, tres hallazgos SEC-06, fuente `sec-06#0`, sin abstención y sin modo demo. Señaló MD5, uso de `random` y comparación mediante `==`.
-- `limites.py`: HTTP 200, `sin hallazgos`, sin abstención y sin modo demo.
+La suite actual tiene 163 pruebas, 57 propias de A3, sin omitidas. Las 159 y 155 anteriores se conservan como historia. La revisión actual tiene firma de fuentes y dos llamadas nuevas a Gemini: no se afirma que el código cambiado sea idéntico al de las llamadas anteriores. Los parches generados por el revisor no se ejecutan ni se incorporan automáticamente.
 
-Las respuestas y las trazas se conservan completas. El parche de `usuarios.py` propone introducir `bcrypt`; no se incorporó ni ejecutó en esta entrega. Que el proveedor responda correctamente no valida automáticamente sus parches, ni demuestra cobertura completa de defectos. La autenticación implementada usa PBKDF2 de la biblioteca estándar y sus resultados se comprueban por separado.
-
-Las capturas son del panel generado a partir de los registros reales de pytest y HTTP. Se identifican como panel de evidencias, no como capturas de Swagger ni de una conversación externa. La llave de Gemini, el secreto de los tokens y los tokens de sesión están excluidos de los archivos de entrega.
-
-## Depuración de la entrega
-
-Por solicitud del estudiante se retiraron las entregas y bitácoras de actividades anteriores y el ejemplo de solicitudes de cambio de la A2. Se conservan la API, el motor y las pruebas relacionadas. La ejecución original de 159 casos se mantiene íntegra como evidencia; al retirar cuatro casos exclusivos de la A2, la suite actual reúne 155. El inventario de archivos retirados está en `bitacora/a3/limpieza_entrega.json`.
+Las nuevas capturas se toman directamente de la tabla Server response de Swagger UI. Incluyen ambos errores de credenciales, cuyo detail debe ser igual. Las capturas de la propuesta muestran el texto real de Gemini en el navegador, no una interfaz ficticia de chat. Los paneles antiguos no se presentan como capturas directas. Las credenciales de configuración y los tokens de sesión quedan fuera del paquete.

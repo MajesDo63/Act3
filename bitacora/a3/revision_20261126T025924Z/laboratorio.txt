@@ -1,0 +1,4 @@
+............                                                             [100%]
+- generated xml file: C:\Users\cesar\OneDrive\Documentos\ChatGPT\Estudiar\output\actividad3_entrega\Act3\bitacora\a3\revision_20261126T025924Z\laboratorio.xml -
+12 passed in 2.82s
+

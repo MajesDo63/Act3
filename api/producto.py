@@ -11,7 +11,7 @@ Endpoints
   POST /auth/registro   {"email","contrasena"} crea usuario (contraseña con hash y sal)
   POST /auth/login      {"email","contrasena"} → {"token", "tipo": "Bearer", "expira_en_s"}
   POST /v1/preguntas    {"pregunta"}          caso guía: respuesta con citas (requiere token)
-  POST /v1/variante     {"entrada": {...}}    tu variante.sistema(); si aún no existe, motor DEMO (requiere token)
+  POST /v1/revisor      {"codigo": "..."}    motor real del equipo; no acepta rutas del servidor
   POST /v1/agente       {"tarea"}             agente con herramientas; lo sensible queda PENDIENTE    ← A4
   POST /v1/agente/confirmar/{id} {"aprobar"}   confirmación humana con los datos exactos               ← A4
 
@@ -41,7 +41,6 @@ from finnorte.config import RAIZ, config
 from api.auth import VIGENCIA_S, Autenticador, ErrorAuth, validar_token
 from finnorte import agente_servicio, llm, trazas, variante
 from finnorte.caso_guia import asistente as caso_guia
-from finnorte.caso_guia import motor_demo
 from finnorte.caso_guia.herramientas import herramientas_caso_guia
 
 app = FastAPI(title="FinNorte · Producto (servicio con token + Gemini + agente)", version="2.0")
@@ -181,26 +180,6 @@ def preguntar(p: Pregunta, usuario: str = Depends(usuario_actual)):
     except llm.LLMError as e:
         raise _error_llm(e)
     return {k: out[k] for k in ("respuesta", "fuentes", "abstuvo", "latencia_ms", "costo_usd")}
-
-
-class EntradaVariante(BaseModel):
-    entrada: dict = Field(description='La entrada de tu variante, p. ej. {"pregunta": "..."} o {"codigo": "..."}')
-
-
-@app.post("/v1/variante")
-def ejecutar_variante(e: EntradaVariante, usuario: str = Depends(usuario_actual)):
-    """Llama a TU variante.sistema() (Avance 1). Si aún no existe, responde el motor DEMO ("motor": "demo").
-    A3: crea además tu propio endpoint POST /v1/<tu-variante> con un modelo de entrada propio de tu variante."""
-    try:
-        try:
-            out = variante.sistema(e.entrada)
-        except NotImplementedError:
-            out = motor_demo.sistema(e.entrada)
-    except ValueError as err:
-        raise ErrorHTTP(422, "Entrada inválida", str(err)[:200])
-    except llm.LLMError as err:
-        raise _error_llm(err)
-    return out
 
 
 class CodigoRevisor(BaseModel):

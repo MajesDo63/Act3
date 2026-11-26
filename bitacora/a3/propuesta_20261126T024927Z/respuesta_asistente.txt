@@ -1,0 +1,90 @@
+Como ingeniero de seguridad, presento el diseño para el sistema de autenticación y control de acceso.
+
+### 1. Implementación de Seguridad (Python Nativo)
+
+Utilizaremos `hashlib` y `hmac` (estándar en Python) para implementar PBKDF2-HMAC-SHA256.
+
+```python
+import hashlib, hmac, os, time, json, sqlite3
+
+TOKEN_SECRET = os.environ.get("TOKEN_SECRET", "secreto-muy-seguro").encode()
+
+def hash_contrasena(password: str) -> str:
+    salt = os.urandom(16)
+    pwd_hash = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000)
+    return f"{salt.hex()}:{pwd_hash.hex()}"
+
+def verificar_contrasena(stored_hash: str, password: str) -> bool:
+    salt_hex, pwd_hash_hex = stored_hash.split(':')
+    salt, pwd_hash = bytes.fromhex(salt_hex), bytes.fromhex(pwd_hash_hex)
+    new_hash = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000)
+    return hmac.compare_digest(new_hash, pwd_hash)
+
+def emitir_token(user_id: str) -> str:
+    exp = int(time.time()) + 900
+    payload = f"{user_id}:{exp}".encode()
+    sig = hmac.new(TOKEN_SECRET, payload, hashlib.sha256).hexdigest()
+    return f"{payload.decode()}:{sig}"
+
+def validar_token(token: str) -> str:
+    try:
+        data, sig = token.rsplit(':', 1)
+        if not hmac.compare_digest(hmac.new(TOKEN_SECRET, data.encode(), hashlib.sha256).hexdigest(), sig):
+            return None
+        user_id, exp = data.split(':')
+        return user_id if int(exp) > time.time() else None
+    except: return None
+```
+
+**Lógica SQLite:** La tabla `usuarios` debe tener `intentos_fallidos` (int) y `bloqueado_hasta` (timestamp). En el login, si `intentos_fallidos >= 5`, rechazar. Si el login falla, incrementar contador; si es exitoso, resetear a 0. **Bitácora:** Registrar `user_id` y `evento` (ej: "login_failed"), nunca el input sensible.
+
+---
+
+### 2. Arquitectura y Riesgos
+
+**Protección de Archivos:**
+Para evitar que la API exponga la lectura de archivos (LFI), se debe aplicar el principio de **separación de responsabilidades**. El motor de CLI debe ser un módulo independiente que no sea importado por el router de FastAPI.
+*   **Riesgo:** Si el endpoint `/v1/revisor` acepta una ruta de archivo como parámetro, un atacante podría leer `/etc/passwd`.
+*   **Mitigación:** Validar que el input `codigo` sea un string procesable y no una ruta. Nunca usar `open(input_usuario)`. Si se requiere procesar archivos, usar una lista blanca de nombres de archivos permitidos en un directorio aislado (`chroot` o `jail`).
+
+---
+
+### 3. Refactorización del Login Inseguro
+
+| Refactorización | Problema resuelto |
+| :--- | :--- |
+| **Seguridad** | Elimina la enumeración de usuarios (el original dice "user not found" vs "wrong password"). |
+| **Eficiencia** | Sustituye la comparación de strings plana por `compare_digest` para evitar ataques de *timing*. |
+| **Mantenibilidad** | Desacopla la lógica de autenticación de la base de datos, permitiendo cambiar el motor sin tocar el flujo. |
+
+**Comparación justa:** La inicialización debe medirse por la latencia de carga de dependencias y conexión a BD. Las llamadas deben medirse mediante *benchmarking* de tiempo de respuesta bajo carga concurrente, asegurando que el tiempo de respuesta sea constante independientemente de si el usuario existe o no.
+
+---
+
+### 4. Pruebas y Oráculos
+
+**Pruebas Oficiales:**
+1.  **Login exitoso:** Credenciales correctas -> Token válido.
+2.  **Bloqueo:** 5 intentos fallidos -> Rechazo de acceso incluso con credenciales correctas.
+3.  **Expiración:** Token emitido hace > 900s -> Rechazo.
+
+**Pruebas Adicionales:**
+1.  **Oráculo de Timing:** Medir tiempo de respuesta con usuario existente vs inexistente (debe ser idéntico).
+2.  **Integridad de Token:** Modificar un bit del token -> Rechazo.
+3.  **Inyección SQL:** Intentar `' OR '1'='1` en el campo usuario -> Rechazo (debe usar parámetros en SQLite).
+
+---
+
+### 5. Riesgos Pendientes y Comprobación
+*   **Riesgo:** El uso de `os.urandom` es seguro, pero la entropía del sistema debe ser monitoreada.
+*   **Comprobación:** Se requiere auditoría de código para verificar que `TOKEN_SECRET` no esté hardcodeado en el repositorio (usar gestor de secretos).
+*   **Pseudocódigo de Revisor:**
+    ```python
+    @app.post("/v1/revisor")
+    def revisar(payload: dict, token: str = Header(...)):
+        user = validar_token(token)
+        if not user: raise HTTPException(status_code=401)
+        # Lógica de negocio: procesar payload["codigo"]
+        # Registrar en bitácora: "Usuario X ejecutó revisión"
+    ```
+*   **Nota:** La implementación de `pbkdf2_hmac` con 100,000 iteraciones es el estándar actual para mitigar ataques de fuerza bruta. La comprobación de esta configuración es crítica para la resiliencia del sistema.

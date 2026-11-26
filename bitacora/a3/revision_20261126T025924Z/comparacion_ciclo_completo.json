@@ -1,0 +1,519 @@
+{
+  "metodo": "Cinco repeticiones por versión y N=1/10. Total incluye inicialización, N logins y cierre. El registro de usuario es precondición común y queda fuera. No se mide carga HTTP. V1 inicializa dentro de cada solicitud; V2/V3 una vez por ciclo. V0 es un contraste inseguro, no una optimización aceptable.",
+  "resumen": [
+    {
+      "version": "original",
+      "n": 1,
+      "repeticiones": 5,
+      "mediana_total_ms": 0.0012,
+      "mediana_inicio_ms": 0.0002,
+      "mediana_solicitud_ms": 0.0003,
+      "derivaciones": 0
+    },
+    {
+      "version": "seguridad",
+      "n": 1,
+      "repeticiones": 5,
+      "mediana_total_ms": 72.9049,
+      "mediana_inicio_ms": 0.0003,
+      "mediana_solicitud_ms": 72.8991,
+      "derivaciones": 2
+    },
+    {
+      "version": "eficiencia",
+      "n": 1,
+      "repeticiones": 5,
+      "mediana_total_ms": 70.1117,
+      "mediana_inicio_ms": 31.3078,
+      "mediana_solicitud_ms": 38.7042,
+      "derivaciones": 2
+    },
+    {
+      "version": "mantenible",
+      "n": 1,
+      "repeticiones": 5,
+      "mediana_total_ms": 71.8901,
+      "mediana_inicio_ms": 32.0166,
+      "mediana_solicitud_ms": 40.1448,
+      "derivaciones": 2
+    },
+    {
+      "version": "original",
+      "n": 10,
+      "repeticiones": 5,
+      "mediana_total_ms": 0.0029,
+      "mediana_inicio_ms": 0.0002,
+      "mediana_solicitud_ms": 0.0001,
+      "derivaciones": 0
+    },
+    {
+      "version": "seguridad",
+      "n": 10,
+      "repeticiones": 5,
+      "mediana_total_ms": 713.0553,
+      "mediana_inicio_ms": 0.0003,
+      "mediana_solicitud_ms": 70.609,
+      "derivaciones": 20
+    },
+    {
+      "version": "eficiencia",
+      "n": 10,
+      "repeticiones": 5,
+      "mediana_total_ms": 414.6825,
+      "mediana_inicio_ms": 31.1587,
+      "mediana_solicitud_ms": 38.2687,
+      "derivaciones": 11
+    },
+    {
+      "version": "mantenible",
+      "n": 10,
+      "repeticiones": 5,
+      "mediana_total_ms": 423.154,
+      "mediana_inicio_ms": 31.2051,
+      "mediana_solicitud_ms": 39.101,
+      "derivaciones": 11
+    }
+  ],
+  "muestras": [
+    {
+      "version": "original",
+      "n": 1,
+      "repeticion": 1,
+      "inicio_ms": 0.0005,
+      "solicitudes_ms": 0.0039,
+      "cierre_ms": 0.0001,
+      "total_ms": 0.0045,
+      "mediana_solicitud_ms": 0.0011,
+      "derivaciones": 0
+    },
+    {
+      "version": "original",
+      "n": 1,
+      "repeticion": 2,
+      "inicio_ms": 0.0004,
+      "solicitudes_ms": 0.002,
+      "cierre_ms": 0.0002,
+      "total_ms": 0.0026,
+      "mediana_solicitud_ms": 0.0007,
+      "derivaciones": 0
+    },
+    {
+      "version": "original",
+      "n": 1,
+      "repeticion": 3,
+      "inicio_ms": 0.0002,
+      "solicitudes_ms": 0.0009,
+      "cierre_ms": 0.0001,
+      "total_ms": 0.0012,
+      "mediana_solicitud_ms": 0.0003,
+      "derivaciones": 0
+    },
+    {
+      "version": "original",
+      "n": 1,
+      "repeticion": 4,
+      "inicio_ms": 0.0002,
+      "solicitudes_ms": 0.0008,
+      "cierre_ms": 0.0001,
+      "total_ms": 0.0011,
+      "mediana_solicitud_ms": 0.0002,
+      "derivaciones": 0
+    },
+    {
+      "version": "original",
+      "n": 1,
+      "repeticion": 5,
+      "inicio_ms": 0.0001,
+      "solicitudes_ms": 0.0008,
+      "cierre_ms": 0.0001,
+      "total_ms": 0.001,
+      "mediana_solicitud_ms": 0.0003,
+      "derivaciones": 0
+    },
+    {
+      "version": "seguridad",
+      "n": 1,
+      "repeticion": 1,
+      "inicio_ms": 0.0001,
+      "solicitudes_ms": 67.7929,
+      "cierre_ms": 0.0001,
+      "total_ms": 67.7931,
+      "mediana_solicitud_ms": 67.7887,
+      "derivaciones": 2
+    },
+    {
+      "version": "seguridad",
+      "n": 1,
+      "repeticion": 2,
+      "inicio_ms": 0.0003,
+      "solicitudes_ms": 75.0507,
+      "cierre_ms": 0.0003,
+      "total_ms": 75.0513,
+      "mediana_solicitud_ms": 75.0462,
+      "derivaciones": 2
+    },
+    {
+      "version": "seguridad",
+      "n": 1,
+      "repeticion": 3,
+      "inicio_ms": 0.0003,
+      "solicitudes_ms": 72.7207,
+      "cierre_ms": 0.0001,
+      "total_ms": 72.7211,
+      "mediana_solicitud_ms": 72.7162,
+      "derivaciones": 2
+    },
+    {
+      "version": "seguridad",
+      "n": 1,
+      "repeticion": 4,
+      "inicio_ms": 0.0007,
+      "solicitudes_ms": 72.9041,
+      "cierre_ms": 0.0001,
+      "total_ms": 72.9049,
+      "mediana_solicitud_ms": 72.8991,
+      "derivaciones": 2
+    },
+    {
+      "version": "seguridad",
+      "n": 1,
+      "repeticion": 5,
+      "inicio_ms": 0.0004,
+      "solicitudes_ms": 74.6733,
+      "cierre_ms": 0.0001,
+      "total_ms": 74.6738,
+      "mediana_solicitud_ms": 74.6695,
+      "derivaciones": 2
+    },
+    {
+      "version": "eficiencia",
+      "n": 1,
+      "repeticion": 1,
+      "inicio_ms": 31.342,
+      "solicitudes_ms": 38.7107,
+      "cierre_ms": 0.059,
+      "total_ms": 70.1117,
+      "mediana_solicitud_ms": 38.7042,
+      "derivaciones": 2
+    },
+    {
+      "version": "eficiencia",
+      "n": 1,
+      "repeticion": 2,
+      "inicio_ms": 31.0163,
+      "solicitudes_ms": 38.5222,
+      "cierre_ms": 0.052,
+      "total_ms": 69.5905,
+      "mediana_solicitud_ms": 38.5173,
+      "derivaciones": 2
+    },
+    {
+      "version": "eficiencia",
+      "n": 1,
+      "repeticion": 3,
+      "inicio_ms": 30.8686,
+      "solicitudes_ms": 38.6946,
+      "cierre_ms": 0.0454,
+      "total_ms": 69.6086,
+      "mediana_solicitud_ms": 38.6898,
+      "derivaciones": 2
+    },
+    {
+      "version": "eficiencia",
+      "n": 1,
+      "repeticion": 4,
+      "inicio_ms": 31.3078,
+      "solicitudes_ms": 40.9238,
+      "cierre_ms": 0.0604,
+      "total_ms": 72.292,
+      "mediana_solicitud_ms": 40.9175,
+      "derivaciones": 2
+    },
+    {
+      "version": "eficiencia",
+      "n": 1,
+      "repeticion": 5,
+      "inicio_ms": 31.5089,
+      "solicitudes_ms": 41.012,
+      "cierre_ms": 0.064,
+      "total_ms": 72.5849,
+      "mediana_solicitud_ms": 41.006,
+      "derivaciones": 2
+    },
+    {
+      "version": "mantenible",
+      "n": 1,
+      "repeticion": 1,
+      "inicio_ms": 32.0166,
+      "solicitudes_ms": 39.5604,
+      "cierre_ms": 0.063,
+      "total_ms": 71.64,
+      "mediana_solicitud_ms": 39.5555,
+      "derivaciones": 2
+    },
+    {
+      "version": "mantenible",
+      "n": 1,
+      "repeticion": 2,
+      "inicio_ms": 32.4654,
+      "solicitudes_ms": 39.3744,
+      "cierre_ms": 0.0503,
+      "total_ms": 71.8901,
+      "mediana_solicitud_ms": 39.3702,
+      "derivaciones": 2
+    },
+    {
+      "version": "mantenible",
+      "n": 1,
+      "repeticion": 3,
+      "inicio_ms": 32.4274,
+      "solicitudes_ms": 40.4163,
+      "cierre_ms": 0.0596,
+      "total_ms": 72.9033,
+      "mediana_solicitud_ms": 40.412,
+      "derivaciones": 2
+    },
+    {
+      "version": "mantenible",
+      "n": 1,
+      "repeticion": 4,
+      "inicio_ms": 31.6479,
+      "solicitudes_ms": 40.1493,
+      "cierre_ms": 0.0612,
+      "total_ms": 71.8584,
+      "mediana_solicitud_ms": 40.1448,
+      "derivaciones": 2
+    },
+    {
+      "version": "mantenible",
+      "n": 1,
+      "repeticion": 5,
+      "inicio_ms": 30.5175,
+      "solicitudes_ms": 42.2095,
+      "cierre_ms": 0.0662,
+      "total_ms": 72.7932,
+      "mediana_solicitud_ms": 42.204,
+      "derivaciones": 2
+    },
+    {
+      "version": "original",
+      "n": 10,
+      "repeticion": 1,
+      "inicio_ms": 0.0025,
+      "solicitudes_ms": 0.0048,
+      "cierre_ms": 0.0001,
+      "total_ms": 0.0074,
+      "mediana_solicitud_ms": 0.0001,
+      "derivaciones": 0
+    },
+    {
+      "version": "original",
+      "n": 10,
+      "repeticion": 2,
+      "inicio_ms": 0.0004,
+      "solicitudes_ms": 0.0034,
+      "cierre_ms": 0.0001,
+      "total_ms": 0.0039,
+      "mediana_solicitud_ms": 0.0001,
+      "derivaciones": 0
+    },
+    {
+      "version": "original",
+      "n": 10,
+      "repeticion": 3,
+      "inicio_ms": 0.0002,
+      "solicitudes_ms": 0.0027,
+      "cierre_ms": 0.0,
+      "total_ms": 0.0029,
+      "mediana_solicitud_ms": 0.0001,
+      "derivaciones": 0
+    },
+    {
+      "version": "original",
+      "n": 10,
+      "repeticion": 4,
+      "inicio_ms": 0.0001,
+      "solicitudes_ms": 0.0026,
+      "cierre_ms": 0.0001,
+      "total_ms": 0.0028,
+      "mediana_solicitud_ms": 0.0001,
+      "derivaciones": 0
+    },
+    {
+      "version": "original",
+      "n": 10,
+      "repeticion": 5,
+      "inicio_ms": 0.0002,
+      "solicitudes_ms": 0.0025,
+      "cierre_ms": 0.0001,
+      "total_ms": 0.0028,
+      "mediana_solicitud_ms": 0.0001,
+      "derivaciones": 0
+    },
+    {
+      "version": "seguridad",
+      "n": 10,
+      "repeticion": 1,
+      "inicio_ms": 0.0001,
+      "solicitudes_ms": 719.0361,
+      "cierre_ms": 0.0002,
+      "total_ms": 719.0364,
+      "mediana_solicitud_ms": 71.76425,
+      "derivaciones": 20
+    },
+    {
+      "version": "seguridad",
+      "n": 10,
+      "repeticion": 2,
+      "inicio_ms": 0.0004,
+      "solicitudes_ms": 714.179,
+      "cierre_ms": 0.0002,
+      "total_ms": 714.1796,
+      "mediana_solicitud_ms": 70.60905,
+      "derivaciones": 20
+    },
+    {
+      "version": "seguridad",
+      "n": 10,
+      "repeticion": 3,
+      "inicio_ms": 0.0003,
+      "solicitudes_ms": 693.02,
+      "cierre_ms": 0.0002,
+      "total_ms": 693.0205,
+      "mediana_solicitud_ms": 69.24889999999999,
+      "derivaciones": 20
+    },
+    {
+      "version": "seguridad",
+      "n": 10,
+      "repeticion": 4,
+      "inicio_ms": 0.0003,
+      "solicitudes_ms": 704.4483,
+      "cierre_ms": 0.0001,
+      "total_ms": 704.4487,
+      "mediana_solicitud_ms": 70.35195,
+      "derivaciones": 20
+    },
+    {
+      "version": "seguridad",
+      "n": 10,
+      "repeticion": 5,
+      "inicio_ms": 0.0004,
+      "solicitudes_ms": 713.0546,
+      "cierre_ms": 0.0003,
+      "total_ms": 713.0553,
+      "mediana_solicitud_ms": 71.38380000000001,
+      "derivaciones": 20
+    },
+    {
+      "version": "eficiencia",
+      "n": 10,
+      "repeticion": 1,
+      "inicio_ms": 31.937,
+      "solicitudes_ms": 379.7686,
+      "cierre_ms": 0.0509,
+      "total_ms": 411.7565,
+      "mediana_solicitud_ms": 38.0754,
+      "derivaciones": 11
+    },
+    {
+      "version": "eficiencia",
+      "n": 10,
+      "repeticion": 2,
+      "inicio_ms": 30.6904,
+      "solicitudes_ms": 392.966,
+      "cierre_ms": 0.0789,
+      "total_ms": 423.7353,
+      "mediana_solicitud_ms": 39.3043,
+      "derivaciones": 11
+    },
+    {
+      "version": "eficiencia",
+      "n": 10,
+      "repeticion": 3,
+      "inicio_ms": 31.1587,
+      "solicitudes_ms": 380.4082,
+      "cierre_ms": 0.0518,
+      "total_ms": 411.6187,
+      "mediana_solicitud_ms": 38.26865,
+      "derivaciones": 11
+    },
+    {
+      "version": "eficiencia",
+      "n": 10,
+      "repeticion": 4,
+      "inicio_ms": 31.0197,
+      "solicitudes_ms": 387.065,
+      "cierre_ms": 0.0595,
+      "total_ms": 418.1442,
+      "mediana_solicitud_ms": 38.4513,
+      "derivaciones": 11
+    },
+    {
+      "version": "eficiencia",
+      "n": 10,
+      "repeticion": 5,
+      "inicio_ms": 33.2863,
+      "solicitudes_ms": 381.344,
+      "cierre_ms": 0.0522,
+      "total_ms": 414.6825,
+      "mediana_solicitud_ms": 38.0143,
+      "derivaciones": 11
+    },
+    {
+      "version": "mantenible",
+      "n": 10,
+      "repeticion": 1,
+      "inicio_ms": 31.2051,
+      "solicitudes_ms": 393.8333,
+      "cierre_ms": 0.065,
+      "total_ms": 425.1034,
+      "mediana_solicitud_ms": 39.38195,
+      "derivaciones": 11
+    },
+    {
+      "version": "mantenible",
+      "n": 10,
+      "repeticion": 2,
+      "inicio_ms": 30.6112,
+      "solicitudes_ms": 391.8541,
+      "cierre_ms": 0.071,
+      "total_ms": 422.5363,
+      "mediana_solicitud_ms": 39.1225,
+      "derivaciones": 11
+    },
+    {
+      "version": "mantenible",
+      "n": 10,
+      "repeticion": 3,
+      "inicio_ms": 30.9306,
+      "solicitudes_ms": 387.7556,
+      "cierre_ms": 0.0553,
+      "total_ms": 418.7415,
+      "mediana_solicitud_ms": 38.12779999999999,
+      "derivaciones": 11
+    },
+    {
+      "version": "mantenible",
+      "n": 10,
+      "repeticion": 4,
+      "inicio_ms": 31.5757,
+      "solicitudes_ms": 391.501,
+      "cierre_ms": 0.0773,
+      "total_ms": 423.154,
+      "mediana_solicitud_ms": 38.1895,
+      "derivaciones": 11
+    },
+    {
+      "version": "mantenible",
+      "n": 10,
+      "repeticion": 5,
+      "inicio_ms": 31.2557,
+      "solicitudes_ms": 393.2636,
+      "cierre_ms": 0.068,
+      "total_ms": 424.5873,
+      "mediana_solicitud_ms": 39.101,
+      "derivaciones": 11
+    }
+  ]
+}

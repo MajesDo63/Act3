@@ -1,0 +1,450 @@
+{
+  "base_url": "http://127.0.0.1:55093",
+  "comando": [
+    "C:\\Users\\cesar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-m",
+    "uvicorn",
+    "api.producto:app",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "55093",
+    "--log-level",
+    "warning"
+  ],
+  "sesiones": [
+    {
+      "base_url": "http://127.0.0.1:58840",
+      "comando": [
+        "C:\\Users\\cesar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "uvicorn",
+        "api.producto:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "58840",
+        "--log-level",
+        "warning"
+      ]
+    },
+    {
+      "base_url": "http://127.0.0.1:59450",
+      "comando": [
+        "C:\\Users\\cesar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "uvicorn",
+        "api.producto:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "59450",
+        "--log-level",
+        "warning"
+      ]
+    },
+    {
+      "base_url": "http://127.0.0.1:55093",
+      "comando": [
+        "C:\\Users\\cesar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "uvicorn",
+        "api.producto:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "55093",
+        "--log-level",
+        "warning"
+      ]
+    }
+  ],
+  "eventos": [
+    {
+      "etiqueta": "salud",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:06:59.981713+00:00",
+      "metodo": "GET",
+      "ruta": "/salud",
+      "solicitud": null,
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 21.19,
+      "respuesta": {
+        "estado": "ok",
+        "llm": "gemini/gemini-3.1-flash-lite",
+        "embeddings": "gemini",
+        "variante": "v2-revisor",
+        "caso_guia": "BM25 + agente de referencia"
+      },
+      "base_url": "http://127.0.0.1:58840"
+    },
+    {
+      "etiqueta": "registro",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:07:00.054260+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/registro",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 201,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 62.84,
+      "respuesta": {
+        "mensaje": "Registro exitoso"
+      },
+      "base_url": "http://127.0.0.1:58840"
+    },
+    {
+      "etiqueta": "login_exitoso",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:07:00.115664+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 58.86,
+      "respuesta": {
+        "token": "<oculto>",
+        "tipo": "Bearer",
+        "expira_en_s": 900
+      },
+      "base_url": "http://127.0.0.1:58840"
+    },
+    {
+      "etiqueta": "revisor_usuarios.py",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:08:22.089450+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "import hashlib\nimport random\n\n\ndef crear_usuario(db, correo, password):\n    h = hashlib.md5(password.encode()).hexdigest()\n    db.insert(\"usuarios\", {\"correo\": correo, \"hash\": h})\n    codigo = random.randint(100000, 999999)\n    return codigo\n\n\ndef verificar(db, correo, password):\n    u = db.find(\"usuarios\", correo=correo)\n    return u and u[\"hash\"] == hashlib.md5(password.encode()).hexdigest()\n"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 81970.81,
+      "respuesta": {
+        "respuesta": "Se encontraron 3 hallazgos: SEC-06 en línea 6; SEC-06 en línea 8; SEC-06 en línea 14. Los parches son propuestas y requieren revisión humana.\n\nH1 · SEC-06 · línea 6: Uso de algoritmo MD5 inseguro para el hashing de contraseñas; se requiere PBKDF2, bcrypt o Argon2 con sal.\n  Explicación: SEC-06, línea 6: el uso de MD5 es insuficiente para la protección de contraseñas, aumentando el riesgo de ataques por fuerza bruta o tablas arcoíris. NO ESPECIFICADO el uso de sal.\n  Parche propuesto: Reemplazar hashlib.md5 por hashlib.pbkdf2_hmac con una sal única para el hashing de contraseñas.\n  Fuente: sec-06#0\nH2 · SEC-06 · línea 8: Uso del módulo 'random' para generar códigos de un solo uso; se debe utilizar el módulo 'secrets' para garantizar aleatoriedad criptográficamente segura.\n  Explicación: SEC-06, línea 8: el módulo 'random' no es apto para fines de seguridad, lo que podría permitir la predicción de códigos de un solo uso.\n  Parche propuesto: Sustituir el módulo random por el módulo secrets para la generación de códigos de un solo uso.\n  Fuente: sec-06#0\nH3 · SEC-06 · línea 14: Comparación de hashes de contraseñas mediante el operador '==' en lugar de 'hmac.compare_digest', lo que puede exponer al sistema a ataques de temporización.\n  Explicación: SEC-06, línea 14: el uso del operador '==' permite que el tiempo de ejecución varíe según la coincidencia de caracteres, facilitando ataques de temporización para inferir el hash correcto.\n  Parche propuesto: Utilizar hmac.compare_digest para comparar hashes y prevenir ataques de temporización.\n  Fuente: sec-06#0",
+        "fuentes": [
+          "sec-06#0"
+        ],
+        "abstuvo": false,
+        "errores_citas": [],
+        "artefacto": {
+          "hallazgos": [
+            {
+              "id": "H1",
+              "regla": "SEC-06",
+              "linea": 6,
+              "descripcion": "Uso de algoritmo MD5 inseguro para el hashing de contraseñas; se requiere PBKDF2, bcrypt o Argon2 con sal.",
+              "explicacion": "SEC-06, línea 6: el uso de MD5 es insuficiente para la protección de contraseñas, aumentando el riesgo de ataques por fuerza bruta o tablas arcoíris. NO ESPECIFICADO el uso de sal.",
+              "fuente": "sec-06#0"
+            },
+            {
+              "id": "H2",
+              "regla": "SEC-06",
+              "linea": 8,
+              "descripcion": "Uso del módulo 'random' para generar códigos de un solo uso; se debe utilizar el módulo 'secrets' para garantizar aleatoriedad criptográficamente segura.",
+              "explicacion": "SEC-06, línea 8: el módulo 'random' no es apto para fines de seguridad, lo que podría permitir la predicción de códigos de un solo uso.",
+              "fuente": "sec-06#0"
+            },
+            {
+              "id": "H3",
+              "regla": "SEC-06",
+              "linea": 14,
+              "descripcion": "Comparación de hashes de contraseñas mediante el operador '==' en lugar de 'hmac.compare_digest', lo que puede exponer al sistema a ataques de temporización.",
+              "explicacion": "SEC-06, línea 14: el uso del operador '==' permite que el tiempo de ejecución varíe según la coincidencia de caracteres, facilitando ataques de temporización para inferir el hash correcto.",
+              "fuente": "sec-06#0"
+            }
+          ],
+          "parches": [
+            {
+              "id": "H1",
+              "regla": "SEC-06",
+              "linea": 6,
+              "cambio": "Reemplazar hashlib.md5 por hashlib.pbkdf2_hmac con una sal única para el hashing de contraseñas."
+            },
+            {
+              "id": "H2",
+              "regla": "SEC-06",
+              "linea": 8,
+              "cambio": "Sustituir el módulo random por el módulo secrets para la generación de códigos de un solo uso."
+            },
+            {
+              "id": "H3",
+              "regla": "SEC-06",
+              "linea": 14,
+              "cambio": "Utilizar hmac.compare_digest para comparar hashes y prevenir ataques de temporización."
+            }
+          ],
+          "codigo_corregido": "import hashlib\nimport secrets\nimport hmac\nimport os\n\n\ndef crear_usuario(db, correo, password):\n    salt = secrets.token_bytes(16)\n    h = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000)\n    db.insert(\"usuarios\", {\"correo\": correo, \"hash\": h, \"salt\": salt})\n    codigo = secrets.randbelow(900000) + 100000\n    return codigo\n\n\ndef verificar(db, correo, password):\n    u = db.find(\"usuarios\", correo=correo)\n    if not u:\n        return False\n    h_input = hashlib.pbkdf2_hmac('sha256', password.encode(), u[\"salt\"], 100000)\n    return hmac.compare_digest(u[\"hash\"], h_input)\n",
+          "dictamen": {
+            "estado": "con_hallazgos",
+            "total_hallazgos": 3,
+            "hallazgos": [
+              {
+                "id": "H1",
+                "regla": "SEC-06",
+                "linea": 6,
+                "descripcion": "Uso de algoritmo MD5 inseguro para el hashing de contraseñas; se requiere PBKDF2, bcrypt o Argon2 con sal.",
+                "explicacion": "SEC-06, línea 6: el uso de MD5 es insuficiente para la protección de contraseñas, aumentando el riesgo de ataques por fuerza bruta o tablas arcoíris. NO ESPECIFICADO el uso de sal.",
+                "fuente": "sec-06#0",
+                "cambio": "Reemplazar hashlib.md5 por hashlib.pbkdf2_hmac con una sal única para el hashing de contraseñas."
+              },
+              {
+                "id": "H2",
+                "regla": "SEC-06",
+                "linea": 8,
+                "descripcion": "Uso del módulo 'random' para generar códigos de un solo uso; se debe utilizar el módulo 'secrets' para garantizar aleatoriedad criptográficamente segura.",
+                "explicacion": "SEC-06, línea 8: el módulo 'random' no es apto para fines de seguridad, lo que podría permitir la predicción de códigos de un solo uso.",
+                "fuente": "sec-06#0",
+                "cambio": "Sustituir el módulo random por el módulo secrets para la generación de códigos de un solo uso."
+              },
+              {
+                "id": "H3",
+                "regla": "SEC-06",
+                "linea": 14,
+                "descripcion": "Comparación de hashes de contraseñas mediante el operador '==' en lugar de 'hmac.compare_digest', lo que puede exponer al sistema a ataques de temporización.",
+                "explicacion": "SEC-06, línea 14: el uso del operador '==' permite que el tiempo de ejecución varíe según la coincidencia de caracteres, facilitando ataques de temporización para inferir el hash correcto.",
+                "fuente": "sec-06#0",
+                "cambio": "Utilizar hmac.compare_digest para comparar hashes y prevenir ataques de temporización."
+              }
+            ],
+            "resumen": "Se encontraron 3 hallazgos: SEC-06 en línea 6; SEC-06 en línea 8; SEC-06 en línea 14. Los parches son propuestas y requieren revisión humana."
+          }
+        },
+        "costo_usd": 0.00407625,
+        "latencia_ms": 81953.4,
+        "demo": false,
+        "alcance": "Cuatro etapas: detectar, explicar, parche y dictamen",
+        "recuperados": [
+          "sec-06#0",
+          "sec-01#0",
+          "sec-02#0",
+          "sec-03#0",
+          "sec-04#0",
+          "sec-10#0"
+        ]
+      },
+      "base_url": "http://127.0.0.1:58840"
+    },
+    {
+      "etiqueta": "revisor_limites.py",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:08:42.120643+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "from decimal import Decimal, ROUND_HALF_EVEN\n\nLIMITE_NIVEL_1 = Decimal(\"8000\")\nLIMITE_NIVEL_2 = Decimal(\"50000\")\n\n\ndef validar_monto(monto: Decimal, nivel: int) -> bool:\n    \"\"\"Devuelve True si el monto es válido para el nivel de cuenta.\"\"\"\n    if monto <= 0 or monto != monto.quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_EVEN):\n        return False\n    limite = LIMITE_NIVEL_2 if nivel == 2 else LIMITE_NIVEL_1\n    return monto <= limite\n"
+      },
+      "estado_http": 503,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 20026.61,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/503",
+        "title": "Proveedor no disponible",
+        "status": 503,
+        "detail": "No fue posible consultar el modelo; intenta más tarde",
+        "trace_id": "11081b504e6f"
+      },
+      "base_url": "http://127.0.0.1:58840"
+    },
+    {
+      "etiqueta": "salud",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:11:13.349894+00:00",
+      "metodo": "GET",
+      "ruta": "/salud",
+      "solicitud": null,
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 24.79,
+      "respuesta": {
+        "estado": "ok",
+        "llm": "gemini/gemini-3.1-flash-lite",
+        "embeddings": "gemini",
+        "variante": "v2-revisor",
+        "caso_guia": "BM25 + agente de referencia"
+      },
+      "base_url": "http://127.0.0.1:59450"
+    },
+    {
+      "etiqueta": "registro",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:11:13.427335+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/registro",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 201,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 75.1,
+      "respuesta": {
+        "mensaje": "Registro exitoso"
+      },
+      "base_url": "http://127.0.0.1:59450"
+    },
+    {
+      "etiqueta": "login_exitoso",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:11:13.496717+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 67.73,
+      "respuesta": {
+        "token": "<oculto>",
+        "tipo": "Bearer",
+        "expira_en_s": 900
+      },
+      "base_url": "http://127.0.0.1:59450"
+    },
+    {
+      "etiqueta": "revisor_limites.py",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:12:32.590252+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "from decimal import Decimal, ROUND_HALF_EVEN\n\nLIMITE_NIVEL_1 = Decimal(\"8000\")\nLIMITE_NIVEL_2 = Decimal(\"50000\")\n\n\ndef validar_monto(monto: Decimal, nivel: int) -> bool:\n    \"\"\"Devuelve True si el monto es válido para el nivel de cuenta.\"\"\"\n    if monto <= 0 or monto != monto.quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_EVEN):\n        return False\n    limite = LIMITE_NIVEL_2 if nivel == 2 else LIMITE_NIVEL_1\n    return monto <= limite\n"
+      },
+      "estado_http": 503,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 79090.37,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/503",
+        "title": "Proveedor no disponible",
+        "status": 503,
+        "detail": "No fue posible consultar el modelo; intenta más tarde",
+        "trace_id": "3716ca1a9a6d"
+      },
+      "base_url": "http://127.0.0.1:59450"
+    },
+    {
+      "etiqueta": "salud",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:13:03.830292+00:00",
+      "metodo": "GET",
+      "ruta": "/salud",
+      "solicitud": null,
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 23.59,
+      "respuesta": {
+        "estado": "ok",
+        "llm": "gemini/gemini-3.1-flash-lite",
+        "embeddings": "gemini",
+        "variante": "v2-revisor",
+        "caso_guia": "BM25 + agente de referencia"
+      },
+      "base_url": "http://127.0.0.1:55093"
+    },
+    {
+      "etiqueta": "registro",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:13:03.888131+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/registro",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 201,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 56.15,
+      "respuesta": {
+        "mensaje": "Registro exitoso"
+      },
+      "base_url": "http://127.0.0.1:55093"
+    },
+    {
+      "etiqueta": "login_exitoso",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:13:03.946564+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 57.8,
+      "respuesta": {
+        "token": "<oculto>",
+        "tipo": "Bearer",
+        "expira_en_s": 900
+      },
+      "base_url": "http://127.0.0.1:55093"
+    },
+    {
+      "etiqueta": "revisor_limites.py",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T03:14:39.832910+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "from decimal import Decimal, ROUND_HALF_EVEN\n\nLIMITE_NIVEL_1 = Decimal(\"8000\")\nLIMITE_NIVEL_2 = Decimal(\"50000\")\n\n\ndef validar_monto(monto: Decimal, nivel: int) -> bool:\n    \"\"\"Devuelve True si el monto es válido para el nivel de cuenta.\"\"\"\n    if monto <= 0 or monto != monto.quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_EVEN):\n        return False\n    limite = LIMITE_NIVEL_2 if nivel == 2 else LIMITE_NIVEL_1\n    return monto <= limite\n"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 95885.02,
+      "respuesta": {
+        "respuesta": "sin hallazgos",
+        "fuentes": [],
+        "abstuvo": false,
+        "errores_citas": [],
+        "artefacto": {
+          "hallazgos": [],
+          "parches": [],
+          "codigo_corregido": "from decimal import Decimal, ROUND_HALF_EVEN\n\nLIMITE_NIVEL_1 = Decimal(\"8000\")\nLIMITE_NIVEL_2 = Decimal(\"50000\")\n\n\ndef validar_monto(monto: Decimal, nivel: int) -> bool:\n    \"\"\"Devuelve True si el monto es válido para el nivel de cuenta.\"\"\"\n    if monto <= 0 or monto != monto.quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_EVEN):\n        return False\n    limite = LIMITE_NIVEL_2 if nivel == 2 else LIMITE_NIVEL_1\n    return monto <= limite\n",
+          "dictamen": {
+            "estado": "sin_hallazgos",
+            "total_hallazgos": 0,
+            "hallazgos": [],
+            "resumen": "sin hallazgos"
+          }
+        },
+        "costo_usd": 0.0015155,
+        "latencia_ms": 95860.3,
+        "demo": false,
+        "alcance": "Cuatro etapas: detectar, explicar, parche y dictamen",
+        "recuperados": [
+          "sec-07#0",
+          "sec-10#0",
+          "sec-04#0",
+          "sec-01#0",
+          "sec-06#0",
+          "sec-09#0"
+        ]
+      },
+      "base_url": "http://127.0.0.1:55093"
+    }
+  ]
+}

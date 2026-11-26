@@ -1,0 +1,93 @@
+{
+  "estado": "completo",
+  "fecha_utc": "2026-11-26T02:59:24.754413+00:00",
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "directorio": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\output\\actividad3_entrega\\Act3",
+  "grupos": [
+    {
+      "nombre": "checkpoint_auth",
+      "comando": [
+        "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_lab_producto.py",
+        "-k",
+        "mensaje or alterado or bloqueo or texto_plano",
+        "-q",
+        "--junitxml=C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\output\\actividad3_entrega\\Act3\\bitacora\\a3\\revision_20261126T025924Z\\checkpoint_auth.xml"
+      ],
+      "directorio": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\output\\actividad3_entrega\\Act3",
+      "codigo_salida": 0,
+      "segundos": 2.349,
+      "pruebas": 4,
+      "aprobadas": 4,
+      "omitidas": 0,
+      "fallos": 0
+    },
+    {
+      "nombre": "laboratorio",
+      "comando": [
+        "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_lab_producto.py",
+        "-q",
+        "--junitxml=C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\output\\actividad3_entrega\\Act3\\bitacora\\a3\\revision_20261126T025924Z\\laboratorio.xml"
+      ],
+      "directorio": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\output\\actividad3_entrega\\Act3",
+      "codigo_salida": 0,
+      "segundos": 3.47,
+      "pruebas": 12,
+      "aprobadas": 12,
+      "omitidas": 0,
+      "fallos": 0
+    },
+    {
+      "nombre": "actividad3",
+      "comando": [
+        "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_a3_auth.py",
+        "tests/test_a3_api.py",
+        "tests/test_a3_versiones.py",
+        "-q",
+        "--junitxml=C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\output\\actividad3_entrega\\Act3\\bitacora\\a3\\revision_20261126T025924Z\\actividad3.xml"
+      ],
+      "directorio": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\output\\actividad3_entrega\\Act3",
+      "codigo_salida": 0,
+      "segundos": 8.589,
+      "pruebas": 57,
+      "aprobadas": 57,
+      "omitidas": 0,
+      "fallos": 0
+    },
+    {
+      "nombre": "regresion",
+      "comando": [
+        "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "--junitxml=C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\output\\actividad3_entrega\\Act3\\bitacora\\a3\\revision_20261126T025924Z\\regresion.xml"
+      ],
+      "directorio": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\output\\actividad3_entrega\\Act3",
+      "codigo_salida": 0,
+      "segundos": 11.268,
+      "pruebas": 163,
+      "aprobadas": 163,
+      "omitidas": 0,
+      "fallos": 0
+    }
+  ],
+  "actualizado_utc": "2026-11-26T03:14:39.866850+00:00",
+  "incidencias_resueltas": [
+    {
+      "error": "RuntimeError",
+      "detalle": "No se completo la entrada limites.py con gemini; se guardo el resultado HTTP",
+      "captura_error": "RuntimeError: Swagger no completó la operación esperada"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "contents": [
+    {
+      "role": "user",
+      "parts": [
+        {
+          "text": "Actúa como ingeniero de seguridad de una fintech. Diseña en Python, sin dependencias externas de criptografía, hash_contrasena, verificar_contrasena, emitir_token y validar_token, más un login SQLite con bloqueo después de cinco fallos. Requisitos: PBKDF2-HMAC-SHA256 con sal aleatoria; compare_digest; token firmado con vigencia máxima de 900 segundos; secreto tomado de TOKEN_SECRET; el mismo mensaje para cuenta inexistente y contraseña incorrecta; bitácora que no registre contraseña ni token. Incluye pseudocódigo suficiente para revisar transacciones, reloj, límites e inicialización. No necesito un programa completo; explica las decisiones y los riesgos pendientes.\n\nEl servicio de la A3 usa FastAPI y debe tener POST /v1/revisor, protegido, entrada propia {\"codigo\": \"...\"}, límite por usuario y errores problem+json. El motor de equipo también permite leer entradas desde archivo cuando se usa desde su CLI. Explica cómo impedir que la API exponga esa lectura de archivos, incluyendo el riesgo de dejar un segundo endpoint genérico.\n\nAnaliza este login oficial, que se conserva solo como ejemplo inseguro:\ndef login(user,password):\n    if user==\"admin\":\n        if password==\"1234\": return \"access granted\"\n        else: return \"wrong password\"\n    return \"user not found \"\n\nPropón tres refactorizaciones separadas: seguridad, eficiencia y mantenibilidad. Relaciona cada una con un problema concreto del original. Evita presentar omitir controles de seguridad como optimización. Explica cómo comparar la inicialización y las llamadas de manera justa. Propón tres pruebas oficiales y al menos tres adicionales con sus oráculos. Señala qué partes de tu propuesta requieren comprobación. Máximo 1000 palabras; no afirmes haber ejecutado pruebas."
+        }
+      ]
+    }
+  ],
+  "generationConfig": {
+    "temperature": 0.2
+  }
+}

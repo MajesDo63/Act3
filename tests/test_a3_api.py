@@ -113,6 +113,44 @@ def test_a3_error_interno_y_ruta_ausente_tienen_problem_json(monkeypatch, servic
 def test_a3_openapi_documenta_entrada_y_salida_propias(servicio):
     _, c = servicio
     esquema = c.get("/openapi.json").json()
+    assert "/v1/variante" not in esquema["paths"]
+    assert "EntradaVariante" not in esquema["components"]["schemas"]
     endpoint = esquema["paths"]["/v1/revisor"]["post"]
     assert endpoint["requestBody"]["content"]["application/json"]["schema"]["$ref"].endswith("CodigoRevisor")
     assert endpoint["responses"]["200"]["content"]["application/json"]["schema"]["$ref"].endswith("SalidaRevisor")
+
+
+@pytest.mark.parametrize("archivo", [".env", "../.env", "/tmp/no-existe-a3", "C:/Windows/win.ini", "C:/ruta-inexistente-a3"])
+def test_a3_ruta_generica_eliminada_no_invoca_motor(monkeypatch, servicio, archivo):
+    m, c = servicio
+    h = cabeceras(c)
+    def prohibido(_):
+        pytest.fail("La ruta retirada no debe enviar ninguna entrada al motor")
+    monkeypatch.setattr(m.variante, "sistema", prohibido)
+    respuesta = c.post("/v1/variante", json={"entrada": {"archivo": archivo}}, headers=h)
+    comprobar_problema(respuesta, 404)
+
+
+def test_a3_archivo_real_del_servidor_no_se_lee_por_http(monkeypatch, servicio, tmp_path):
+    from pathlib import Path
+    m, c = servicio
+    h = cabeceras(c)
+    privado = tmp_path / "credencial-sintetica.env"
+    privado.write_text("MARCADOR_PRIVADO_NO_ENVIAR_AL_MODELO", encoding="utf8")
+    leer_original = Path.read_text
+    def leer_controlado(path, *args, **kwargs):
+        if path == privado:
+            pytest.fail("Ningún endpoint debe abrir el archivo sintético del servidor")
+        return leer_original(path, *args, **kwargs)
+    def motor_prohibido(_):
+        pytest.fail("No se debe invocar el motor con una ruta de archivo HTTP")
+    monkeypatch.setattr(Path, "read_text", leer_controlado)
+    monkeypatch.setattr(m.variante, "sistema", motor_prohibido)
+    for endpoint, cuerpo, estado in [
+        ("/v1/variante", {"entrada": {"archivo": str(privado)}}, 404),
+        ("/v1/revisor", {"archivo": str(privado)}, 422),
+        ("/v1/revisor", {"codigo": "x=1", "archivo": str(privado)}, 422),
+    ]:
+        respuesta = c.post(endpoint, json=cuerpo, headers=h)
+        comprobar_problema(respuesta, estado)
+        assert "MARCADOR_PRIVADO" not in respuesta.text

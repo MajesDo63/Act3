@@ -103,11 +103,10 @@ if modo.startswith("Preguntar"):
 
 elif modo == "Mi variante":
     st.title(f"🧩 Mi variante · {salud.get('variante', '')}")
-    campo = st.selectbox("Campo de entrada", ["pregunta", "requisito", "codigo", "log"])
-    texto = st.text_area("Entrada", height=200)
+    texto = st.text_area("Código Python a revisar", height=200, max_chars=20000)
     if st.button("Ejecutar", type="primary", disabled=not texto.strip()):
         with st.spinner("Recuperando contexto, corriendo el flujo y validando…"):
-            st_, out = llamar("POST", "/v1/variante", json={"entrada": {campo: texto}})
+            st_, out = llamar("POST", "/v1/revisor", json={"codigo": texto})
         if st_ != 200:
             mostrar_error(st_, out)
         else:

@@ -1,0 +1,31 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Como ingeniero de seguridad, presento el diseño para el sistema de autenticación y control de acceso.\n\n### 1. Implementación de Seguridad (Python Nativo)\n\nUtilizaremos `hashlib` y `hmac` (estándar en Python) para implementar PBKDF2-HMAC-SHA256.\n\n```python\nimport hashlib, hmac, os, time, json, sqlite3\n\nTOKEN_SECRET = os.environ.get(\"TOKEN_SECRET\", \"secreto-muy-seguro\").encode()\n\ndef hash_contrasena(password: str) -> str:\n    salt = os.urandom(16)\n    pwd_hash = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000)\n    return f\"{salt.hex()}:{pwd_hash.hex()}\"\n\ndef verificar_contrasena(stored_hash: str, password: str) -> bool:\n    salt_hex, pwd_hash_hex = stored_hash.split(':')\n    salt, pwd_hash = bytes.fromhex(salt_hex), bytes.fromhex(pwd_hash_hex)\n    new_hash = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000)\n    return hmac.compare_digest(new_hash, pwd_hash)\n\ndef emitir_token(user_id: str) -> str:\n    exp = int(time.time()) + 900\n    payload = f\"{user_id}:{exp}\".encode()\n    sig = hmac.new(TOKEN_SECRET, payload, hashlib.sha256).hexdigest()\n    return f\"{payload.decode()}:{sig}\"\n\ndef validar_token(token: str) -> str:\n    try:\n        data, sig = token.rsplit(':', 1)\n        if not hmac.compare_digest(hmac.new(TOKEN_SECRET, data.encode(), hashlib.sha256).hexdigest(), sig):\n            return None\n        user_id, exp = data.split(':')\n        return user_id if int(exp) > time.time() else None\n    except: return None\n```\n\n**Lógica SQLite:** La tabla `usuarios` debe tener `intentos_fallidos` (int) y `bloqueado_hasta` (timestamp). En el login, si `intentos_fallidos >= 5`, rechazar. Si el login falla, incrementar contador; si es exitoso, resetear a 0. **Bitácora:** Registrar `user_id` y `evento` (ej: \"login_failed\"), nunca el input sensible.\n\n---\n\n### 2. Arquitectura y Riesgos\n\n**Protección de Archivos:**\nPara evitar que la API exponga la lectura de archivos (LFI), se debe aplicar el principio de **separación de responsabilidades**. El motor de CLI debe ser un módulo independiente que no sea importado por el router de FastAPI.\n*   **Riesgo:** Si el endpoint `/v1/revisor` acepta una ruta de archivo como parámetro, un atacante podría leer `/etc/passwd`.\n*   **Mitigación:** Validar que el input `codigo` sea un string procesable y no una ruta. Nunca usar `open(input_usuario)`. Si se requiere procesar archivos, usar una lista blanca de nombres de archivos permitidos en un directorio aislado (`chroot` o `jail`).\n\n---\n\n### 3. Refactorización del Login Inseguro\n\n| Refactorización | Problema resuelto |\n| :--- | :--- |\n| **Seguridad** | Elimina la enumeración de usuarios (el original dice \"user not found\" vs \"wrong password\"). |\n| **Eficiencia** | Sustituye la comparación de strings plana por `compare_digest` para evitar ataques de *timing*. |\n| **Mantenibilidad** | Desacopla la lógica de autenticación de la base de datos, permitiendo cambiar el motor sin tocar el flujo. |\n\n**Comparación justa:** La inicialización debe medirse por la latencia de carga de dependencias y conexión a BD. Las llamadas deben medirse mediante *benchmarking* de tiempo de respuesta bajo carga concurrente, asegurando que el tiempo de respuesta sea constante independientemente de si el usuario existe o no.\n\n---\n\n### 4. Pruebas y Oráculos\n\n**Pruebas Oficiales:**\n1.  **Login exitoso:** Credenciales correctas -> Token válido.\n2.  **Bloqueo:** 5 intentos fallidos -> Rechazo de acceso incluso con credenciales correctas.\n3.  **Expiración:** Token emitido hace > 900s -> Rechazo.\n\n**Pruebas Adicionales:**\n1.  **Oráculo de Timing:** Medir tiempo de respuesta con usuario existente vs inexistente (debe ser idéntico).\n2.  **Integridad de Token:** Modificar un bit del token -> Rechazo.\n3.  **Inyección SQL:** Intentar `' OR '1'='1` en el campo usuario -> Rechazo (debe usar parámetros en SQLite).\n\n---\n\n### 5. Riesgos Pendientes y Comprobación\n*   **Riesgo:** El uso de `os.urandom` es seguro, pero la entropía del sistema debe ser monitoreada.\n*   **Comprobación:** Se requiere auditoría de código para verificar que `TOKEN_SECRET` no esté hardcodeado en el repositorio (usar gestor de secretos).\n*   **Pseudocódigo de Revisor:**\n    ```python\n    @app.post(\"/v1/revisor\")\n    def revisar(payload: dict, token: str = Header(...)):\n        user = validar_token(token)\n        if not user: raise HTTPException(status_code=401)\n        # Lógica de negocio: procesar payload[\"codigo\"]\n        # Registrar en bitácora: \"Usuario X ejecutó revisión\"\n    ```\n*   **Nota:** La implementación de `pbkdf2_hmac` con 100,000 iteraciones es el estándar actual para mitigar ataques de fuerza bruta. La comprobación de esta configuración es crítica para la resiliencia del sistema.",
+            "thoughtSignature": "EqkBCqYBAWkUfRMqBrlBmjpJAKeCjSpmxvbqt/Y/tWclOlZsGHLAvBMjFkLKed14kJfjdwLoKgfFdHWD2L3ZiHMUX99/p7WlhgFGlwPo5Hjc9+Wui0PEKqrxV34bpVtt/0uafm+V8ul6gFkjkyoDI+lg227VFz0Ly0fNmJ9Ka+LoaJ0FTT8akVs5/d/eSWYwPjuRjszMhlD2uvgxMmWrEu4d7RaPBczh2y4/yA=="
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 394,
+    "candidatesTokenCount": 1389,
+    "totalTokenCount": 1783,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 394
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.1-flash-lite",
+  "responseId": "OJ4Ha6bbF5vOz7IPnu7vwAU"
+}

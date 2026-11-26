@@ -15,7 +15,7 @@ for linea in (ROOT/'.env').read_text(encoding='utf8').splitlines():
         if k.strip() in ('GEMINI_API_KEY','TOKEN_SECRET') and v.strip():secretos.append(v.strip().strip('\"\'').encode())
 assert len(secretos)==2
 omitir={'.git','.venv','__pycache__','.pytest_cache','privado','tmp'}
-excluidas={'.env'}
+excluidas={'.env','swagger_diagnostico.txt','swagger_ajuste_error.txt','captura_error.txt'}
 ext={'.pyc','.pyo','.db','.sqlite','.sqlite3','.npy','.pem','.key'}
 manifest={}
 excluir_raices={'Actividad 2','avance1','entregables','README_BASE_AVANCE1.md'}
@@ -43,6 +43,7 @@ for p in DEST.rglob('*'):
     if not p.is_file():continue
     if any(part in omitir or part.endswith('.egg-info') for part in p.relative_to(DEST).parts):continue
     if p.suffix.lower() in ext:continue
+    if p.name in excluidas:continue
     name=p.relative_to(DEST).as_posix()
     assert name in expected or name=='CONTENIDO_SHA256.json',f'Archivo adicional de una preparación anterior: {name}'
 (DEST/'CONTENIDO_SHA256.json').write_text(json.dumps({'destino_github':'https://github.com/MajesDo63/Act3.git','archivos':manifest},ensure_ascii=False,indent=2)+'\n',encoding='utf8')

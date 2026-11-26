@@ -1,37 +1,47 @@
 # Actividad 3 · Cesar Eduardo Valdez Pinto
 
-Entrega individual de LSCA2318: servicio del revisor de código con autenticación, revisión del login oficial y tres versiones comparadas.
+Entrega individual de LSCA2318, variante v2-revisor. Repositorio: **https://github.com/MajesDo63/Act3**. Etiqueta: **a3-MajesDo63**.
 
-Destino: **https://github.com/MajesDo63/Act3**. Etiqueta de entrega: **a3-MajesDo63**.
+## Revisión corregida
 
-## Qué revisar
+Se eliminó completamente `POST /v1/variante`, su modelo `EntradaVariante` y el fallback demo. La API del revisor solo admite `POST /v1/revisor` con `{"codigo": "..."}`. Enviar `archivo` al endpoint propio produce 422; la ruta retirada produce 404 incluso con token válido. El cliente de ejemplo utiliza el endpoint propio.
 
-| Elemento | Ruta |
+Una prueba crea un archivo sintético y falla si cualquier petición intenta leerlo o enviar su contenido al motor. Otros cinco casos cubren rutas relativas, traversal, absolutas e inexistentes. La lectura de archivos del motor compartido permanece disponible para CLI; no se publica mediante HTTP.
+
+## Entregables y resultados actuales
+
+| Elemento | Ruta / resultado |
 | --- | --- |
-| Informe de siete páginas | `entrega/Actividad3_Cesar_Informe.pdf` |
-| Informe editable | `entrega/Actividad3_Cesar_Informe.docx` |
-| Autenticación completa | `api/auth.py` |
-| Endpoint propio protegido | `api/producto.py`: `POST /v1/revisor` |
+| Informe PDF y Word editable | `entrega/Actividad3_Cesar_Informe.pdf` y `.docx` |
+| Autenticación | `api/auth.py` |
+| Servicio específico | `api/producto.py`: `/v1/revisor` |
 | Tres versiones | `a3/login_seguridad.py`, `login_eficiencia.py`, `login_mantenible.py` |
-| Prompt y crítica | `a3/prompt_diseno.md`, `propuesta_y_evaluacion.md`, `critica_pruebas.md` |
-| Análisis y reflexión | `a3/analisis_login.md`, `a3/reflexion.md` |
-| Asistencia de IA | `ai_log_a3.md` |
-| Evidencias de esta entrega | `bitacora/a3/20261126T020719Z/` |
+| Evaluación de una respuesta literal | `a3/propuesta_y_evaluacion.md` |
+| Registro de IA | `ai_log.md` |
+| Checkpoint / laboratorio | 4 / 12 aprobadas, sin omitidas |
+| Pruebas propias de A3 | **57 aprobadas**: 23 auth + 19 API + 15 versiones |
+| Suite completa actual | **163 aprobadas**, sin omitidas |
+| Evidencias vigentes | `bitacora/a3/ultima_revision.json` identifica la corrida de esta revisión |
 
-## Resultados comprobados
+Los grupos se solapan; no se suman. Las cifras 159 y 155 son históricas. Los resultados actuales, firmas, comandos y fechas se conservan en la carpeta `revision_*` señalada por el índice. La corrección tiene nuevas pruebas y dos solicitudes nuevas a Gemini; no se afirma que conserve los bytes de la API anterior.
 
-- Checkpoint de autenticación: **4 aprobadas, 0 omitidas**.
-- Laboratorio: **12 aprobadas, 0 omitidas**.
-- A3: **49 aprobadas, 0 omitidas**.
-- Regresión completa: **159 aprobadas, 0 omitidas** antes de depurar la entrega. Al retirar cuatro pruebas exclusivas del ejemplo de la A2 quedan 155 casos relacionados con la A3 y su motor. No se suman los grupos.
-- HTTP real con proveedor `fake`: registro 201, login 200, rechazo 401, validación 422 y bloqueo 429; dos entradas del revisor 200.
-- HTTP real con Gemini 3.1 Flash-Lite: `usuarios.py` 200, tres hallazgos SEC-06; `limites.py` 200, sin hallazgos. Ambas respuestas: `demo=false` y `abstuvo=false`.
+## Evidencia de IA y capturas
 
-Las pruebas de la suite emplean fake/hash; la integración real con Gemini está identificada en `http_gemini.json`. Un HTTP 200 no demuestra exactitud exhaustiva de los hallazgos o de los parches sugeridos. No se aplicaron ni ejecutaron los parches generados.
+`bitacora/a3/propuesta_20261126T024927Z/` conserva un prompt nuevo, la solicitud sin credenciales, el JSON original de Gemini 3.1 Flash-Lite, el texto íntegro y capturas del texto abierto en el navegador. Esta consulta posterior subsana la falta de una respuesta verificable; no se presenta como la conversación original.
 
-## Instalar y reproducir
+La evaluación cita líneas concretas: secreto de respaldo, token sin iat, ambigüedad del desbloqueo, clasificación errónea de eficiencia y un oráculo de tiempos idénticos. El bloque propuesto no se ejecutó ni se copió al servicio.
 
-Python 3.11 o posterior. La evidencia entregada se obtuvo con Python 3.14.7 y Windows 11. Desde la raíz del repositorio, en PowerShell:
+Las capturas `swagger_*.png` de la revisión actual proceden directamente de Server response en Swagger UI: 401 sin token, token alterado, ambos errores de credenciales, 422 y 429. Los JSON HTTP y JUnit son los registros completos. Los paneles de la primera corrida se conservan como antecedentes y no se usan como si fueran capturas directas.
+
+## Eficiencia y comparación
+
+V2 reutiliza el autenticador y procesa un iterable de intentos de forma perezosa. El contexto cierra la conexión incluso si falla el productor. Cada intento conserva la verificación criptográfica.
+
+El benchmark usa cinco repeticiones para N=1 y N=10. **Todas las versiones incluyen inicialización + N logins + cierre en el total**. Se guardan muestras, medianas y conteos PBKDF2 en `comparacion_ciclo_completo.json`. V0 ya es O(1) para una cuenta y omite seguridad; no se presenta como una solución aceptable ni se afirma una mejora asintótica frente a él. La amortización se compara con V1 bajo los mismos controles.
+
+## Instalación y reproducción
+
+Python 3.11 o posterior; la evidencia local utiliza Python 3.14.7. Desde la raíz:
 
 ```powershell
 python -m venv .venv
@@ -41,33 +51,21 @@ Copy-Item '.env.example' '.env'
 & '.\.venv\Scripts\python.exe' -c "import secrets; print(secrets.token_hex(32))"
 ```
 
-En tu `.env` local agrega el valor generado como `TOKEN_SECRET`. Para ejecutar sin proveedor externo, configura `LLM_PROVIDER=fake` y `EMB_PROVIDER=hash`. Para las consultas reales configura `LLM_PROVIDER=gemini`, `LLM_MODEL=gemini-3.1-flash-lite`, `EMB_PROVIDER=gemini`, `EMB_MODEL=gemini-embedding-001` y tu `GEMINI_API_KEY`. El archivo `.env` no se publica.
+Guarda el valor generado como `TOKEN_SECRET` en `.env`. Para pruebas sin red usa `LLM_PROVIDER=fake` y `EMB_PROVIDER=hash`. Para integración real configura tu `GEMINI_API_KEY`, `LLM_PROVIDER=gemini`, `LLM_MODEL=gemini-3.1-flash-lite`, `EMB_PROVIDER=gemini` y `EMB_MODEL=gemini-embedding-001`. La llave y `.env` no se publican.
 
 ```powershell
 & '.\.venv\Scripts\python.exe' -m pytest tests -q
 & '.\.venv\Scripts\python.exe' -m uvicorn api.producto:app --host 127.0.0.1 --port 8000
 ```
 
-Abre `http://127.0.0.1:8000/docs`, registra una cuenta de prueba, inicia sesión, pega solo el token en **Authorize** y llama a `/v1/revisor` con `{"codigo":"..."}`. El modelo solo recibe el código de prueba; nunca envíes secretos en esa entrada.
+Abre `http://127.0.0.1:8000/docs`, registra una cuenta de prueba, inicia sesión, usa Authorize y llama a `/v1/revisor`. Los archivos y rutas del servidor no son entradas válidas del endpoint.
 
-Para otra corrida completa con JUnit, HTTP real y capturas:
+El script `guia/validar_correccion_a3.py` genera otra corrida con pruebas, benchmark, HTTP, Swagger y Gemini. No sobrescribe la primera corrida. `--continuar` solo reanuda si las fuentes ejecutables no cambiaron. El script puede usar `.env` local; las rutas absolutas de los registros identifican el equipo donde se produjo la evidencia original. Las copias de dependencias en `herramientas_a3/` conservan versión, procedencia y licencias; la instalación normal usa requirements.txt.
 
-```powershell
-& '.\.venv\Scripts\python.exe' '.\guia\completar_a3.py'
-```
+## Alcance y procedencia
 
-`--sin-gemini` permite la comprobación local y marca explícitamente Gemini pendiente. `--reanudar` conserva los grupos aprobados de la corrida indicada por `bitacora/a3/ultima_ejecucion.json`; exige que sus fuentes medidas sigan intactas. Los registros originales contienen las rutas del equipo donde se ejecutaron; el script generará rutas nuevas si se ejecuta desde otra carpeta.
+El motor de cuatro etapas pertenece al equipo del Avance 1 y su origen se reconoce en `PROCEDENCIA_BASE.md`. La A3 añade autenticación, endpoint y refactorizaciones del login. Las entregas de otras actividades se excluyen; el caso guía del kit se conserva como dependencia y referencia.
 
-`herramientas_a3/` conserva copias verificadas de dependencias y licencias empleadas en este equipo; `PROCEDENCIA.json` identifica sus repositorios y versiones. La instalación normal y GitHub Actions utilizan `requirements.txt`. Esas copias no sustituyen Python ni todas las dependencias binarias y no se anuncian como instalación portátil universal.
+El token es un formato HMAC educativo, no JWT ni OAuth 2.0 completo. El límite por usuario es local a un proceso. El prototipo usa HTTP en loopback; un despliegue externo requiere HTTPS y gestión de secretos apropiada. Las respuestas 200 de Gemini prueban integración, no exactitud exhaustiva; los parches propuestos no se aplicaron ni ejecutaron.
 
-## Alcance, procedencia y límites
-
-La base del equipo procede de `alanrivera066/Project_v2_TSTI`, commit `81a1dd0bec2a6350d750f9440fbdcbaa2af05b63`. El origen y la autoría se documentan en `PROCEDENCIA_BASE.md`. Se retiraron los informes y registros de actividades anteriores; se conservan el motor y sus recursos y pruebas relacionados. El motor compartido mantiene detectar, explicar, parche y dictamen. La autenticación, el endpoint específico, las tres versiones y su documentación corresponden a esta entrega.
-
-El token HMAC del kit es `payload.firma`, no JWT ni OAuth 2.0 completo. La vigencia máxima es 900 s. Tras cinco fallos consecutivos se bloquea temporalmente el login; las rutas protegidas tienen un límite local de 30 solicitudes por minuto y usuario. Este límite vive en memoria. El prototipo local utiliza HTTP; una exposición externa requiere HTTPS y gestión de secretos adecuada. Los componentes de referencia de A4 se conservan, pero no se presenta una A4 individual terminada.
-
-Se siguieron el manual y las presentaciones proporcionadas. El Word oficial de instrucciones no estuvo disponible.
-
-## Publicación
-
-Ver `guia/PUBLICAR_ACT3.md`. El informe y los resultados están preparados localmente. Crear el repositorio, un commit o una etiqueta local no los publica automáticamente: verifica que el contenido y `a3-MajesDo63` se vean en GitHub antes de entregar el enlace.
+El manual y las presentaciones proporcionadas fueron la base de la entrega. El Word oficial de instrucciones no estuvo disponible.
