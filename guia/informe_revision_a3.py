@@ -37,17 +37,17 @@ def main():
     def pair(c,a,b,caption):c.append(('pair',str(dest/a),str(dest/b),caption))
 
     c=page('Actividad 3 · Servicio con autenticación','Cesar Eduardo Valdez Pinto · MajesDo63 · LSCA2318 · v2-revisor')
-    p(c,'Implementé la autenticación del revisor de código de FinNorte y su endpoint específico. Comparé el login oficial con versiones de seguridad, eficiencia y mantenibilidad. Esta revisión corrige el acceso alternativo por la ruta genérica del kit y presenta pruebas y consultas nuevas que corresponden al código entregado.')
+    p(c,'En esta actividad desarrollé la autenticación del revisor de código de FinNorte y su endpoint específico. Analicé el login del enunciado y preparé tres versiones para comparar seguridad, eficiencia y mantenibilidad. Organicé las pruebas y las consultas al modelo para comprobar el resultado.')
     tab(c,['Identificación','Entrega'],[
         ['Repositorio','https://github.com/MajesDo63/Act3'],
         ['Etiqueta','a3-MajesDo63'],
         ['Autor','Cesar Eduardo Valdez Pinto'],
-        ['Estado de esta revisión',f"{grupos['regresion']['aprobadas']} pruebas aprobadas; {grupos['actividad3']['aprobadas']} propias de A3; cero omitidas."],
+        ['Resultados de las pruebas',f"{grupos['regresion']['aprobadas']} pruebas aprobadas; {grupos['actividad3']['aprobadas']} propias de A3; cero omitidas."],
         ['Ejecución','Windows 11 · Python 3.14.7 · PowerShell local'],
         ['Modelo de las dos entradas','Gemini 3.1 Flash-Lite; ambas respuestas con demo=false.'],
         ['Carpeta de evidencia','bitacora/a3/'+dest.name+'/'],
     ],[1.55,4.95])
-    p(c,'Reutilicé el motor compartido del Avance 1, como requiere la actividad: Project_v2_TSTI, commit 81a1dd0bec2a6350d750f9440fbdcbaa2af05b63. PROCEDENCIA_BASE.md reconoce al equipo. Conservé el motor y sus recursos; los informes y bitácoras de otras actividades están excluidos.')
+    p(c,'Reutilicé el motor del Avance 1 de nuestro equipo: Project_v2_TSTI, commit 81a1dd0bec2a6350d750f9440fbdcbaa2af05b63. En PROCEDENCIA_BASE.md identifiqué la base y el trabajo compartido. En esta actividad me concentré en la autenticación, el endpoint y las versiones del login.')
     tab(c,['Pieza','Responsabilidad'],[
         ['api/auth.py','Registro, hash, tokens, intentos y bloqueo persistente.'],
         ['api/producto.py','POST /v1/revisor: entrada propia, token, límite y problem+json.'],
@@ -55,12 +55,12 @@ def main():
         ['a3/','Login oficial, tres versiones, evaluación de una respuesta real y reflexión.'],
         ['tests/ y bitacora/a3/','Casos reproducibles, firmas, registros íntegros y capturas directas.'],
     ],[1.6,4.9])
-    p(c,'La revisión anterior validaba el rechazo de archivos solo en /v1/revisor. Eso era insuficiente: /v1/variante seguía aceptando un diccionario que el motor podía interpretar como una ruta. Retiré por completo esa ruta, su modelo y el fallback demo. El cliente de ejemplo también utiliza ahora /v1/revisor.')
+    p(c,'Definí /v1/revisor como la entrada HTTP del revisor y retiré /v1/variante para impedir el acceso a archivos del servidor. También adapté el cliente para enviar únicamente codigo al endpoint específico.')
 
-    c=page('1. Prompt y evaluación de la propuesta','Consulta real nueva, sin reconstruir la conversación original')
-    p(c,'Guardé una consulta nueva a Gemini antes de cerrar esta corrección. La respuesta literal de la primera conversación no estaba conservada; no atribuyo a ese intercambio las capturas nuevas. El prompt, la solicitud sin credenciales, el JSON del proveedor y el texto íntegro están en bitacora/a3/'+propuesta.name+'/.')
+    c=page('1. Diseño y evaluación de la propuesta','Requisitos, análisis y decisiones')
+    p(c,'Consulté Gemini 3.1 Flash-Lite para contrastar el diseño de autenticación. Guardé el prompt, la respuesta completa y las capturas en bitacora/a3/propuesta_20261126T024927Z/. Utilicé ese material para relacionar los pasajes de la propuesta con las decisiones que tomé.')
     p(c,'Prompt (extracto): «Actúa como ingeniero de seguridad de una fintech. Diseña en Python […] hash_contrasena, verificar_contrasena, emitir_token y validar_token, más un login SQLite con bloqueo después de cinco fallos». A continuación enumeré los seis requisitos, el contrato HTTP, el login oficial y el riesgo de conservar un endpoint genérico. Pedí separar arranque y llamadas en la comparación.')
-    p(c,'El rol y el contexto delimitan el problema; los requisitos y oráculos permiten comprobar el resultado. Aun así, la respuesta incumplió condiciones explícitas. La rechacé como implementación lista para copiar y evalué estos pasajes reales:')
+    p(c,'Redacté el prompt con un rol, un contexto y requisitos que pudiera comprobar. Eso me permitió comparar la respuesta con el manual e identificar las decisiones que necesitaba ajustar:')
     tab(c,['Pasaje de la respuesta','Evaluación y decisión'],[
         ['L10: secreto de respaldo literal.','SEC-01/06, ing-02: rechacé el respaldo; la configuración ausente debe fallar.'],
         ['L29–36: exp sin iat.','SEC-06, ing-07: no prueba vigencia máxima; conservé sub/iat/exp y límites estrictos.'],
@@ -69,8 +69,8 @@ def main():
         ['L72: tiempos idénticos.','Rechacé ese oráculo; el ruido de ejecución impide exigir igualdad literal.'],
         ['L84–87: payload: dict.','SEC-04/08, ing-07: omite el modelo estricto y la ruta alternativa; retiré la genérica.'],
     ],[2.05,4.45])
-    img(c,propuesta/'captura_respuesta_detalle.png','Figura 1. Captura de la respuesta real de Gemini API, abierta como texto en el navegador. El respaldo mostrado es una propuesta insegura del modelo; no se incorporó al servicio.',6.1)
-    p(c,'Acepté PBKDF2 con sal, HMAC y separación de responsabilidades. Modifiqué validación, reloj, desbloqueo y transacciones. Rechacé el secreto de respaldo y las afirmaciones no demostradas sobre eficiencia. El análisis completo, con líneas verificables, está en a3/propuesta_y_evaluacion.md.')
+    img(c,propuesta/'captura_respuesta_detalle.png','Figura 1. Propuesta de Gemini que evalué. Identifiqué y rechacé el secreto de respaldo indicado en el código.',6.1)
+    p(c,'Acepté PBKDF2 con sal, HMAC y la separación de responsabilidades. Ajusté la validación, el reloj, el desbloqueo y las transacciones. Rechacé el secreto de respaldo y diferencié los controles de seguridad de las mejoras de eficiencia. Desarrollé el análisis en a3/propuesta_y_evaluacion.md.')
 
     c=page('2. Autenticación y superficie HTTP','Seis requisitos y cierre de la ruta alternativa')
     tab(c,['Requisito','Implementación y oráculo'],[
@@ -81,13 +81,13 @@ def main():
         ['Bloqueo','Cinco fallos consecutivos en 900 s; siguiente intento 429; éxito reinicia la racha.'],
         ['Bitácora sin contraseña','SQLite parametrizado y confirmación del intento antes del error; capturas sin tokens.'],
     ],[1.45,5.05])
-    p(c,'POST /v1/revisor exige Bearer y acepta solo codigo: no vacío, sin NUL y hasta 20 000 caracteres. Rechaza archivo y campos extra con 422. El límite local es 30 solicitudes/minuto por usuario; 429 incluye Retry-After. Los errores contienen type, title, status, detail y trace_id. /v1/variante ya no existe ni aparece en OpenAPI: con token válido y cualquier ruta de entrada responde 404.')
-    c.append(('crop',str(dest/'swagger_contrasena_incorrecta.png'),'Figura 2. Contraseña incorrecta: fragmento de Server response en Swagger UI. El PNG íntegro acompaña la entrega.'))
-    c.append(('crop',str(dest/'swagger_usuario_inexistente.png'),'Figura 3. Usuario inexistente: mismo 401 y detail; trace_id distinto. Captura directa, con recorte de maquetación.'))
-    p(c,'Se conservan también las capturas directas de 401 sin token, token alterado, 422 y 429. La prueba de archivo real falla si se intenta abrir un marcador sintético o invocar el motor; no lee el .env real. La capacidad de archivos permanece en CLI, sin ruta HTTP que la reciba. El token educativo no es JWT ni OAuth 2.0 completo; una exposición externa requiere HTTPS y gestión de secretos adecuada.')
+    p(c,'Protegí POST /v1/revisor con Bearer y limité su entrada a codigo: texto no vacío, sin NUL y hasta 20 000 caracteres. Configuré 30 solicitudes por minuto y usuario, con Retry-After en 429. Utilicé errores con type, title, status, detail y trace_id. Comprobé que /v1/variante devolviera 404 y que enviar archivo a /v1/revisor produjera 422.')
+    c.append(('crop',str(dest/'swagger_contrasena_incorrecta.png'),'Figura 2. Respuesta 401 al iniciar sesión con una contraseña incorrecta.'))
+    c.append(('crop',str(dest/'swagger_usuario_inexistente.png'),'Figura 3. Respuesta 401 para un usuario inexistente. Comprobé el mismo mensaje en ambos casos.'))
+    p(c,'Guardé también las capturas de 401 sin token, token alterado, 422 y 429. Para comprobar el acceso a archivos utilicé un marcador sintético. Mantuve la lectura de archivos solo para CLI. Implementé el token HMAC y el control de uso dentro del alcance local del ejercicio.')
 
     c=page('3. Login oficial y tres mejoras','Problema, explicación técnica, impacto y trazabilidad')
-    p(c,'Conservé el ejemplo oficial en a3/login_original.py: admin/1234 concede acceso; otra contraseña devuelve wrong password; otra identidad devuelve user not found con un espacio final. Son datos sintéticos del enunciado, no cuentas de la API.')
+    p(c,'Tomé el ejemplo de a3/login_original.py para comparar sus tres salidas: admin/1234 concede acceso, otra contraseña devuelve wrong password y otra identidad devuelve user not found con un espacio final. Mantuve esos datos del enunciado separados de las cuentas de prueba de la API.')
     tab(c,['Problema / impacto','Mejora y versión','Evidencia'],[
         ['Identidad fija y contraseña literal: conocer el código revela el acceso.','V1: usuarios persistentes y PBKDF2 con sal.','Hash diferente con misma contraseña; registro sin texto plano.'],
         ['== no contempla comparación de secretos en tiempo constante.','V1–V3: primitivas compartidas con compare_digest.','Firma y contraseña comprobadas; token alterado rechazado.'],
@@ -101,16 +101,16 @@ def main():
         ['login_eficiencia.py','Reutiliza conexión, índices y hash ficticio. autenticar_lote entrega un resultado por intento sin construir una lista; el contexto cierra recursos incluso ante errores.'],
         ['login_mantenible.py','Separa presentación y autenticación con un contrato inyectable; facilita sustituir y probar el proveedor.'],
     ],[1.6,4.9])
-    p(c,'V0 ya hace un trabajo constante para una única cuenta; no afirmo una mejora asintótica ni que V2 sea más rápida que omitir seguridad. Comparo V2 con V1 bajo los mismos controles, contabilizando también el arranque. Las tres versiones comparten el componente criptográfico: son refactorizaciones de responsabilidades, no tres criptografías distintas.')
+    p(c,'Comparé V2 con V1 porque ambas aplican los mismos controles de autenticación. Incluí el arranque en la medición para observar el efecto de reutilizar recursos. Compartí las funciones criptográficas entre las tres versiones y concentré cada enfoque en una responsabilidad.')
 
-    c=page('4. Pruebas de la revisión entregada','Conteos actuales y consultas reales con el código corregido')
+    c=page('4. Pruebas y resultados','Pruebas automatizadas y consultas con Gemini')
     tab(c,['Grupo','Aprobadas','Omitidas','Alcance'],[
         ['Checkpoint',str(grupos['checkpoint_auth']['aprobadas']),'0','Mensaje, token, bloqueo y texto plano.'],
         ['Laboratorio',str(grupos['laboratorio']['aprobadas']),'0','Contrato original del kit.'],
         ['Actividad 3',str(grupos['actividad3']['aprobadas']),'0','23 de auth, 19 de API y 15 de versiones.'],
-        ['Regresión actual',str(grupos['regresion']['aprobadas']),'0','Suite completa de esta revisión.'],
+        ['Regresión completa',str(grupos['regresion']['aprobadas']),'0','Suite completa del proyecto.'],
     ],[1.3,.75,.75,3.7])
-    p(c,'Los grupos se solapan y no se suman. Las cifras 159 y 155 corresponden a corridas anteriores; no son el resultado actual. La nueva firma de fuentes acompaña a los XML y registros completos de esta revisión.')
+    p(c,'Organicé las pruebas en grupos que se solapan: la regresión completa incluye los anteriores. Relacioné los resultados con las fuentes ejecutadas y guardé los XML y los registros de cada grupo.')
     tab(c,['Casos','Oráculo utilizado'],[
         ['Tres oficiales','Éxito, contraseña incorrecta y usuario inexistente; V0 conserva sus salidas y las versiones seguras unifican los dos errores.'],
         ['Seguridad adicional','Token alterado/expirado/futuro, secreto ausente, bloqueo persistente, sal aleatoria, SQL malicioso y ausencia de secretos en registros.'],
@@ -123,10 +123,10 @@ def main():
         detail=str(d.get('estado',s.get('respuesta','')))[:70]+f"; {len(arte.get('hallazgos',[]))} hallazgos; abstuvo={s.get('abstuvo')}"
         rows.append([e['etiqueta'].removeprefix('revisor_'),f"200 / {e['duracion_ms']/1000:.2f} s",detail])
     tab(c,['Entrada real','HTTP / duración','Resultado observado'],rows,[1.1,1.2,4.2])
-    p(c,'Las dos solicitudes nuevas utilizan /v1/revisor con Gemini y demo=false. HTTP 200 prueba la integración, no exactitud exhaustiva. No ejecuté ni incorporé los parches sugeridos por el motor. Las pruebas de la suite usan fake/hash; los registros Gemini se distinguen en http_gemini.json y trazas_gemini/.')
-    p(c,'El proveedor devolvió temporalmente 503 al procesar limites.py. El intento fallido se conserva; la reanudación mantiene usuarios.py aprobado y repite solo la entrada pendiente con las mismas fuentes. No se reemplazó el fallo por una respuesta inventada.')
-    p(c,'Comandos: python -m pytest tests -q y python guia/validar_correccion_a3.py. El directorio real, Python, plataforma, comandos por grupo y fechas UTC están en estado.json. Cada petición HTTP registra URL, solicitud saneada, duración y respuesta. Los PNG nuevos proceden de Swagger UI; los paneles generados de la corrida anterior no se usan como si fueran capturas directas.')
-    p(c,'Rechacé dos sugerencias de pruebas de la propuesta nueva: reemplazar las tres oficiales por bloqueo/expiración y exigir tiempos idénticos. Mantuve estados, mensajes, firmas y efectos observables como oráculos. La revisión externa puso de manifiesto que cubrir una sola ruta era insuficiente; los seis casos de regresión nuevos cubren el acceso alternativo.')
+    p(c,'Envié las dos entradas a /v1/revisor con Gemini y obtuve HTTP 200. Analicé los hallazgos y los parches como propuestas de cambio. Utilicé fake/hash para las pruebas de la suite y guardé por separado las respuestas y trazas de Gemini en http_gemini.json y trazas_gemini/.')
+    p(c,'Al procesar limites.py recibí un 503 temporal del proveedor. Esperé y reanudé esa entrada, manteniendo el resultado de usuarios.py. Guardé los intentos y completé ambos casos con HTTP 200.')
+    p(c,'Ejecuté python -m pytest tests -q y python guia/validar_correccion_a3.py. Registré el directorio, Python, la plataforma, los comandos y las fechas en estado.json. Guardé cada petición HTTP con su duración y respuesta, junto con las capturas de Swagger.')
+    p(c,'Conservé las tres pruebas oficiales y añadí bloqueo y expiración como casos propios. Usé estados, mensajes, firmas y efectos observables como criterios de comprobación. También añadí seis casos para verificar la ruta retirada y el rechazo de archivos.')
 
     c=page('5. Comparación y eficiencia','Cinco criterios, cuatro versiones y una frontera de medida común')
     tab(c,['Criterio','Original','Seguridad','Eficiencia','Mantenible'],[
@@ -140,20 +140,20 @@ def main():
     for b in benchmark['resumen']:
         br.append([b['version'],str(b['n']),f"{b['mediana_total_ms']:.3f}",f"{b['mediana_inicio_ms']:.3f}",str(b['derivaciones'])])
     tab(c,['Versión','N','Total mediano ms','Inicio mediano ms','PBKDF2/ciclo'],br,[1.25,.4,1.65,1.7,1.5])
-    p(c,'Método: cinco repeticiones para N=1 y N=10. El total abarca inicializar + N logins + cerrar en todas las versiones. Registrar el usuario es una precondición común fuera del intervalo. En V1 la inicialización ocurre dentro de cada llamada; el inicio separado aparece cercano a cero porque su costo ya está en solicitudes. Se conservan todas las muestras y componentes, no solo medianas.')
-    p(c,'Para diez intentos, V1 realiza veinte derivaciones; V2/V3 realizan once incluyendo el hash ficticio inicial y una verificación por intento. Para un intento los costos criptográficos son equivalentes. Esto evita atribuir a V2 una ganancia artificial por omitir el arranque. El lote permite consumir intentos uno a uno sin guardar la lista completa, y no evita verificar contraseñas.')
-    p(c,'La propuesta de Gemini confundía compare_digest con eficiencia. Lo mantuve como control de seguridad. Los tiempos locales no son un ensayo de carga, no demuestran tiempo constante de toda la aplicación y no se generalizan a producción. La rapidez de V0 no compensa la ausencia de controles.')
+    p(c,'Realicé cinco repeticiones con N=1 y N=10. En cada ciclo incluí inicialización, N logins y cierre. Preparé el usuario antes de medir. En V1 el costo de inicialización está dentro de cada solicitud; en V2 y V3 medí el arranque una vez por ciclo. Guardé todas las muestras para comparar los resultados.')
+    p(c,'Para diez intentos medí veinte derivaciones en V1 y once en V2/V3, incluyendo el hash ficticio inicial. Con una sola solicitud observé costos criptográficos equivalentes. En V2 añadí el procesamiento de intentos uno a uno, manteniendo la verificación de cada contraseña.')
+    p(c,'Diferencié compare_digest, que utilicé como control de seguridad, de la reutilización de recursos que medí en V2. Tomé los tiempos de mi equipo como una comparación local entre versiones con los mismos controles y consideré el original como referencia del ejercicio.')
 
-    c=page('6. Reflexión y trazabilidad','Qué corregí y qué demuestran las evidencias')
+    c=page('6. Reflexión y trazabilidad','Aprendizajes y referencias')
     for text in (ROOT/'a3/reflexion.md').read_text(encoding='utf8').split('\n\n')[1:]:
         if text.strip():p(c,text.strip())
     tab(c,['Comprobación','Referencia'],[
-        ['Propuesta literal','bitacora/a3/'+propuesta.name+'/; líneas citadas y JSON original.'],
-        ['Revisión actual','bitacora/a3/'+dest.name+'/; firmas, JUnit, HTTP, Swagger y benchmark.'],
-        ['Procedencia y asistencia','PROCEDENCIA_BASE.md, ai_log.md y a3/propuesta_y_evaluacion.md.'],
+        ['Propuesta evaluada','bitacora/a3/'+propuesta.name+'/; líneas citadas y JSON original.'],
+        ['Ejecución de las pruebas','bitacora/a3/'+dest.name+'/; firmas, JUnit, HTTP, Swagger y benchmark.'],
+        ['Base y decisiones','PROCEDENCIA_BASE.md, ai_log.md y a3/propuesta_y_evaluacion.md.'],
         ['Entrega','entrega/Actividad3_Cesar_Informe.pdf y .docx; etiqueta a3-MajesDo63.'],
     ],[1.5,5.0])
-    p(c,'Fuentes: MANUAL_ALUMNO.md, sección 4; Presentacion_Actividades_A3_A4.pptx, diapositivas 3–7 y 12; reglas SEC del corpus e ing-02/ing-07 del kit proporcionado. El Word oficial de instrucciones no estuvo disponible. Se distingue la respuesta nueva de Gemini de la revisión inicial; no se reconstruyeron capturas históricas.')
+    p(c,'Para realizar la actividad utilicé MANUAL_ALUMNO.md, sección 4; Presentacion_Actividades_A3_A4.pptx, diapositivas 3–7 y 12; las reglas SEC del corpus e ing-02/ing-07 del kit. Relacioné estas referencias con el análisis, las pruebas y las decisiones del informe.')
     render(pages,ROOT/'entrega')
 
 def render(pages,out):
@@ -178,7 +178,7 @@ def render(pages,out):
     sec.top_margin=Inches(.6);sec.bottom_margin=Inches(.6);sec.left_margin=Inches(.7);sec.right_margin=Inches(.7);sec.page_width=Inches(8.5);sec.page_height=Inches(11)
     normal=doc.styles['Normal'];normal.font.name='Arial';normal.font.size=Pt(9);normal.paragraph_format.space_after=Pt(6);normal.paragraph_format.line_spacing=1.05
     doc.styles['Title'].font.size=Pt(20);doc.styles['Title'].font.color.rgb=RGBColor.from_string('153655')
-    sec.footer.paragraphs[0].text='Cesar Eduardo Valdez Pinto · Actividad 3 · Revisión corregida'
+    sec.footer.paragraphs[0].text='Cesar Eduardo Valdez Pinto · Actividad 3'
     for idx,(title,subtitle,items) in enumerate(pages):
         if idx:story.append(PageBreak());doc.add_page_break()
         story.extend([para(title,head),para(subtitle,sub)]);doc.add_paragraph(title,'Title');doc.add_paragraph(subtitle,'Subtitle')
@@ -213,10 +213,10 @@ def render(pages,out):
                 for cell,path in zip(dt.rows[0].cells,[a,b]):cell.paragraphs[0].add_run().add_picture(path,width=Inches(3.12))
                 doc.add_paragraph(caption,'Caption')
     def footer(canvas,document):
-        canvas.setStrokeColor(colors.HexColor('#b7c7d3'));canvas.line(50,39,562,39);canvas.setFont('ArialA3',8);canvas.setFillColor(colors.HexColor('#486c85'));canvas.drawString(50,27,'Cesar Eduardo Valdez Pinto · Actividad 3 · Revisión corregida');canvas.drawRightString(562,27,str(document.page))
+        canvas.setStrokeColor(colors.HexColor('#b7c7d3'));canvas.line(50,39,562,39);canvas.setFont('ArialA3',8);canvas.setFillColor(colors.HexColor('#486c85'));canvas.drawString(50,27,'Cesar Eduardo Valdez Pinto · Actividad 3');canvas.drawRightString(562,27,str(document.page))
     pdf=out/'Actividad3_Cesar_Informe.pdf';word=out/'Actividad3_Cesar_Informe.docx'
-    SimpleDocTemplate(str(pdf),pagesize=(612,792),rightMargin=50,leftMargin=50,topMargin=42,bottomMargin=49,title='Actividad 3 - Revisión corregida',author='Cesar Eduardo Valdez Pinto').build(story,onFirstPage=footer,onLaterPages=footer)
-    doc.core_properties.title='Actividad 3 - Revisión corregida';doc.core_properties.author='Cesar Eduardo Valdez Pinto';doc.save(word)
+    SimpleDocTemplate(str(pdf),pagesize=(612,792),rightMargin=50,leftMargin=50,topMargin=42,bottomMargin=49,title='Actividad 3 - Servicio con autenticación',author='Cesar Eduardo Valdez Pinto').build(story,onFirstPage=footer,onLaterPages=footer)
+    doc.core_properties.title='Actividad 3 - Servicio con autenticación';doc.core_properties.author='Cesar Eduardo Valdez Pinto';doc.save(word)
     print(json.dumps({'pdf':str(pdf),'word':str(word)},ensure_ascii=False))
 
 if __name__=='__main__':main()

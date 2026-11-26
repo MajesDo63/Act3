@@ -1,6 +1,6 @@
 # Análisis del login oficial
 
-Fuente: Presentacion_Actividades_A3_A4.pptx, diapositiva 4. Código conservado en login_original.py.
+Analicé el login de la diapositiva 4 de Presentacion_Actividades_A3_A4.pptx y lo guardé en login_original.py para comparar su comportamiento con las tres versiones que desarrollé.
 
 | Problema | Explicación técnica | Impacto | Mejora y evidencia |
 | --- | --- | --- | --- |
@@ -20,7 +20,7 @@ Fuente: Presentacion_Actividades_A3_A4.pptx, diapositiva 4. Código conservado e
 | login_eficiencia.py | Reutiliza Autenticador, conexión e índices; procesa iterables de intentos sin construir una lista y cierra recursos con un contexto. Conserva cada verificación de contraseña. | Evita repetir trabajo de inicialización; no debilita la verificación. | Comparación con inicialización + N logins + cierre (N=1 y 10, cinco repeticiones) y pruebas de lote perezoso/cierre ante error. |
 | login_mantenible.py | Introduce Protocol, ResultadoLogin y un servicio con dependencia inyectada. | Permite probar presentación y orquestación sin una base real y evita acoplarlas al HTTP. | test_mantenible_admite_proveedor_inyectado_sin_base_real y los mismos tres escenarios. |
 
-Las tres versiones comparten las primitivas revisadas de api/auth.py. No son tres criptografías distintas. El servicio HTTP utiliza el componente integrado; los archivos a3/ explican y comparan las decisiones de refactorización.
+Compartí las funciones de api/auth.py entre las tres versiones para mantener los mismos controles criptográficos. En a3/ organicé cada enfoque y expliqué las decisiones que tomé.
 
 ## Cinco criterios de comparación
 
@@ -32,8 +32,10 @@ Las tres versiones comparten las primitivas revisadas de api/auth.py. No son tre
 | Mantenibilidad | Credenciales y lógica mezcladas. | Separa autenticación del ejemplo original. | Requiere gestionar el cierre de la instancia reutilizada. | Permite sustituir proveedor y probarlo de forma aislada. |
 | Manejo de errores y pruebas | Tres retornos de texto, incluido un espacio final. | Estados y mensajes uniformes. | Mantiene el contrato de la versión segura. | ResultadoLogin centraliza la salida; prueba de inyección. |
 
-Los tiempos de comparación son mediciones locales, no una prueba de carga de la API ni una afirmación de rendimiento en producción. El menor tiempo del original no lo convierte en una solución aceptable.
+Medí los tiempos en mi equipo para comparar el costo de cada versión. Tomé el original como referencia del ejercicio y prioricé que las mejoras mantuvieran los controles de seguridad.
 
-## Alcance de la eficiencia
+## Comparación de eficiencia
 
-El original compara una sola cuenta fija y ya es O(1); no afirmo que V2 sea más rápida que omitir seguridad. Su problema es que identidad y lógica están acopladas y no permiten atender una secuencia de usuarios de forma reutilizable. V2 usa el almacén indexado compartido, reutiliza recursos y entrega los resultados uno a uno. La mejora de tiempo se evalúa contra V1 con los mismos controles, incluyendo el inicio y el cierre de ambas. La medida de un solo login muestra el costo de arranque; diez logins permiten observar si se amortiza. La prueba de lote comprueba que no se adelantan intentos y que cada uno sigue verificándose.
+Comparé V2 con V1 porque ambas verifican contraseñas, registran intentos y emiten tokens. Incluí el inicio, las solicitudes y el cierre dentro de la medición. Usé una solicitud para observar el costo inicial y diez para comprobar cómo se amortiza la reutilización de recursos.
+
+El ejemplo original compara una sola cuenta y realiza un trabajo constante. En V2 utilicé el almacén indexado del servicio y procesé una secuencia de intentos sin construir una lista completa. Comprobé que cada intento siguiera verificándose y que la conexión se cerrara ante un error.

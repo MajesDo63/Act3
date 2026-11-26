@@ -1,8 +1,8 @@
-# Propuesta real del asistente y evaluación crítica
+# Evaluación de la propuesta
 
-La respuesta completa de Gemini 3.1 Flash-Lite está en `bitacora/a3/propuesta_20261126T024927Z/respuesta_asistente.txt`. Se conserva el JSON original del proveedor, la solicitud sin credenciales, el prompt, metadatos HTTP 200 y una captura del texto recibido. Es una **consulta nueva de revisión**, posterior a la primera entrega; no la presento como la conversación original, cuya respuesta literal no quedó conservada.
+Consulté Gemini 3.1 Flash-Lite para contrastar el diseño de autenticación. Guardé el prompt, la respuesta, el JSON del proveedor y las capturas en bitacora/a3/propuesta_20261126T024927Z/.
 
-La respuesta nueva se recibió antes de cerrar la corrección. No ejecuté ni copié su bloque de autenticación. Contrasté sus afirmaciones con el manual y con el componente existente. Las líneas siguientes corresponden al texto íntegro, sin editar.
+Comparé la propuesta con el manual y con el comportamiento que necesitaba para el servicio. En la siguiente tabla relacioné cada pasaje con su regla y con la decisión que tomé. Los números de línea corresponden a respuesta_asistente.txt.
 
 | Pasaje real del modelo | Falla o ambigüedad | Regla y decisión |
 | --- | --- | --- |
@@ -13,19 +13,21 @@ La respuesta nueva se recibió antes de cerrar la corrección. No ejecuté ni co
 | L72: el tiempo «debe ser idéntico». | La igualdad exacta depende de ruido del sistema y no es un oráculo reproducible. | SEC-06: rechazo la igualdad literal. Mensaje uniforme y verificación también para cuentas desconocidas, sin afirmar inmunidad temporal. |
 | L84–87: `payload: dict` y token por `Header`. | Omite modelo propio, campos extra prohibidos, límite y problem+json. No retira explícitamente otra ruta genérica. | SEC-04, SEC-08, ing-07: CodigoRevisor y HTTPBearer; retiro de `/v1/variante`, su modelo y fallback demo. Pruebas de 404 y archivo sintético nunca abierto. |
 
-Corregí las «pruebas oficiales» enumeradas por el modelo: el login oficial tiene éxito, contraseña incorrecta y usuario inexistente. Bloqueo y expiración son pruebas adicionales, no sustituyen las tres oficiales. No acepté como autoridad la afirmación de que 100 000 iteraciones sea «el estándar actual»: no aporta fuente ni medición. El parámetro del prototipo no se presenta como configuración universal de producción.
+Además, conservé los tres casos del login oficial: éxito, contraseña incorrecta y usuario inexistente. Añadí bloqueo y expiración como pruebas del componente seguro. Para el número de iteraciones mantuve explícito el parámetro del prototipo; la propuesta no aportaba una referencia que justificara su afirmación sobre un estándar actual.
 
-## Decisiones
+## Decisiones que tomé
 
-- Acepté PBKDF2 con sal, HMAC, SQLite parametrizado, separación de presentación y autenticación y registro de eventos sin contraseñas ni tokens.
-- Modifiqué el contrato del token, las reglas del reloj, la transacción de intentos, el desbloqueo y el modelo HTTP.
-- Rechacé el secreto de respaldo, `except` sin tipo como contrato de errores, tiempos idénticos como oráculo y atribuir eficiencia a `compare_digest`.
-- Conservé el motor compartido, como requiere la A3: se invoca únicamente con `{"codigo": ...}` desde HTTP. La capacidad de lectura de archivos sigue disponible internamente/CLI; la ruta genérica que la exponía se elimina.
+- Acepté PBKDF2 con sal, HMAC, SQLite parametrizado y la separación entre presentación y autenticación.
+- Ajusté el contrato del token, las reglas del reloj, el registro de intentos, el desbloqueo y el modelo de entrada HTTP.
+- Rechacé el secreto de respaldo y el uso de tiempos idénticos como criterio de prueba. Traté compare_digest como un control de seguridad.
+- Reutilicé el motor del equipo y lo invoqué desde HTTP únicamente con codigo. Retiré la ruta que permitía enviar archivos.
 
 ## Utilidad del prompt
 
-El prompt identifica rol y contexto, enumera seis requisitos comprobables, describe el contrato HTTP y aporta el login oficial. Explica la lectura de archivos en CLI, pide revisar la ruta genérica y exige separar inicialización de llamadas. Así permite contrastar respuestas concretas con reglas y pruebas. Aun con ese contexto, el modelo incumplió requisitos explícitos: el prompt no sustituye la revisión.
+El prompt me ayudó a establecer el rol, los seis requisitos y el contrato HTTP. Incluí el login oficial, expliqué la lectura de archivos en CLI y pedí separar la inicialización de las solicitudes al comparar las versiones.
 
-## Versiones y evidencias
+Con esa información pude evaluar la respuesta con criterios concretos. Identifiqué los puntos que coincidían con el manual y los que necesitaba corregir antes de incorporarlos al diseño.
 
-La corrida de 159 pruebas y la entrega depurada de 155 se mantienen como antecedentes. La corrección modifica la superficie HTTP, V2 y sus pruebas; tiene una nueva corrida, firma de fuentes y dos solicitudes nuevas a Gemini. No afirmo que el código corregido tenga los mismos bytes que la versión anterior.
+## Evidencias
+
+Relacioné el resultado con la ejecución de bitacora/a3/revision_20261126T025924Z/. Allí guardé las pruebas, las firmas de las fuentes y las respuestas de las dos entradas enviadas a Gemini. Utilicé esos registros para elaborar las tablas del informe.

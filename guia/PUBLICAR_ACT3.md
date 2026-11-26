@@ -1,40 +1,26 @@
-# Publicar la entrega en el repositorio nuevo
+# Publicación de mi actividad
 
-Destino único: **https://github.com/MajesDo63/Act3**.
+Publiqué el código, el informe y las evidencias en **https://github.com/MajesDo63/Act3**.
 
-El paquete contiene una sola carpeta `Act3`. Copia el contenido de esa carpeta dentro del clon local de **Act3**. No copies Documentos, OneDrive ni `Project_v2_TSTI`. Conserva `.git` del clon; el paquete no trae esa carpeta.
+Utilicé la etiqueta **a3-MajesDo63** para identificar la versión de entrega. En ella reuní el servicio con /v1/revisor, las tres versiones del login y los resultados de las 163 pruebas.
 
-## GitHub Desktop
+## Archivos de entrega
 
-1. **File → Clone repository → URL**: pega `https://github.com/MajesDo63/Act3.git` y elige una carpeta local distinta del proyecto anterior.
-2. Pulsa **Show in Explorer**. Copia ahí los archivos y carpetas que están dentro de `Act3` en el ZIP descomprimido. `README.md`, `api/`, `a3/` y `entrega/` deben quedar directamente en la raíz del clon.
-3. Vuelve a Desktop y verifica que **Current repository** diga **Act3**. La lista debe contener el informe, código y registros, sin `.env`, `.venv` ni bases SQLite.
-4. En Summary escribe `Completar Actividad 3 de Cesar` y pulsa **Commit to main**. Después **Push origin** o **Publish branch**, según aparezca.
-5. En **History**, clic derecho sobre ese commit → **Create Tag** → `a3-MajesDo63`. Pulsa **Push origin** si indica una etiqueta pendiente. Si tu versión no ofrece esa opción, usa los comandos de abajo después de subir el commit.
-6. Abre **View on GitHub** y verifica el PDF dentro de `entrega/` y la etiqueta en **Tags**. Solo entonces el repositorio y la etiqueta estarán publicados.
+- Informe: `entrega/Actividad3_Cesar_Informe.pdf`.
+- Documento editable: `entrega/Actividad3_Cesar_Informe.docx`.
+- Evidencias: `bitacora/a3/revision_20261126T025924Z/`.
+- Análisis y reflexión: `a3/`.
 
-## Crear y subir la etiqueta desde PowerShell
+Guardé los registros originales y las firmas de las fuentes para relacionar el informe con su ejecución. En GitHub Actions puedo consultar las pruebas automáticas de la versión publicada.
 
-Abre una terminal **en la carpeta del clon Act3**, después de subir el commit, y ejecuta una línea a la vez:
+## Consultar la versión
 
-```powershell
-git remote get-url origin
-```
+Enlace de entrega: **https://github.com/MajesDo63/Act3/tree/a3-MajesDo63**.
 
-Debe mostrar `https://github.com/MajesDo63/Act3.git` (o el remoto SSH equivalente de esa misma cuenta y repositorio). Si muestra otro proyecto, abre el clon correcto antes de continuar.
+Desde un clon local puedo consultar el commit de la etiqueta con:
 
 ```powershell
-git tag -a a3-MajesDo63 -m 'Entrega Actividad 3 - Cesar Eduardo Valdez Pinto'
-git push origin a3-MajesDo63
+git show --no-patch --oneline a3-MajesDo63
 ```
 
-No uses `--force` para sustituir una etiqueta que ya exista.
-
-## Entregar al docente
-
-Adjunta `entrega/Actividad3_Cesar_Informe.pdf` en Canvas y en el correo. Incluye:
-
-- Repositorio: `https://github.com/MajesDo63/Act3`
-- Versión entregada: `https://github.com/MajesDo63/Act3/tree/a3-MajesDo63` (después de publicar la etiqueta).
-
-El Word es editable y acompaña la entrega como respaldo. El código y las evidencias quedan en GitHub; no necesitas mandar el entorno `.venv` ni la llave de Gemini.
+Para la entrega al docente adjunto el PDF y el enlace de la etiqueta. El repositorio contiene el código y las evidencias que respaldan el informe.
