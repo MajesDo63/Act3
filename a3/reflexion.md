@@ -1,0 +1,11 @@
+# Reflexión
+
+En esta actividad comprendí que mejorar un login exige revisar el comportamiento completo del servicio, no solamente cambiar unas condiciones. El ejemplo original permite reconocer problemas con facilidad, pero su brevedad oculta requisitos importantes: proteger lo que se almacena, evitar revelar cuentas, limitar intentos y comprobar una sesión en cada operación protegida.
+
+La propuesta asistida me ayudó a ordenar la solución y a relacionar cada componente con una responsabilidad. Sin embargo, una arquitectura razonable no garantiza que todos sus límites estén resueltos. Por eso revisé cuestiones como la vigencia configurable, el momento en que se confirma una transacción y la posibilidad de recibir campos adicionales. También distinguí el mensaje de error que necesita el usuario de la información que debe permanecer dentro del servicio.
+
+La comparación de versiones me permitió separar tres objetivos. La versión de seguridad incorpora las comprobaciones necesarias. La de eficiencia conserva esas comprobaciones y evita repetir la inicialización de recursos. La mantenible expresa los contratos mediante tipos y dependencias que se pueden sustituir en las pruebas. Compartir las primitivas criptográficas evita mantener implementaciones diferentes de una función sensible.
+
+Las pruebas también necesitaron evaluación crítica. Comprobar que el ejemplo devuelve sus tres mensajes originales no demuestra que sea seguro. Añadí situaciones de expiración, modificación del token, bloqueo persistente, concurrencia y rechazo de entradas indebidas. Para el endpoint separé las pruebas de integración con dobles del registro de las solicitudes realizadas con Gemini; ambos tipos de evidencia responden preguntas distintas.
+
+Mi principal conclusión es que la IA resulta útil para proponer y explicar, pero la aceptación de una solución debe apoyarse en reglas, contratos y resultados reproducibles. La mejora posterior sería ampliar las pruebas de concurrencia entre procesos, trasladar el control de uso a un almacén compartido y diseñar la autenticación de un despliegue externo. El alcance actual es un prototipo local de clase, con evidencia de los casos que realmente se ejecutaron.

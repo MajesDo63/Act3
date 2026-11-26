@@ -1,0 +1,91 @@
+{
+  "estado": "completo",
+  "fecha_utc": "2026-11-26T02:13:22.468487+00:00",
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "directorio": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar",
+  "destino": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\bitacora\\a3\\20261126T020719Z",
+  "grupos": [
+    {
+      "nombre": "checkpoint_auth",
+      "comando": [
+        "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_lab_producto.py",
+        "-k",
+        "mensaje or alterado or bloqueo or texto_plano",
+        "-q",
+        "--junitxml=C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\bitacora\\a3\\20261126T020719Z\\checkpoint_auth.xml"
+      ],
+      "directorio": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar",
+      "codigo_salida": 0,
+      "segundos": 2.243,
+      "pruebas": 4,
+      "aprobadas": 4,
+      "omitidas": 0,
+      "fallos": 0
+    },
+    {
+      "nombre": "laboratorio",
+      "comando": [
+        "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_lab_producto.py",
+        "-q",
+        "--junitxml=C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\bitacora\\a3\\20261126T020719Z\\laboratorio.xml"
+      ],
+      "directorio": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar",
+      "codigo_salida": 0,
+      "segundos": 3.335,
+      "pruebas": 12,
+      "aprobadas": 12,
+      "omitidas": 0,
+      "fallos": 0
+    },
+    {
+      "nombre": "actividad3",
+      "comando": [
+        "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_a3_auth.py",
+        "tests/test_a3_api.py",
+        "tests/test_a3_versiones.py",
+        "-q",
+        "--junitxml=C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\bitacora\\a3\\20261126T020719Z\\actividad3.xml"
+      ],
+      "directorio": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar",
+      "codigo_salida": 0,
+      "segundos": 11.32,
+      "pruebas": 49,
+      "aprobadas": 49,
+      "omitidas": 0,
+      "fallos": 0
+    },
+    {
+      "nombre": "regresion",
+      "comando": [
+        "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "--junitxml=C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\bitacora\\a3\\20261126T020719Z\\regresion.xml"
+      ],
+      "directorio": "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar",
+      "codigo_salida": 0,
+      "segundos": 10.32,
+      "pruebas": 159,
+      "aprobadas": 159,
+      "omitidas": 0,
+      "fallos": 0
+    }
+  ],
+  "capturas": [
+    "captura_errores.png",
+    "captura_pruebas.png"
+  ],
+  "cierre_utc": "2026-11-26T02:14:48.401582+00:00"
+}

@@ -1,0 +1,2586 @@
+{
+  "metodo": "Fuentes oficiales sin modificar, fijadas por etiqueta y SHA de blob GitHub",
+  "versiones": {
+    "fastapi": "0.121.3",
+    "starlette": "0.49.3",
+    "anyio": "4.11.0",
+    "httpx": "0.28.1",
+    "httpcore": "1.0.9",
+    "h11": "0.16.0",
+    "uvicorn": "0.38.0",
+    "sniffio": "1.3.1",
+    "annotated_doc": "0.0.4"
+  },
+  "archivos": [
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "LICENSE",
+      "sha": "3e92463e6bd522a2a21e5f0a80d8089d6c4be20d",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/fastapi/LICENSE",
+      "rel": "LICENCIAS/fastapi/LICENSE",
+      "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/__init__.py",
+      "sha": "85a7ea7b530a4011e660c597e6b50e355b904c9a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/__init__.py",
+      "rel": "fastapi/__init__.py",
+      "sha256": "63495267b0b58719accfccba4804ba41dc0436d10af953cdbedb75bc916f5b9f"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/__main__.py",
+      "sha": "fc36465f5f40701bf333de8811d76d3484f211e6",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/__main__.py",
+      "rel": "fastapi/__main__.py",
+      "sha256": "6ca78f5cb74ee12b1548ceabf525682e2724243711d9cd1c4cec5944aab6e984"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/_compat/__init__.py",
+      "sha": "0aadd68de2c578b15a90ce6aa87bc71c81c655cb",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/_compat/__init__.py",
+      "rel": "fastapi/_compat/__init__.py",
+      "sha256": "f1f6b95e633aff086be985ae0aceca0dd291fe067f00c99ac585bb1839f47a78"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/_compat/main.py",
+      "sha": "e5275950e80df301b1ebbf28b0e33d35e794ff18",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/_compat/main.py",
+      "rel": "fastapi/_compat/main.py",
+      "sha256": "5838b1961f7fe677c5bb05af6d8409362f25e670d975f6e5da73324eb886eb97"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/_compat/may_v1.py",
+      "sha": "beea4d167f735f510ab81beaf97678c5ef7d54bf",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/_compat/may_v1.py",
+      "rel": "fastapi/_compat/may_v1.py",
+      "sha256": "ba26696531151c1943fd0dd66145bf04d5b6e17df293f3b0bc784280fc1351ca"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/_compat/model_field.py",
+      "sha": "fa2008c5e0bcf0bfe759e11d955e40a92af6a94d",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/_compat/model_field.py",
+      "rel": "fastapi/_compat/model_field.py",
+      "sha256": "4ab4a85c4725a065ca02a8d1f140d6dbcebd44f80b4457564ee5604c1857fc6c"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/_compat/shared.py",
+      "sha": "cabf48228380dbe05e8fb026438cf95f808b8ed1",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/_compat/shared.py",
+      "rel": "fastapi/_compat/shared.py",
+      "sha256": "28f38a0d10663389b318b7516700f2ad322987a12e77d55bdaf8a5d5dc4d755d"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/_compat/v1.py",
+      "sha": "e17ce8beafdd68bf4335065e987d240bfdd02379",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/_compat/v1.py",
+      "rel": "fastapi/_compat/v1.py",
+      "sha256": "bff60bce8f2ecabd07780ed0c4d6e06926f7df69027012bdfbd3d998e1c692af"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/_compat/v2.py",
+      "sha": "5cd49343b66fcfb40ee3910195be4641a3d696fc",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/_compat/v2.py",
+      "rel": "fastapi/_compat/v2.py",
+      "sha256": "c3d34b8322f7785fbb50ab852c661f1242ba214500cf756459eedc1601f0c27b"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/applications.py",
+      "sha": "0a47699aefc982c46c2fe7c07c43cefb13ef2b01",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/applications.py",
+      "rel": "fastapi/applications.py",
+      "sha256": "2cc482e7a6127a403dfc3f0bc0890f489c40100aa5b568d3260f4f53418ee9f7"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/background.py",
+      "sha": "6d4a30d4421e8074fcbae2a7981378b19e8687d3",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/background.py",
+      "rel": "fastapi/background.py",
+      "sha256": "616c4d74172476030b265c09253dac479349a6455741575b62ebb28fccd462c9"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/cli.py",
+      "sha": "8d3301e9daf73b474162d712f4b87f54ccd97a16",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/cli.py",
+      "rel": "fastapi/cli.py",
+      "sha256": "3988596f4351fdd7ae4f9a1fc8f176368341cd90cd38ff126a579fda793e1ea0"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/concurrency.py",
+      "sha": "3202c70789ad37f934a67bfe19d3bc8f45efe513",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/concurrency.py",
+      "rel": "fastapi/concurrency.py",
+      "sha256": "322adfa30a12a6431067c8ff8346716902a957a781dc6f9d0794e07170ab8040"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/datastructures.py",
+      "sha": "8ad9aa11a6fd8e8f16b62cd8b278e6f8184cef9f",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/datastructures.py",
+      "rel": "fastapi/datastructures.py",
+      "sha256": "56758acf3135116eca2ce4d1356784aa522825001209f81d28e3aee443371fd0"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/dependencies/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/dependencies/__init__.py",
+      "rel": "fastapi/dependencies/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/dependencies/models.py",
+      "sha": "d6359c0f51aa2955f677d14a3c1625572e1d38ba",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/dependencies/models.py",
+      "rel": "fastapi/dependencies/models.py",
+      "sha256": "1856d06b027dda2d07310e43a8bd22e29edaa9109260ade671be59b642d88888"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/dependencies/utils.py",
+      "sha": "1e92c1ba2a2fb8dca9f3a7ccee6d41bd2cdbadcd",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/dependencies/utils.py",
+      "rel": "fastapi/dependencies/utils.py",
+      "sha256": "e4b8728edefc3db87e53b22a2626975cb6d8a33ba1718d352151dc5f9e4a1d86"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/encoders.py",
+      "sha": "6fc6228e157ac83ee003dd2f9ee6ef9e7c074244",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/encoders.py",
+      "rel": "fastapi/encoders.py",
+      "sha256": "280305274b33d05165d0f838b148978aeabde1abf798b74b667cde629f5fe303"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/exception_handlers.py",
+      "sha": "475dd7bdd9891a7595b6df5db97cd3840179c8fa",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/exception_handlers.py",
+      "rel": "fastapi/exception_handlers.py",
+      "sha256": "615713f19cb4db555861e79c81dca1e581148c420729c2eca5b9127f839f6c92"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/exceptions.py",
+      "sha": "0620428be749bf5f5be47ba950d68c3536735fb0",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/exceptions.py",
+      "rel": "fastapi/exceptions.py",
+      "sha256": "25786958c31b37072342ade755edc2ce3fa739953531c6eed445a9b8aef99700"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/logger.py",
+      "sha": "5b2c4ad5250b589aa0c8f8d1cc9125b91b10edb0",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/logger.py",
+      "rel": "fastapi/logger.py",
+      "sha256": "23d34d8b7a2ff0072a6ec6c2f709755fe85d22d2a062dd974ebc757fdf59a65e"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/middleware/__init__.py",
+      "sha": "620296d5ad6ca2cc49eb5d0dc140bcbc3204e9b4",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/middleware/__init__.py",
+      "rel": "fastapi/middleware/__init__.py",
+      "sha256": "a100f188555c7357d825438816fa619caee94d3e6492d99f2f7d905e9045befa"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/middleware/asyncexitstack.py",
+      "sha": "4ce3f5a625548a00514f872d1653194bd3669a73",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/middleware/asyncexitstack.py",
+      "rel": "fastapi/middleware/asyncexitstack.py",
+      "sha256": "44a1a54291b383718ba2ca9586bc41cbf34267da894bbcd078d1ede58df1fb4d"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/middleware/cors.py",
+      "sha": "8dfaad0dbb3ff5300cccb2023748cd30f54bc920",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/middleware/cors.py",
+      "rel": "fastapi/middleware/cors.py",
+      "sha256": "ca7c2359066873fbdb873677fd95dc7a8692aec9471473dda0ce76ad7af45945"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/middleware/gzip.py",
+      "sha": "bbeb2cc7861a735d6cd5c0e29aeb6dbf8457023a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/middleware/gzip.py",
+      "rel": "fastapi/middleware/gzip.py",
+      "sha256": "c4ce4f72c1fc425022999c38543bdc9939ea41a9ac95386c7dedc254ddafa1ad"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/middleware/httpsredirect.py",
+      "sha": "b7a3d8e078574e87dc6e345d621f5a596c3bdc1e",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/middleware/httpsredirect.py",
+      "rel": "fastapi/middleware/httpsredirect.py",
+      "sha256": "acbf1e5cc9e62e28f05641fbff8d34cc7ae2d407a47de05de83eaab3c8b1f79d"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/middleware/trustedhost.py",
+      "sha": "08d7e035315677856fd2cd0be2044689b57619bf",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/middleware/trustedhost.py",
+      "rel": "fastapi/middleware/trustedhost.py",
+      "sha256": "784e57191c466bb739ccf9cc2431a9dc1c5a2f6e64e625509619eff8f9343ecb"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/middleware/wsgi.py",
+      "sha": "c4c6a797d2675e1c13b028be977c64a822fb649b",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/middleware/wsgi.py",
+      "rel": "fastapi/middleware/wsgi.py",
+      "sha256": "67751efbbc278b895464cbc7dc6f5e93ffda72061d26cb5b9e9657fc74006e86"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/openapi/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/openapi/__init__.py",
+      "rel": "fastapi/openapi/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/openapi/constants.py",
+      "sha": "d724ee3cfdbcda1c39f39511046c7a884186ca98",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/openapi/constants.py",
+      "rel": "fastapi/openapi/constants.py",
+      "sha256": "69d1b39a2b352f51c9453137909e5f9874bf368abab4863aa56bff485ce81435"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/openapi/docs.py",
+      "sha": "74b23a3706a4d42aeeddc103bfe42e0eb530d8da",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/openapi/docs.py",
+      "rel": "fastapi/openapi/docs.py",
+      "sha256": "f51ca9a3c194e60769d92ed2b28c88652546a797b74f64f5293b490584c29d1b"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/openapi/models.py",
+      "sha": "81d276aed65fe7a9b059044279e5f43a3ec7eeed",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/openapi/models.py",
+      "rel": "fastapi/openapi/models.py",
+      "sha256": "9b504d1f17ff4620d32b5b827ccadee9764de72ee4ad9340eb64043ffd8457db"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/openapi/utils.py",
+      "sha": "dbc93d28920e41f534ff0e84f2146f4a5de99a60",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/openapi/utils.py",
+      "rel": "fastapi/openapi/utils.py",
+      "sha256": "d83921bcc1e81cb239f2f2b8bda8bfeeff5667747944c07a7460c8031dec9c6a"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/param_functions.py",
+      "sha": "e32f755933ba506530d9278c4bc2a58d615a7c23",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/param_functions.py",
+      "rel": "fastapi/param_functions.py",
+      "sha256": "0f131a41d2251ce1ccfb32320cf85c46fb819b528b063754d488ebb0e1c6e4b7"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/params.py",
+      "sha": "6d07df35e1fd6ae400ee97da01da06d5f64478ec",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/params.py",
+      "rel": "fastapi/params.py",
+      "sha256": "2d551b31a16824f0ac0ad66f5241accad14ed6430540f178ffc83ada9ea9e6fe"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/py.typed",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/py.typed",
+      "rel": "fastapi/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/requests.py",
+      "sha": "d16552c0a9535e1c0bd7f701987301681832eba5",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/requests.py",
+      "rel": "fastapi/requests.py",
+      "sha256": "cdac9ea4a15c89e9c1965bf7b27996236d06934a073552d4e030e1a9705be0b5"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/responses.py",
+      "sha": "6c8db6f3353fffa953aa8efdd89739e2bda4c476",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/responses.py",
+      "rel": "fastapi/responses.py",
+      "sha256": "40d410970a4a850a083d94d35a4a5cf5dfd019e199fda5503da0d5de743c9bb7"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/routing.py",
+      "sha": "a8e12eb6073180490be19c5356c623a572144f18",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/routing.py",
+      "rel": "fastapi/routing.py",
+      "sha256": "77d87e2a4d2222aa789a1a058f5b70d8b5c6b1a43b055e4fb4f4d3abbd70e2bc"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/security/__init__.py",
+      "sha": "3aa6bf21e44f3069adb94242fbba5c8160532a1c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/security/__init__.py",
+      "rel": "fastapi/security/__init__.py",
+      "sha256": "6cef29366c6a5515d48df97698e2a25592e7d05a4143ad555185639a9a676c9c"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/security/api_key.py",
+      "sha": "496c815a77a295a2615bbd9ccc345f372cd85305",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/security/api_key.py",
+      "rel": "fastapi/security/api_key.py",
+      "sha256": "06095d8bdfdc770eafca80f9d5dc2afe0a897d11bb7b5333224ea7a876a8b4a7"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/security/base.py",
+      "sha": "c43555deb8ea83b14241a5631c9ea451c96f6e7f",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/security/base.py",
+      "rel": "fastapi/security/base.py",
+      "sha256": "765e29bdb0be4718df6d680fb4259df0c554fbb081d92676dab2435d50973ba7"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/security/http.py",
+      "sha": "3a5985650a068476eaa3d0e1579b144be7fa1708",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/security/http.py",
+      "rel": "fastapi/security/http.py",
+      "sha256": "738b0d144f7ddc45866187edfca3661a789a91ba0feb56be9f097c3cea1fb418"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/security/oauth2.py",
+      "sha": "f8d97d76206f6033b77c014fec0b55f36ad1bae4",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/security/oauth2.py",
+      "rel": "fastapi/security/oauth2.py",
+      "sha256": "1a72e3db7099a68f9cf72ddfdcf66fde13aa317b738eebfcf3f0593ab8cef93a"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/security/open_id_connect_url.py",
+      "sha": "5e99798e6329a2c073cdcf2efe068d3779d61e1e",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/security/open_id_connect_url.py",
+      "rel": "fastapi/security/open_id_connect_url.py",
+      "sha256": "2d90957b154c92c563ffb55438021d769ebcbe9019b6a9fc0893d1a2f21648fb"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/security/utils.py",
+      "sha": "fa7a450b74e813e66fd6e9a140d48c29215503bb",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/security/utils.py",
+      "rel": "fastapi/security/utils.py",
+      "sha256": "6ddf13d1833b5100f90132ae72bd5b36d02fcff637fff755340bf951e6e23ef7"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/staticfiles.py",
+      "sha": "299015d4fef268cde91273790251f35192e1c8a6",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/staticfiles.py",
+      "rel": "fastapi/staticfiles.py",
+      "sha256": "8a2ac622ddec758d90657777ea28ecdc28fe4f416e18575addc77dd2433d224c"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/temp_pydantic_v1_params.py",
+      "sha": "e41d712308ed1ca20660c8d29ffa739f6e7c28d8",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/temp_pydantic_v1_params.py",
+      "rel": "fastapi/temp_pydantic_v1_params.py",
+      "sha256": "73db93040af27dd6e0126022b89f419a7985cd888564ae76cf7743297e0f4916"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/templating.py",
+      "sha": "0cb868486edd9dda38f90c65f314597813128cf8",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/templating.py",
+      "rel": "fastapi/templating.py",
+      "sha256": "e33b2e4d681c8dc11a8a7309140956ebe827b259ba020392d528a20d67e64319"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/testclient.py",
+      "sha": "4012406aa76f743c5c5d1ab8ff56d6d67cfb6653",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/testclient.py",
+      "rel": "fastapi/testclient.py",
+      "sha256": "9c1bda0265fae9895d45e24d6573ce935b1fba8d90ea1b3c6cebc86827a9e8b4"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/types.py",
+      "sha": "3f4e81a7cca9487527f4ed0ebdc2e1f5a1cc0bdb",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/types.py",
+      "rel": "fastapi/types.py",
+      "sha256": "63e4e01744b2e50e80f2aed8c23b6ce6ccacc99af3b86f016b93b2142898df38"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/utils.py",
+      "sha": "2e79ee6b197959945ee58dee38f6dbcde960bb78",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/utils.py",
+      "rel": "fastapi/utils.py",
+      "sha256": "35e766ff53899cbd76b8727ce474cf08ef801dfc310ad5ce6c5a418bfd17e314"
+    },
+    {
+      "name": "fastapi",
+      "repo": "fastapi/fastapi",
+      "ref": "0.121.3",
+      "path": "fastapi/websockets.py",
+      "sha": "55a4ac4a1a918720bb3b94eaea6f8737b968216a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/fastapi/websockets.py",
+      "rel": "fastapi/websockets.py",
+      "sha256": "e35f6e9dc60e6c42991b461cad7b1c7d04182d25a8135d23ab154c7ad19d47df"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "LICENSE.md",
+      "sha": "d16a60ec5b9963ef86b35a52ac92227014618e6c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/starlette/LICENSE.md",
+      "rel": "LICENCIAS/starlette/LICENSE.md",
+      "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/__init__.py",
+      "sha": "839a08a650b4454817fd94feb32daf39c3bb3d48",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/__init__.py",
+      "rel": "starlette/__init__.py",
+      "sha256": "ba9d47533e35c4b11c34f124d9b06cdc188647c62658b929f5557653f47681d9"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/_exception_handler.py",
+      "sha": "40761b68c98cb40a3d24ff1e6067f3a653800b94",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/_exception_handler.py",
+      "rel": "starlette/_exception_handler.py",
+      "sha256": "8b370c88fd95b956c8bf04d442384c95c85c680e7bf79f916b54829f92963d33"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/_utils.py",
+      "sha": "b0f01d31b755c07a38658d9c6ffc8a8ace3410fe",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/_utils.py",
+      "rel": "starlette/_utils.py",
+      "sha256": "dc8826f8777f3574589a2c248859e0b25ad71ef3d64c1de2b356643f90905e83"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/applications.py",
+      "sha": "8cbc7f06b36c63bbce5fa6246f6cfd64b5002687",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/applications.py",
+      "rel": "starlette/applications.py",
+      "sha256": "5d3652cc39d07141d818372a218e3c08531398cffd3309410614e08c9b7fec85"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/authentication.py",
+      "sha": "a7138949e256ad6defdbd3e2f637d0ba11affb76",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/authentication.py",
+      "rel": "starlette/authentication.py",
+      "sha256": "072ff01f27b53a4de7b6b326cdfce71f081e7df1a68c3bc0ede83aace42b14ae"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/background.py",
+      "sha": "8a4562cdc9f10dace61e5e6b20ff859ef00cdc8e",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/background.py",
+      "rel": "starlette/background.py",
+      "sha256": "d31767fd04e7732c7dbd7e8c15d3dc61bbfced7f9b8598dc016cb638b7559ce5"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/concurrency.py",
+      "sha": "7986475387964445ecf157b4edae394aa8669325",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/concurrency.py",
+      "rel": "starlette/concurrency.py",
+      "sha256": "c16a194e12f792bc2da96724be3a96487209fc4ebaab06b69751bbcb6a0b9653"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/config.py",
+      "sha": "7f839eebb073754bcac9cb3b4f2a5a7d0c3c5141",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/config.py",
+      "rel": "starlette/config.py",
+      "sha256": "3d2d1caca5ad46a90b149a325a036b63b135bea43c87b96cf738572b4f04cb8c"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/convertors.py",
+      "sha": "72b1cf9fdfb6d7f5be61f648a9ae016deb45012b",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/convertors.py",
+      "rel": "starlette/convertors.py",
+      "sha256": "175aec7b701a70df6bb1f2674deb839e36cde75affa2e1dcdd62f26248e45ffa"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/datastructures.py",
+      "sha": "38eabec52743cb04dde53b17fdc19fe074a12841",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/datastructures.py",
+      "rel": "starlette/datastructures.py",
+      "sha256": "ce16c619c99e45507a3aebedf47c2807c8122bd9396e21f7cd48636f9715fa8c"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/endpoints.py",
+      "sha": "bcf018ee0df24acc0ab94f475cb0908ca87886dc",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/endpoints.py",
+      "rel": "starlette/endpoints.py",
+      "sha256": "b3d20a10170735082b52d06020a75c4c91ac05aaa448552ae18a68bb13e64912"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/exceptions.py",
+      "sha": "9ad3527b94ce034bb3967b3bf0969403118d4284",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/exceptions.py",
+      "rel": "starlette/exceptions.py",
+      "sha256": "b48a619596bc12c41f2b0dfec70e49dd93751a3691e147317c92baf40776846f"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/formparsers.py",
+      "sha": "8e389dec7f380c72fc0d9ee7d986f7b4522160ab",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/formparsers.py",
+      "rel": "starlette/formparsers.py",
+      "sha256": "35d9797465d9b68a732548ccd38339cd8852f2c4f7ddeff92702b64fb31de330"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/__init__.py",
+      "sha": "8c3f287e9cf3eb128d26655cf49984ec9820d67e",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/__init__.py",
+      "rel": "starlette/middleware/__init__.py",
+      "sha256": "c51c5ccf042b6bac22ec4490c1a0f07690b29ed9e0189fbbbed2843bed96bfc9"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/authentication.py",
+      "sha": "77fc742daf444e759fe31de5d16ac2978f797580",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/authentication.py",
+      "rel": "starlette/middleware/authentication.py",
+      "sha256": "77a09b2c3fc83f5f5b007efe5a902033ca9a109996e2cf2d2774339d2b2118db"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/base.py",
+      "sha": "dc353a26dd3873aefc9435b92acfb0e1145ae233",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/base.py",
+      "rel": "starlette/middleware/base.py",
+      "sha256": "ee8cf99f9b9124a07211603479c9ac42f140a1d3f6da88731a26010de4e17e3b"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/cors.py",
+      "sha": "ffd8aefc60cedf17b87748cb11daeeb284c6685b",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/cors.py",
+      "rel": "starlette/middleware/cors.py",
+      "sha256": "1e9d4e0450753906d81916ba85f4f306a9242473a15298ebb11af2ac722d1c54"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/errors.py",
+      "sha": "bbc10728af8f809c12e39d5016585922f66665cc",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/errors.py",
+      "rel": "starlette/middleware/errors.py",
+      "sha256": "87be937d50eb7584afa410045a067dd55bcf6507b7bd1a4097a0a1a225c6f939"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/exceptions.py",
+      "sha": "6c98558f4db50007dd3ddee1892454a5a73f6abd",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/exceptions.py",
+      "rel": "starlette/middleware/exceptions.py",
+      "sha256": "ece812522060c074b854c9a9696970db5b8328d0e638cccb559ad60cb0d4a96a"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/gzip.py",
+      "sha": "abd898b2daffb4c1cc2b47b5931060ce34f2abfd",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/gzip.py",
+      "rel": "starlette/middleware/gzip.py",
+      "sha256": "fed86909172d82ec34b4c33a2768839408f9bd996897d4faef7207b5fbdfc501"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/httpsredirect.py",
+      "sha": "a8359067ff7afb80e979042077d5fa0fff119ddf",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/httpsredirect.py",
+      "rel": "starlette/middleware/httpsredirect.py",
+      "sha256": "48d4e579a6002c6a084d5ef1c1b89ce2007a55874cf1895e6bfca4722533df58"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/sessions.py",
+      "sha": "1b95db4b0d638fb5f18a61b4f7924c1f6eafb25e",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/sessions.py",
+      "rel": "starlette/middleware/sessions.py",
+      "sha256": "2206644e481b3a153db5071e415d0a8cb022369f9d2a19e0707a6ee1561a0d74"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/trustedhost.py",
+      "sha": "98451e29fef8a22379b5c1ef22c0f7f077eca83a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/trustedhost.py",
+      "rel": "starlette/middleware/trustedhost.py",
+      "sha256": "6f22825323e07b9e19e0cce7cae9c3ff60ec31f25cd94b1f5786f60eef966137"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/middleware/wsgi.py",
+      "sha": "7d7fd0d1145afda0350fac35b1db222ddd9a55df",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/middleware/wsgi.py",
+      "rel": "starlette/middleware/wsgi.py",
+      "sha256": "c8d421a371552b405c0d3553d8d1a660b3b1b6bc4f154a31f5a537714a860e07"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/py.typed",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/py.typed",
+      "rel": "starlette/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/requests.py",
+      "sha": "99e8b9e193df5f6b7de2d4cb9bbf627ab4c6ecc9",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/requests.py",
+      "rel": "starlette/requests.py",
+      "sha256": "666520505c3345a05fbd1b8544621c1078a1c4df238f7de9c58d89db594cadf3"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/responses.py",
+      "sha": "73bc3485fc0969724c773b0944064af279efe2ec",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/responses.py",
+      "rel": "starlette/responses.py",
+      "sha256": "bc067dd6999ca10590f8ec9d6c2251d21a49fa288ec9cf41b758d15209a8f279"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/routing.py",
+      "sha": "f0550208f4b126b263a97e87647ffadeeeb5eda8",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/routing.py",
+      "rel": "starlette/routing.py",
+      "sha256": "b8b3bd4373f3dc0256cace9c4b5cebf9df6976009d7836cd0a2e4cafeb7c343e"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/schemas.py",
+      "sha": "e97f83ecf86c78b5cb6e1945c905417b107df910",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/schemas.py",
+      "rel": "starlette/schemas.py",
+      "sha256": "0312aac3743e5cbd9f535af250f9fec9ed63d5555e5a9812ba427ff043c9c248"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/staticfiles.py",
+      "sha": "a458fd7d8aa5d1cd61add58fd4c65588fff220ec",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/staticfiles.py",
+      "rel": "starlette/staticfiles.py",
+      "sha256": "08351e5d168ab2aa23280ad24e28efb0fb113d6667999744cb612a7eb193770d"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/status.py",
+      "sha": "0160aac354f7fcf2041de3e8dd3244ed5a6ab455",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/status.py",
+      "rel": "starlette/status.py",
+      "sha256": "3f94b138ddda296debc14a49edcc710f7bef1142cca4ef9a233cc94662f0c15b"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/templating.py",
+      "sha": "10fa02710acf3adcea62d8b10812c077c03a9280",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/templating.py",
+      "rel": "starlette/templating.py",
+      "sha256": "93447cef98db691f6f5e50a0fb990662462be94247c7215e89182dea6da4669f"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/testclient.py",
+      "sha": "9db3b5a21c458af9cc24e8533ba31ee3c8ffda18",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/testclient.py",
+      "rel": "starlette/testclient.py",
+      "sha256": "0554f51eca483c0e2d829b676ab327968e352de4491209421a4f4c9cfbf96c21"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/types.py",
+      "sha": "e1f478d78741df2af89e0d839a40bb1412a51bd4",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/types.py",
+      "rel": "starlette/types.py",
+      "sha256": "bcba41c053eacbfabced4f1e5f94749c93faee460898dcaf72c8ce23b28decd3"
+    },
+    {
+      "name": "starlette",
+      "repo": "Kludex/starlette",
+      "ref": "0.49.3",
+      "path": "starlette/websockets.py",
+      "sha": "fb76361c8a2210dc6c494549b0c8c3b9c2e01a18",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/starlette/websockets.py",
+      "rel": "starlette/websockets.py",
+      "sha256": "a61b168295dc958ade56183ec00c945a98015894e26cd1793e2fad3716e64056"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "LICENSE",
+      "sha": "104eebf5a3002fccdaceef3a4cb936173c1c2035",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/anyio/LICENSE",
+      "rel": "LICENCIAS/anyio/LICENSE",
+      "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/__init__.py",
+      "sha": "8fe844286a263667720753a41d5900a1a69baa43",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/__init__.py",
+      "rel": "anyio/__init__.py",
+      "sha256": "336d45242ff4061447ec0757bece33dee6b28f8cad340c6e27b527b212c3e513"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_backends/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_backends/__init__.py",
+      "rel": "anyio/_backends/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_backends/_asyncio.py",
+      "sha": "cfebad5c88613be92922fbb95d6c44389f3ba561",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_backends/_asyncio.py",
+      "rel": "anyio/_backends/_asyncio.py",
+      "sha256": "8d33e54eee163bd6d35d4264c454343f519b1b8235e27396a43d453332a692f0"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_backends/_trio.py",
+      "sha": "36941f0e393b669e76922c60a7f42044ea54d88e",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_backends/_trio.py",
+      "rel": "anyio/_backends/_trio.py",
+      "sha256": "49c3553100748a2b89300a27d5ea500953956c86dff8bc677dbe4ec6e8f33289"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/__init__.py",
+      "rel": "anyio/_core/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_asyncio_selector_thread.py",
+      "sha": "9f35bae568e33e6a9e1219761c83cc8350fa0532",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_asyncio_selector_thread.py",
+      "rel": "anyio/_core/_asyncio_selector_thread.py",
+      "sha256": "d8f77114cddcb34d8aa7a052a696ef9914fbabb6acade4d6e45801c44b1f941a"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_contextmanagers.py",
+      "sha": "302f32b0c78a7071605b195c55054cfdb0b55f37",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_contextmanagers.py",
+      "rel": "anyio/_core/_contextmanagers.py",
+      "sha256": "6089c109a6e211e4be51a3ff25dc5ad426850bbd444cf5bc1d94c720cf11b1cf"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_eventloop.py",
+      "sha": "7ffdc8afdc5a6426a5e05d40e7b8fb423efefa90",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_eventloop.py",
+      "rel": "anyio/_core/_eventloop.py",
+      "sha256": "9a0fd3b974db7d48ae5b3d84bdbd7d7715520b64d54ceb72a4aa731d5efeb652"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_exceptions.py",
+      "sha": "5f123d7e0700de391d5ada45e9bd448a56962bea",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_exceptions.py",
+      "rel": "anyio/_core/_exceptions.py",
+      "sha256": "7d1d92bd15016151efa2534a6f35922edf050bfe4d141d8e033183ef7f1f0fc4"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_fileio.py",
+      "sha": "2eae029e4826c27764d0d8f398ae42bd8f0856fc",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_fileio.py",
+      "rel": "anyio/_core/_fileio.py",
+      "sha256": "2804f2b0364fedbbf0c23a54c0468601cd311a8b898003ea355a6704c4ec4e86"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_resources.py",
+      "sha": "b9a5344aef2962670f9b305a02cd0b11f2087d2f",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_resources.py",
+      "rel": "anyio/_core/_resources.py",
+      "sha256": "35b994e4ee545f7c44c800a7926617dbc166c1d97e7fe9f2d2d1f29b6e9ed30d"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_signals.py",
+      "sha": "f3451d302f514a6b2c9b4f96c6b3e17e36d7d050",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_signals.py",
+      "rel": "anyio/_core/_signals.py",
+      "sha256": "bee953d4cd7174b62d011f9e6394da98881a7f559394ec0eacc1b0b309534ebf"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_sockets.py",
+      "sha": "c65508f1f57df5087ea49d35634d744b2de91093",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_sockets.py",
+      "rel": "anyio/_core/_sockets.py",
+      "sha256": "6936e032bd2a3e604f7eb6a9c4bca4c9a8ec992ec801eae15bdfd0939af9135f"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_streams.py",
+      "sha": "6a9814e5a91d64e081ecef323a761ed42d3e64de",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_streams.py",
+      "rel": "anyio/_core/_streams.py",
+      "sha256": "3a768a8280c3f8570c4b02ef92801418fe75b06d99751bcca71b7dab6c358180"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_subprocesses.py",
+      "sha": "36d9b306c992b83a8033c0ee66daa141d23d010c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_subprocesses.py",
+      "rel": "anyio/_core/_subprocesses.py",
+      "sha256": "1179b98a02fb763e7989890f95b61502ab5bab12718d4fba3a77524c8c7d4918"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_synchronization.py",
+      "sha": "66c1a9d3402004c2688ba226d9c3c30eaff7abe4",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_synchronization.py",
+      "rel": "anyio/_core/_synchronization.py",
+      "sha256": "a59ffd825f60d1bb1bf76fb09c9e475feabd4e059ff928cad57a3e0c6663d8e9"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_tasks.py",
+      "sha": "d37efe31335d469b1cefa0b973a9b771348d4d28",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_tasks.py",
+      "rel": "anyio/_core/_tasks.py",
+      "sha256": "926ea1544d5fb2e21e9f26b7303b9df0a3faf89fdb373960602d74c14c48ee20"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_tempfile.py",
+      "sha": "fbb6b14a9a8eae9dcaa66eb68ac36d2084617877",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_tempfile.py",
+      "rel": "anyio/_core/_tempfile.py",
+      "sha256": "9476fb096e05c8896991fe400c07f85662c708ac041c5f67c6a3720421455220"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_testing.py",
+      "sha": "9e28b22766d8a4bd0af8949445f3f1aa2f684c6a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_testing.py",
+      "rel": "anyio/_core/_testing.py",
+      "sha256": "6141b00397201456d44efe1615dedcbff05256be2bc93b4fa7ca30400dc97561"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/_core/_typedattr.py",
+      "sha": "f358a448cb12739fd4eda4f4859d3a24ddd1de63",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/_core/_typedattr.py",
+      "rel": "anyio/_core/_typedattr.py",
+      "sha256": "3f8a33662927dfe0dba6861cbf28214bf14e60081b994c5ea14f3e2ffd3ba593"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/abc/__init__.py",
+      "sha": "d560ce3f1fa45a7ee4a3bc8958aa59702caa9d0c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/abc/__init__.py",
+      "rel": "anyio/abc/__init__.py",
+      "sha256": "ea65a1725fe919786b8195473ff4c27ccbc85c83a9f66ae810533dd1f60253f5"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/abc/_eventloop.py",
+      "sha": "a99a7ee44b45306185b2e9cd06dc7fd2c16f5815",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/abc/_eventloop.py",
+      "rel": "anyio/abc/_eventloop.py",
+      "sha256": "19365b748b411dc8ff6fef0ad97ca5113dbe6c160b6775e35b8b2763bbcaecb1"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/abc/_resources.py",
+      "sha": "10df115a7b9f975493476da763cc1e26dbd822e5",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/abc/_resources.py",
+      "rel": "anyio/abc/_resources.py",
+      "sha256": "0eb62f90d375847e94befe7fe6e2b24af0ec9e49c65437bc14229f928d15b4df"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/abc/_sockets.py",
+      "sha": "3ff60d4d9dfc3c15d416c9fc4a6b3b7f79a9fdb1",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/abc/_sockets.py",
+      "rel": "anyio/abc/_sockets.py",
+      "sha256": "1024d8d232c4175f20af200d1d1def1735f319d67ec4fc042ead5076039bd09a"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/abc/_streams.py",
+      "sha": "369df3f36cda74aa0d0893cd98bd4b29d3786faa",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/abc/_streams.py",
+      "rel": "anyio/abc/_streams.py",
+      "sha256": "d34e462920971a9af19e1b9c20b6e84aa736245a2f102664f66de9faaab15d57"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/abc/_subprocesses.py",
+      "sha": "ce0564ceac8aac425675b5c8f7f7205d08061fd3",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/abc/_subprocesses.py",
+      "rel": "anyio/abc/_subprocesses.py",
+      "sha256": "72e9803c94e4b4e42dc3adc8a86d250e9c99aaefe5d44125bd01cc8b02602f4f"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/abc/_tasks.py",
+      "sha": "516b3ec3b38a4b140f5d607dd28da989f057b832",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/abc/_tasks.py",
+      "rel": "anyio/abc/_tasks.py",
+      "sha256": "282ef0adc884e3c00834e23e0213eeb671617b57b07cfed09da985943cea7ac4"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/abc/_testing.py",
+      "sha": "7c50ed76dc4d8df41262973a0122295523e2a935",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/abc/_testing.py",
+      "rel": "anyio/abc/_testing.py",
+      "sha256": "b41254ce449f397270db77def2a489d3790995284e6238da132141ea4e8c613f"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/from_thread.py",
+      "sha": "1897f9acb298535baefab23716ef21673d888220",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/from_thread.py",
+      "rel": "anyio/from_thread.py",
+      "sha256": "326ce45b3ef2abe7741b768ea04cb21b69e1fc39bb87c82045616c62d78d549b"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/lowlevel.py",
+      "sha": "9f86c1c325f18e1a42a82f2b2d89a173cf92cb11",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/lowlevel.py",
+      "rel": "anyio/lowlevel.py",
+      "sha256": "d9adde95b292c39f5ba1ec870730bd553eef6ab937a3e901ca95d62864378ea5"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/py.typed",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/py.typed",
+      "rel": "anyio/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/pytest_plugin.py",
+      "sha": "00974b58efc2e85ab19a759703935d72334214cb",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/pytest_plugin.py",
+      "rel": "anyio/pytest_plugin.py",
+      "sha256": "713bedb47ed1e1ef098780b7993395f10561398109b4dd5d0991674681fd957e"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/streams/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/streams/__init__.py",
+      "rel": "anyio/streams/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/streams/buffered.py",
+      "sha": "ca40eae84822e805adf075cbc231f2f056ea9808",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/streams/buffered.py",
+      "rel": "anyio/streams/buffered.py",
+      "sha256": "8e850f773d0ea117ca80698ca4723dbd9c8c366ea5cbd8859687eb6543ecf5c4"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/streams/file.py",
+      "sha": "f492464267ac54b57ee9953a4aad128f06a2110a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/streams/file.py",
+      "rel": "anyio/streams/file.py",
+      "sha256": "eaea1335be4a6cca23fba812dffc6bacbf2e64df10e2222f392d56b46c857cac"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/streams/memory.py",
+      "sha": "9a3bac474b5eba460033240b5b8c45effd7bb334",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/streams/memory.py",
+      "rel": "anyio/streams/memory.py",
+      "sha256": "19c6c5ddc6a176c74566d71365a20aa595cf0d92a8823d7cc163cf984d0e9865"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/streams/stapled.py",
+      "sha": "80f64a2e8e5763ae327c5c213ec12e24f023b4d3",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/streams/stapled.py",
+      "rel": "anyio/streams/stapled.py",
+      "sha256": "534f690ab98ec3d9243617bab4aa29b26d5020c4f59454c5bed6fe03b4887b89"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/streams/text.py",
+      "sha": "dfd8e7a2550a7e217ec280a7147826c2bc3bad96",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/streams/text.py",
+      "rel": "anyio/streams/text.py",
+      "sha256": "b4227c9636af18cf8763468bfb94f0c6ff8acb0d417d1d01e0eb55201ea467dc"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/streams/tls.py",
+      "sha": "17fa200e61c77edc80a52601eb9f6edc89620023",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/streams/tls.py",
+      "rel": "anyio/streams/tls.py",
+      "sha256": "b2249a691c97f979df0bb25b9fd563b48755cc9903b2f216ff6a5211585e0c54"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/to_interpreter.py",
+      "sha": "bafd221fed4d272e052ec5ee63d9b7bf55705145",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/to_interpreter.py",
+      "rel": "anyio/to_interpreter.py",
+      "sha256": "674fa42c2c652138c51bf44cfd335d525127a20f78978f065d50d9f34c345117"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/to_process.py",
+      "sha": "495de2ae7111ef3b0382f5efe11a0e8e7cbd186b",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/to_process.py",
+      "rel": "anyio/to_process.py",
+      "sha256": "66faee7a544cf87366a836aa978b1d34e0e0d900ffb92970482c675783a1b1f4"
+    },
+    {
+      "name": "anyio",
+      "repo": "agronholm/anyio",
+      "ref": "4.11.0",
+      "path": "src/anyio/to_thread.py",
+      "sha": "5070516eb56679f863bd446c97cf76376d80d83b",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/anyio/to_thread.py",
+      "rel": "anyio/to_thread.py",
+      "sha256": "58cd8943631b56c7790f908cd3c6d0893c33648be9b068df1f5172db8ecaa034"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "LICENSE.md",
+      "sha": "ab79d16a3f4c6c894c028d1f7431811e8711b42b",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/httpx/LICENSE.md",
+      "rel": "LICENCIAS/httpx/LICENSE.md",
+      "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/__init__.py",
+      "sha": "e9addde071f81758baf350c4ab6bde2556340131",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/__init__.py",
+      "rel": "httpx/__init__.py",
+      "sha256": "0ac6997bac998f4ac783adf6d8058a587193315afdb718047c3e4fdff46bcfad"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/__version__.py",
+      "sha": "801bfacf671017cfbebf1ac26ec385daa02ed260",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/__version__.py",
+      "rel": "httpx/__version__.py",
+      "sha256": "2e853261e3974e2786cee3ffeb850bd30c5db718eebbf41b3af13b34e83e22a5"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_api.py",
+      "sha": "c3cda1ecda8629edbdca2e3bc04bc51dba5e1430",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_api.py",
+      "rel": "httpx/_api.py",
+      "sha256": "aff660b388c8a5c3c92ea2b975b6d26b2aa8fe254c2856b164277ea0e1f12c4b"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_auth.py",
+      "sha": "b03971ab4b311d60790dc22ca24d9966426ec0a4",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_auth.py",
+      "rel": "httpx/_auth.py",
+      "sha256": "62bdd0c1a5122b5eeb198c7eee3f85762705233cf863d14557ed45e3eed15d7e"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_client.py",
+      "sha": "2249231f8c3b912c731ff160344d3672e2f11738",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_client.py",
+      "rel": "httpx/_client.py",
+      "sha256": "c43f941baefe58c91e96d00039e1868fe719d91453026d7db1647194563bff8d"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_config.py",
+      "sha": "467a6c90ae269babe3af7963d9d7c78b9f012268",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_config.py",
+      "rel": "httpx/_config.py",
+      "sha256": "a4fa7653ec2271f70ab05f8a6111352d876dddee84446788a1767c1a3a372d67"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_content.py",
+      "sha": "6f479a0885f723b7395843d41164a87041820776",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_content.py",
+      "rel": "httpx/_content.py",
+      "sha256": "2c61b3ac94d1dcebcde0c6f519554d2d7917247fbaa0a97002db4ef69e70ff28"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_decoders.py",
+      "sha": "899dfada878e1181fca6d3c75a79526a076abb9e",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_decoders.py",
+      "rel": "httpx/_decoders.py",
+      "sha256": "a74757f08d0d1077b1b37506a784ac66eb62321b17aeb5a5ebe1a7a956f488a3"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_exceptions.py",
+      "sha": "77f45a6d3986d15626fc8a5fd459d6a3e0fbe466",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_exceptions.py",
+      "rel": "httpx/_exceptions.py",
+      "sha256": "6f15bb7f1ce054c01d3536f04f4567ab4e202435b5fe023f1858903ee3328cbd"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_main.py",
+      "sha": "cffa4bb7db0f930f4db56653a061c4d7400ba4e6",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_main.py",
+      "rel": "httpx/_main.py",
+      "sha256": "0a0f4631a6e24d3fecc1a0df5202118ad4b0c4b44c4b05033a6ecb7521aa940e"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_models.py",
+      "sha": "67d74bf86bfc80e22d9a4a3153572845accd9039",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_models.py",
+      "rel": "httpx/_models.py",
+      "sha256": "e3ffc6bb2bf580bc6e6428708a6f247d036220e709f5a72b785392babbd97e6b"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_multipart.py",
+      "sha": "b4761af9b2cf384de5189269927d781a700dbe46",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_multipart.py",
+      "rel": "httpx/_multipart.py",
+      "sha256": "28e1c465997aa28860f663da2b2caedf8e6aab5ac92e0df94d41b7600cd70776"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_status_codes.py",
+      "sha": "133a6231a5b53fd2f073799ca1bd07c50abe40ae",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_status_codes.py",
+      "rel": "httpx/_status_codes.py",
+      "sha256": "0d89fedae7c180c797cb9b3cc77fd307bc2302e00031ec136a43eb9b9ad712c7"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_transports/__init__.py",
+      "sha": "7a321053b29bcd48698cf2bd74a1d19c8556aefb",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_transports/__init__.py",
+      "rel": "httpx/_transports/__init__.py",
+      "sha256": "19b52805200ea7bcfe97ef63e5884c851dc3308727e8554b863d3bd8edcd9e7a"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_transports/asgi.py",
+      "sha": "2bc4efae0e1b14620f75f712eb15ecf500d14eef",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_transports/asgi.py",
+      "rel": "httpx/_transports/asgi.py",
+      "sha256": "1d17e20d830fb78c101f6805807660e1cfa2dec6e5a3a6cbe464ea7044fec73f"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_transports/base.py",
+      "sha": "66fd99d702480b555c06694fe14715ea6df3dfc3",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_transports/base.py",
+      "rel": "httpx/_transports/base.py",
+      "sha256": "9194bf54c6d58987c5e7bd29a205022756ee973fb26df2f9d4faacf7292d79b5"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_transports/default.py",
+      "sha": "d5aa05ff234fd3fbf4fee88c4a7d3e3c151a538f",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_transports/default.py",
+      "rel": "httpx/_transports/default.py",
+      "sha256": "03379a454c95c0271c4f2c8d25ec437f49f57457f3cf2769748420bf0ecf2e79"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_transports/mock.py",
+      "sha": "8c418f59e06cae43abdbb626ec21cafc7e8c6277",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_transports/mock.py",
+      "rel": "httpx/_transports/mock.py",
+      "sha256": "3d3a34779ebb4484d7c46ae48ba90deffebbc300317f088c0dcb972626428c4a"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_transports/wsgi.py",
+      "sha": "8592ffe017a87367cc7578184540096a9682908d",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_transports/wsgi.py",
+      "rel": "httpx/_transports/wsgi.py",
+      "sha256": "35c3d7dd76a9fc4c0215958efce692c9036e227098c7540c35b3bc1807a2ea36"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_types.py",
+      "sha": "704dfdffc8ba61eb913fa918072381e410b23c00",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_types.py",
+      "rel": "httpx/_types.py",
+      "sha256": "272878d4642aec039ebfc20e58a0c083bcc26ef1c07ee7e65b983f3e24ed12b6"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_urlparse.py",
+      "sha": "bf190fd560ee4fc8a11af371a15fc5f1dc284d34",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_urlparse.py",
+      "rel": "httpx/_urlparse.py",
+      "sha256": "640987e3b38d7e4c6bae3f8f3d88467a21e36fa0232824be00d58837838bfca6"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_urls.py",
+      "sha": "147a8fa333acaf31618d37ba2896e3a5bf5e4d02",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_urls.py",
+      "rel": "httpx/_urls.py",
+      "sha256": "757f7d551d4348e1e9828f40abb3f360ee0529dc6a2a3c32369f20adff1d1cdd"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/_utils.py",
+      "sha": "7fe827da4d071b32ea6da44328629699d6fc88ce",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/_utils.py",
+      "rel": "httpx/_utils.py",
+      "sha256": "fd355ea802afc4990a1ddcfb74579be2cd0b66a41781e1645d281f88704aff5a"
+    },
+    {
+      "name": "httpx",
+      "repo": "encode/httpx",
+      "ref": "0.28.1",
+      "path": "httpx/py.typed",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpx/py.typed",
+      "rel": "httpx/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "LICENSE.md",
+      "sha": "311b2b56c53f678ab95fc0def708c675d521a807",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/httpcore/LICENSE.md",
+      "rel": "LICENCIAS/httpcore/LICENSE.md",
+      "sha256": "fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/__init__.py",
+      "sha": "9a92dc4a440bdf6f259ec1083c89c817eb7b631b",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/__init__.py",
+      "rel": "httpcore/__init__.py",
+      "sha256": "f644ff92a0a10822544c7c30db866647f7b371d6e94585a4b03fa060dce464ff"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_api.py",
+      "sha": "38b961d10de88bebc98c758d0d1f14af1e7c0370",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_api.py",
+      "rel": "httpcore/_api.py",
+      "sha256": "ba7666783b1c8415821823c2c244b75a8b7d7ae2ba6e0fe42b12ed193c70db5e"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_async/__init__.py",
+      "sha": "88dc7f01e132933728cbcf45c88ce82e85ddf65f",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_async/__init__.py",
+      "rel": "httpcore/_async/__init__.py",
+      "sha256": "116765dafe2d867007cc9a6a8d4e21d9af03522180bcd896ae48a2f697e14dfd"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_async/connection.py",
+      "sha": "b42581dff8aabf4c2ef80ffda26296e1b368d693",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_async/connection.py",
+      "rel": "httpcore/_async/connection.py",
+      "sha256": "e8e70f5ea3047dcd01537f3ffa21d4343775bca4937365154f4f57a8d6ff04e9"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_async/connection_pool.py",
+      "sha": "96e973d0ce223f6bed9be9e6a6a2f3c01622c611",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_async/connection_pool.py",
+      "rel": "httpcore/_async/connection_pool.py",
+      "sha256": "0ce210dacd9909ff6a7f0c61ccca6b4cf2ea08bf0ec465e2285eaa447c6f5726"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_async/http11.py",
+      "sha": "e6d6d709852b137a862cfe2b3af42dc790fa705d",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_async/http11.py",
+      "rel": "httpcore/_async/http11.py",
+      "sha256": "faa33d6d5ecf8d2405e6fc6cdfbf9e5173881706c88cf7196cd962b97f53b41c"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_async/http2.py",
+      "sha": "dbd0beeb4da32d8c0175d412fa442eae8f837723",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_async/http2.py",
+      "rel": "httpcore/_async/http2.py",
+      "sha256": "6b35f57dc9ad5da2308e9bad165678bddf7627cc708c639af5ac7d408bf8dfde"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_async/http_proxy.py",
+      "sha": "cc9d92066e1680576846e46ccdf645a2b1dd5718",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_async/http_proxy.py",
+      "rel": "httpcore/_async/http_proxy.py",
+      "sha256": "db3564ae5bfe0ecfab5866aa69796b84426201014fa36dc14f71aafec5a80575"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_async/interfaces.py",
+      "sha": "361583bede6b2b84088b38054d5d8116ef9f1597",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_async/interfaces.py",
+      "rel": "httpcore/_async/interfaces.py",
+      "sha256": "8d389a58bf37a60a460bdce2bfdd197f068a34c987c2639a97368a8ae4f1013a"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_async/socks_proxy.py",
+      "sha": "b363f55a0b071de6c5f377726be82dc2110e373c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_async/socks_proxy.py",
+      "rel": "httpcore/_async/socks_proxy.py",
+      "sha256": "94b2a02e58203df84596a8b438378190e5afb7d0a0841054caab27b14d6dc7a4"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_backends/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_backends/__init__.py",
+      "rel": "httpcore/_backends/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_backends/anyio.py",
+      "sha": "a140095e1b8de022f321a41c0125e0e5febc0749",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_backends/anyio.py",
+      "rel": "httpcore/_backends/anyio.py",
+      "sha256": "c7c3e01215d10bc6d5aac77393f609c7c63a77d4ee6f4e82b944b09db9adaa86"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_backends/auto.py",
+      "sha": "49f0e698c97ad5623f376d8182675352e21c2c3c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_backends/auto.py",
+      "rel": "httpcore/_backends/auto.py",
+      "sha256": "cced77e8f2999ac6930caf87464f38780f8c520f3fdb025fe0dbe62b8df6022a"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_backends/base.py",
+      "sha": "cf55c8b10eb543872550be863206fe2f760d0d8d",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_backends/base.py",
+      "rel": "httpcore/_backends/base.py",
+      "sha256": "69286045d6673264611561deb63ba694cef77fc2b3d58380c8250fff8907b250"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_backends/mock.py",
+      "sha": "9b6edca03d4d4b34f355fd53e49d4b4c699c972c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_backends/mock.py",
+      "rel": "httpcore/_backends/mock.py",
+      "sha256": "7abf53e37eae49eecd2eb7e22dae31e8dbaa8398af43af770b1598096b206c7e"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_backends/sync.py",
+      "sha": "4018a09c6fb1e0ef1b03ab8d84b13ebef4031f7c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_backends/sync.py",
+      "rel": "httpcore/_backends/sync.py",
+      "sha256": "6e113877d88af549b176c76c826d847ca9d76819acd9682019853eee3994ba35"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_backends/trio.py",
+      "sha": "6f53f5f2a025e01e9949e2530bd9ca6928859251",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_backends/trio.py",
+      "rel": "httpcore/_backends/trio.py",
+      "sha256": "2c7bb8fccaf932cc109a64f7c84e282e07fd6ff2497de552e018c3c5e25ced1a"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_exceptions.py",
+      "sha": "bc28d44f55bdc4b872951a74780469a3999d9ab4",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_exceptions.py",
+      "rel": "httpcore/_exceptions.py",
+      "sha256": "968a022a06b7fd8558bb7b3e7772fd44c3d127286c63b7e2bae1b1be4383d1cd"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_models.py",
+      "sha": "8a65f13347d6621289a166d08123cbc8e1ad0157",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_models.py",
+      "rel": "httpcore/_models.py",
+      "sha256": "20ed8271771da68bd170b4dd185181e91c8165d126da1fd33a6a02738ac42a1a"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_ssl.py",
+      "sha": "c99c5a67945b8a3a3544d481e979c791ab45fe23",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_ssl.py",
+      "rel": "httpcore/_ssl.py",
+      "sha256": "b2baa648d53888e52f585f92ac9bdbf06fd811b1c510b39740ec1d0c80534bd7"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_sync/__init__.py",
+      "sha": "b476d76d9a7ff45de8d18ec22d33d6af2982f92e",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_sync/__init__.py",
+      "rel": "httpcore/_sync/__init__.py",
+      "sha256": "2410c8817b7995ad4b089d6c2d078a863285a4b9e936bf12beceb3da78b77e08"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_sync/connection.py",
+      "sha": "363f8be819d2576ea65365e625dd1596ea40429a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_sync/connection.py",
+      "rel": "httpcore/_sync/connection.py",
+      "sha256": "f5ec4639bdcf07e329d93d7eb1c91278bdadfad27ff7e357a2657c8a19960a05"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_sync/connection_pool.py",
+      "sha": "9ccfa53e597a29ee387f9d16f3af4f695ac0d33a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_sync/connection_pool.py",
+      "rel": "httpcore/_sync/connection_pool.py",
+      "sha256": "6be4fc2d3b14c5ceebd16c356ad7c7483a163e34347c0f1497b4b7f85d0c8fbd"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_sync/http11.py",
+      "sha": "ebd3a97480c720d418acb1285a7b75da19b62c8c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_sync/http11.py",
+      "rel": "httpcore/_sync/http11.py",
+      "sha256": "205a1b0f531de491652462969e1d7f4377a98a452bc88f2aa34f6ff0c8892040"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_sync/http2.py",
+      "sha": "ddcc189001c50c37c6a03810dc21d955df919f10",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_sync/http2.py",
+      "rel": "httpcore/_sync/http2.py",
+      "sha256": "031538ca172aebc067e6fa9d258b625ca6148fb9ef8586f1cf7bf8ad3e319ef0"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_sync/http_proxy.py",
+      "sha": "ecca88f7dc93b78f2aa26f16cf29d17a8a83ae27",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_sync/http_proxy.py",
+      "rel": "httpcore/_sync/http_proxy.py",
+      "sha256": "fda97fe9cacab8466edb0cafbb8f7745922625d0499e3e6818a3632ce24bd99a"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_sync/interfaces.py",
+      "sha": "e673d4cc1b1dd7e7ecdbde91fd6ada386c3de03f",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_sync/interfaces.py",
+      "rel": "httpcore/_sync/interfaces.py",
+      "sha256": "b275ce378daf5031cee49049be8f03e155a4d966ade38cf63975c70eb8db97de"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_sync/socks_proxy.py",
+      "sha": "0ca96ddfb580b19413797f41e79f7abcecdd9d79",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_sync/socks_proxy.py",
+      "rel": "httpcore/_sync/socks_proxy.py",
+      "sha256": "cde8195bd4a7aa3dbff7dd831496bcfc2a6939506454be0083076e4644ad6a44"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_synchronization.py",
+      "sha": "2ecc9e9c363e2f16c4f934cf41cf871826d6a495",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_synchronization.py",
+      "rel": "httpcore/_synchronization.py",
+      "sha256": "cd28b5de6002a250679278d90649d40ba84a343413e02ea28e77b367eaf44f6b"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_trace.py",
+      "sha": "5f1cd7c47829ce17dbcf651ab56b4ffdce04a485",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_trace.py",
+      "rel": "httpcore/_trace.py",
+      "sha256": "724e99a08cd84e474d0087eae4c19e2aa0570edaa3397faa7d8c266456eb19ca"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/_utils.py",
+      "sha": "c44ff93cb2f572afc6e679308024b744b65c3b0a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/_utils.py",
+      "rel": "httpcore/_utils.py",
+      "sha256": "fd12e05d8380602df9d229002d5e7d199ebc209adda1c459c4fb3d3e39b37456"
+    },
+    {
+      "name": "httpcore",
+      "repo": "encode/httpcore",
+      "ref": "1.0.9",
+      "path": "httpcore/py.typed",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/httpcore/py.typed",
+      "rel": "httpcore/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "LICENSE.txt",
+      "sha": "8f080eae848f759c9173bfc0c79506357ebe5090",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/h11/LICENSE.txt",
+      "rel": "LICENCIAS/h11/LICENSE.txt",
+      "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/__init__.py",
+      "sha": "989e92c3458681a6f0be72ae4105ea742750d328",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/__init__.py",
+      "rel": "h11/__init__.py",
+      "sha256": "88ed4ace448ee36c99e9f7e0f953206f1fd9553586518d349d16045a7facde46"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/_abnf.py",
+      "sha": "933587fba22290d7eb7df4c88e12f1e61702b8ce",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/_abnf.py",
+      "rel": "h11/_abnf.py",
+      "sha256": "c9b8b1af4c6cba99e403a18503232e6ee5c5e9373595bfe117cf743600ac7cd7"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/_connection.py",
+      "sha": "e37d82a82a882c072cb938a90eb4486b51cdad99",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/_connection.py",
+      "rel": "h11/_connection.py",
+      "sha256": "93d61155fea4a19a9bb6d056dfac5259a26959d6706bec50554f401c4a3d0ee2"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/_events.py",
+      "sha": "ca1c3adbde2c4e7710482a18e3471f91f1da610e",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/_events.py",
+      "rel": "h11/_events.py",
+      "sha256": "23deda5e86a5d56bbb7642f9e3c04034150290e21b7bec790a2a1803d201635e"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/_headers.py",
+      "sha": "31da3e2b23b55a624b36f105e62a6902e63286aa",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/_headers.py",
+      "rel": "h11/_headers.py",
+      "sha256": "3fb0fe9413711f074b64f2e29a6630acf1bef59923125bef25925d6408123fee"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/_readers.py",
+      "sha": "576804cc282032526e0a932c9853d586a094bad0",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/_readers.py",
+      "rel": "h11/_readers.py",
+      "sha256": "6b8472a4e454082dddd2afe4c4fb8120cee34c3f222ede57f754c7d05b1db8de"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/_receivebuffer.py",
+      "sha": "e5c4e08a56f5081e87103f38b4add6ce1b730204",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/_receivebuffer.py",
+      "rel": "h11/_receivebuffer.py",
+      "sha256": "c6bb29b1db0d81617145f41c4d7c51f11add8d15d74cad08a39710616a49d56b"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/_state.py",
+      "sha": "3ad444b043e3f3d6c05c2d9d84d5119312bfaa34",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/_state.py",
+      "rel": "h11/_state.py",
+      "sha256": "ff92c6fc1191f0509c1507813c7f93307826ffe07e1147160a74287fff578c51"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/_util.py",
+      "sha": "6718445290770e028ea2f1f662026c9a0b0991db",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/_util.py",
+      "rel": "h11/_util.py",
+      "sha256": "2d69248d7c89685940cba2eddfdc3bdd44ad925153e68bdcbe8d13918ed162e9"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/_version.py",
+      "sha": "76e7327b8617c9d12236f511414d5eb58e98a44b",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/_version.py",
+      "rel": "h11/_version.py",
+      "sha256": "1954ac6cf48f0dc3ae17aa6d7c88979d52686849b7ca05db327aa5aff1a26a1c"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/_writers.py",
+      "sha": "939cdb912a9debaea07fbf3a9ac04549c44d077c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/_writers.py",
+      "rel": "h11/_writers.py",
+      "sha256": "a052a6e8fb637877db8f844b5fb541eca0dcd60218e778171b7fc747d96d9930"
+    },
+    {
+      "name": "h11",
+      "repo": "python-hyper/h11",
+      "ref": "v0.16.0",
+      "path": "h11/py.typed",
+      "sha": "f5642f79f21d872f010979dcf6f0c4a415acc19d",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/h11/py.typed",
+      "rel": "h11/py.typed",
+      "sha256": "b28c3db284f03fd4ff80401049587b19bf3ce79874e0dc2686cd967be2518193"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "LICENSE.md",
+      "sha": "a6bba14552c7673a7db57a5750ddb06508264273",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/uvicorn/LICENSE.md",
+      "rel": "LICENCIAS/uvicorn/LICENSE.md",
+      "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/__init__.py",
+      "sha": "d80a498d5af73eba50004ca3cd30e50e31eceb86",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/__init__.py",
+      "rel": "uvicorn/__init__.py",
+      "sha256": "e98f296a80312cec8a2153bb412b8bc5279029165686f03d30d03f3f7243d726"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/__main__.py",
+      "sha": "8a1dc979a39e36ce81e987843391479f125d73f3",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/__main__.py",
+      "rel": "uvicorn/__main__.py",
+      "sha256": "0d08b3cba9ca3f4cb084fa6708782644360831f72a64a544ccd2164198eab554"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/_compat.py",
+      "sha": "118a19ac0c43e518a24cf1108bfbb9dde507bd0c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/_compat.py",
+      "rel": "uvicorn/_compat.py",
+      "sha256": "e97e3d73da2fce63078abd92decca29ce40ccd23c1729f0c36e23d650adb6225"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/_subprocess.py",
+      "sha": "1c06844de5f1e1fa06394e42d11259c65555cd14",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/_subprocess.py",
+      "rel": "uvicorn/_subprocess.py",
+      "sha256": "1db7d19ec0a45f283bc425950165b35d04de5a5bcb29f4e5205e707af141911e"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/_types.py",
+      "sha": "c927cc11dc89cb57f69e62f7047140800d7ac5d2",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/_types.py",
+      "rel": "uvicorn/_types.py",
+      "sha256": "e4570fbef21f78ab090e31a14eb71e0eff139b0cd823cc8f17b997b174d63943"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/config.py",
+      "sha": "222f13e64ab68875d77c86feccee926fc5dc644b",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/config.py",
+      "rel": "uvicorn/config.py",
+      "sha256": "30e50fe71b5ae98ab5072435fd6edaf4277a597d16416fa272926b2106c16f65"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/importer.py",
+      "sha": "f77520ee106deeedee30a48005479806ff9a19e2",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/importer.py",
+      "rel": "uvicorn/importer.py",
+      "sha256": "9d1b74410deaa62dbae3e9ff991d25e790b675d33c9e8c133734f58ec59a6a6f"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/lifespan/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/lifespan/__init__.py",
+      "rel": "uvicorn/lifespan/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/lifespan/off.py",
+      "sha": "74554b1e2a149c37131168fbe283f3e2476a8f75",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/lifespan/off.py",
+      "rel": "uvicorn/lifespan/off.py",
+      "sha256": "9df23aa87014a3ff3e0445cc04aa0743dc146ec5eb3da5cb09b0d24b4bca4abf"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/lifespan/on.py",
+      "sha": "8becf70a2c9e39820deeb90e3f48abdb49e920a5",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/lifespan/on.py",
+      "rel": "uvicorn/lifespan/on.py",
+      "sha256": "59e493a86b0aae75842606cefa5f80f3deba39ba16711f77bf376bf3e0972afe"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/logging.py",
+      "sha": "02f455d8eefd53ef88da5424315589610bf7edd7",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/logging.py",
+      "rel": "uvicorn/logging.py",
+      "sha256": "f9e084e273899856ed07da9f349b8454d174635dcb1941eabc5cde9984f43da4"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/loops/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/loops/__init__.py",
+      "rel": "uvicorn/loops/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/loops/asyncio.py",
+      "sha": "ad6121ee086b0c3b2fc2cb8dd378134725c1edf6",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/loops/asyncio.py",
+      "rel": "uvicorn/loops/asyncio.py",
+      "sha256": "6bcc0ee1f078a4293e44b202abb0a71abfdcc5023b3012c98fe1a8e14425743f"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/loops/auto.py",
+      "sha": "190839905566f0c0e59c6119604887c326078115",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/loops/auto.py",
+      "rel": "uvicorn/loops/auto.py",
+      "sha256": "a5d4ec31caa46c4f1fbdd3602ecd72e1cea1b2e379f7c9993923a50b46b6dd2e"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/loops/uvloop.py",
+      "sha": "c6692c58f5c63501b2ad0f3d3c1d6b2336d88aad",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/loops/uvloop.py",
+      "rel": "uvicorn/loops/uvloop.py",
+      "sha256": "09af932fe5bcb5b7445b9baf2ff1ab32287b1bc7bfb7fbe135ebe2d8d2988c45"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/main.py",
+      "sha": "e0e1b0a6a90f110d68399c26e87526d246f05060",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/main.py",
+      "rel": "uvicorn/main.py",
+      "sha256": "45b965e90b96c7480d75e2cbdc31994aefcbf84268e2bb902ac403dd900257fc"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/middleware/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/middleware/__init__.py",
+      "rel": "uvicorn/middleware/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/middleware/asgi2.py",
+      "sha": "4e15d1599bab04ac38f56cf271d2ff9b1b9984c8",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/middleware/asgi2.py",
+      "rel": "uvicorn/middleware/asgi2.py",
+      "sha256": "610ad0366dd17a116db379b3937938cb0f1a0fc120b63d2d452dcde3962441ad"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/middleware/message_logger.py",
+      "sha": "0174bcce6d48de946214d59bcae5543d38d89c3a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/middleware/message_logger.py",
+      "rel": "uvicorn/middleware/message_logger.py",
+      "sha256": "2071195129c535a305505770b593b702e1404e761c4a8afe815b4e8db0b3b7c3"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/middleware/proxy_headers.py",
+      "sha": "b9ee14a6c760840e01b62f6bd91685e77a2ef271",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/middleware/proxy_headers.py",
+      "rel": "uvicorn/middleware/proxy_headers.py",
+      "sha256": "c901b74e199985187d8e9f8021dec34216f959597ab68d210f51b40cfaed2e8c"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/middleware/wsgi.py",
+      "sha": "d53a8b06d933ef4bbc43b4149d0ebe61b7433eb1",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/middleware/wsgi.py",
+      "rel": "uvicorn/middleware/wsgi.py",
+      "sha256": "37a7d6c8e9c7a1e1db51ebd7d260d814d988e25b0cbfb634aa777b6377c954be"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/__init__.py",
+      "rel": "uvicorn/protocols/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/http/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/http/__init__.py",
+      "rel": "uvicorn/protocols/http/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/http/auto.py",
+      "sha": "a14bec144a97a5e3718a768abe3b6a9e7e93d2c1",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/http/auto.py",
+      "rel": "uvicorn/protocols/http/auto.py",
+      "sha256": "61f5c6cb359369a136a7f8e44cf5ab2425ecc446909c2dcd2b4f86ed68269e5b"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/http/flow_control.py",
+      "sha": "2d1b5fa2d3366fd6584181a26c8569a0207900cc",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/http/flow_control.py",
+      "rel": "uvicorn/protocols/http/flow_control.py",
+      "sha256": "d39d16560df512f3ce907c329c2a0c3f5cd7165fef3b753876eae5739bf2a785"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/http/h11_impl.py",
+      "sha": "b8cdde3abf6045ad99f3c43d312719b078a75369",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/http/h11_impl.py",
+      "rel": "uvicorn/protocols/http/h11_impl.py",
+      "sha256": "e1bf8ab302b9ec505a44f7875e52bfa32f2928ceaf1b585a00b0887911fed5b0"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/http/httptools_impl.py",
+      "sha": "e8795ed35c598d9635961bac628c4129b83844b7",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/http/httptools_impl.py",
+      "rel": "uvicorn/protocols/http/httptools_impl.py",
+      "sha256": "b6e4010a20faadfe4341ec90c0755ce39af11fda2ea233299178bd286e8d4419"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/utils.py",
+      "sha": "e1d6f01d53b33f0cba9d61b8f7ba2e8c079e101f",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/utils.py",
+      "rel": "uvicorn/protocols/utils.py",
+      "sha256": "ac28d82dde3fbb03de6646d15d0e9b7827f1c88fe8629bc90b0cf78c418d3a21"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/websockets/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/websockets/__init__.py",
+      "rel": "uvicorn/protocols/websockets/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/websockets/auto.py",
+      "sha": "b74ac30e977c1dc639c3d406d319455367b40536",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/websockets/auto.py",
+      "rel": "uvicorn/protocols/websockets/auto.py",
+      "sha256": "487fca57fdefc11f3fa0675ad86ac716ddfc546f88c18d2e7e3bc73aee15034a"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/websockets/websockets_impl.py",
+      "sha": "1e895cd493f81dc4a83b81321410a7317487fff0",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/websockets/websockets_impl.py",
+      "rel": "uvicorn/protocols/websockets/websockets_impl.py",
+      "sha256": "029977b2bd016295a06d5893019885200d86d15602c5835ff02924f7606a5ea8"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "sha": "abd4c2b30c3a3fb9570379348391d9683b381826",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "rel": "uvicorn/protocols/websockets/websockets_sansio_impl.py",
+      "sha256": "4f1a6391bba169377451761cd5531ee14801afa927fc9c0957e86a7a01c79b1b"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/protocols/websockets/wsproto_impl.py",
+      "sha": "14f5011080190f3dc7171dea26624af792614923",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/protocols/websockets/wsproto_impl.py",
+      "rel": "uvicorn/protocols/websockets/wsproto_impl.py",
+      "sha256": "bb64cacb34540a64294b57b813f5fa528bbd408ba829934d3661d4d48ce458f5"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/py.typed",
+      "sha": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/py.typed",
+      "rel": "uvicorn/py.typed",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/server.py",
+      "sha": "23fe61784c7104d61ad78c2bdb4d05f039b86c99",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/server.py",
+      "rel": "uvicorn/server.py",
+      "sha256": "a3bdfc6d064d11cb9a1ac7bd10e4781183b1ccf9b590e6802aea512e3b1fb88d"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/supervisors/__init__.py",
+      "sha": "cfceb6b94ce36dad006b1f81b816d45ce70ab3d6",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/supervisors/__init__.py",
+      "rel": "uvicorn/supervisors/__init__.py",
+      "sha256": "c13f1e38422a4f5c96420cad66dbf9b5a58cba5ef1a13218d319b59b8a323d3c"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/supervisors/basereload.py",
+      "sha": "eed999230228235f9bd4e532feef05d3108e5930",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/supervisors/basereload.py",
+      "rel": "uvicorn/supervisors/basereload.py",
+      "sha256": "3005d243772464fc2acc9f149fdc83864dd6d32c8002b42d64bb8e1343889d27"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/supervisors/multiprocess.py",
+      "sha": "febb5b7e2b519a28aef37df14bd5d0cf89b1b10c",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/supervisors/multiprocess.py",
+      "rel": "uvicorn/supervisors/multiprocess.py",
+      "sha256": "9e6908ac3dd8b0ba11209ac121d6d71dd7eada46d894d5bac2380432eca3a099"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/supervisors/statreload.py",
+      "sha": "d9cbd525b252cd843cb4020ba92425659653b32b",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/supervisors/statreload.py",
+      "rel": "uvicorn/supervisors/statreload.py",
+      "sha256": "b986e59a8c4cdc86cf6ef303cebe406f0dbe5b291097c3714d3cde2df572be75"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/supervisors/watchfilesreload.py",
+      "sha": "c13dc745a42d8a3564ce50e483a20d9144648ee5",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/supervisors/watchfilesreload.py",
+      "rel": "uvicorn/supervisors/watchfilesreload.py",
+      "sha256": "5bce986dbd04e5274c618b961c9ddba40157770e59babbcb45d15cbcb9d81080"
+    },
+    {
+      "name": "uvicorn",
+      "repo": "Kludex/uvicorn",
+      "ref": "0.38.0",
+      "path": "uvicorn/workers.py",
+      "sha": "827d091c0f1693a43ae030b55e6ff79f7a552192",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/uvicorn/workers.py",
+      "rel": "uvicorn/workers.py",
+      "sha256": "94c0ae6e7d568bee21da3c6b5cd32684e259cbb64ff10c5b65b3f7ff63b58871"
+    },
+    {
+      "name": "sniffio",
+      "repo": "python-trio/sniffio",
+      "ref": "v1.3.1",
+      "path": "LICENSE",
+      "sha": "51f3442917839f8e0f0cccb52b3c10968ad0779e",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/sniffio/LICENSE",
+      "rel": "LICENCIAS/sniffio/LICENSE",
+      "sha256": "652c878488d1456361e08c3f8607fd7ba59892a14103d15cce4ff93c85b5cc8b"
+    },
+    {
+      "name": "sniffio",
+      "repo": "python-trio/sniffio",
+      "ref": "v1.3.1",
+      "path": "LICENSE.APACHE2",
+      "sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/sniffio/LICENSE.APACHE2",
+      "rel": "LICENCIAS/sniffio/LICENSE.APACHE2",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "name": "sniffio",
+      "repo": "python-trio/sniffio",
+      "ref": "v1.3.1",
+      "path": "LICENSE.MIT",
+      "sha": "b8bb97185926d7daed314609753173945ed4ff1a",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/sniffio/LICENSE.MIT",
+      "rel": "LICENCIAS/sniffio/LICENSE.MIT",
+      "sha256": "3e6dae555eb92787fc82d1d48355677f454c7f65aeb38d3f9e72bf9a3daf034b"
+    },
+    {
+      "name": "sniffio",
+      "repo": "python-trio/sniffio",
+      "ref": "v1.3.1",
+      "path": "sniffio/__init__.py",
+      "sha": "63f2f19e409c7f4b3c6c064022e8f104227873aa",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/sniffio/__init__.py",
+      "rel": "sniffio/__init__.py",
+      "sha256": "f562442655eeef296e3f462d239490f4cf4e4d07db34791a75aacad6f5c60cf3"
+    },
+    {
+      "name": "sniffio",
+      "repo": "python-trio/sniffio",
+      "ref": "v1.3.1",
+      "path": "sniffio/_impl.py",
+      "sha": "c1a7bbf218ba985b87cd1d9b23da69222894c1dd",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/sniffio/_impl.py",
+      "rel": "sniffio/_impl.py",
+      "sha256": "526505319a62b8eadc8e7b8786e62260cc5e08d59faaef6406568f7f4c64e97f"
+    },
+    {
+      "name": "sniffio",
+      "repo": "python-trio/sniffio",
+      "ref": "v1.3.1",
+      "path": "sniffio/_version.py",
+      "sha": "0495d10545c9fd515ed51e890309d2b66e2c30bb",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/sniffio/_version.py",
+      "rel": "sniffio/_version.py",
+      "sha256": "8957ace71c2c1de4734037b105a021cb1fed68db76b9c7c0ec2580a38403b7a4"
+    },
+    {
+      "name": "sniffio",
+      "repo": "python-trio/sniffio",
+      "ref": "v1.3.1",
+      "path": "sniffio/py.typed",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/sniffio/py.typed",
+      "rel": "sniffio/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "annotated_doc",
+      "repo": "fastapi/annotated-doc",
+      "ref": "0.0.4",
+      "path": "LICENSE",
+      "sha": "7a254464cc78ccea32b3ded00513c44c4e4da412",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/LICENCIAS/annotated_doc/LICENSE",
+      "rel": "LICENCIAS/annotated_doc/LICENSE",
+      "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf"
+    },
+    {
+      "name": "annotated_doc",
+      "repo": "fastapi/annotated-doc",
+      "ref": "0.0.4",
+      "path": "src/annotated_doc/__init__.py",
+      "sha": "a0152a7d12abc2db37fb26e764a61e0c894a43f3",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/annotated_doc/__init__.py",
+      "rel": "annotated_doc/__init__.py",
+      "sha256": "56ecb1c547bcd247c4c969ceac2c7f064f21c9ba3768aa3a4580659010585bc9"
+    },
+    {
+      "name": "annotated_doc",
+      "repo": "fastapi/annotated-doc",
+      "ref": "0.0.4",
+      "path": "src/annotated_doc/main.py",
+      "sha": "7063c59e4500a1d02bfc9b41887f9e95f8163507",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/annotated_doc/main.py",
+      "rel": "annotated_doc/main.py",
+      "sha256": "e597efc6ff344b0c0baa9456ef7019c99ca23386d699af505916e9fdc803db4b"
+    },
+    {
+      "name": "annotated_doc",
+      "repo": "fastapi/annotated-doc",
+      "ref": "0.0.4",
+      "path": "src/annotated_doc/py.typed",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "dest": "C:/Users/cesar/OneDrive/Documentos/ChatGPT/Estudiar/actividad3_cesar/herramientas_a3/annotated_doc/py.typed",
+      "rel": "annotated_doc/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

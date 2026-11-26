@@ -1,0 +1,6 @@
+........................................................................ [ 45%]
+........................................................................ [ 90%]
+...............                                                          [100%]
+- generated xml file: C:\Users\cesar\OneDrive\Documentos\ChatGPT\Estudiar\actividad3_cesar\bitacora\a3\20261126T020719Z\regresion.xml -
+159 passed in 9.71s
+

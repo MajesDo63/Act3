@@ -1,0 +1,5 @@
+{
+  "estado_http": 200,
+  "modelo_solicitado": "gemini-3.1-flash-lite",
+  "modelo_elegido": "gemini-3.1-flash-lite"
+}

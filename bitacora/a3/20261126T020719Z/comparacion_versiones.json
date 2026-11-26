@@ -1,0 +1,85 @@
+{
+  "metodo": "10 logins exitosos por version despues de un calentamiento. Inicializacion de servicios reutilizados fuera del intervalo; V1 abre y cierra por solicitud. No es una prueba de carga HTTP.",
+  "resultados": [
+    {
+      "version": "original",
+      "repeticiones": 10,
+      "mediana_ms": 0.0001,
+      "minimo_ms": 0.0001,
+      "maximo_ms": 0.0012,
+      "llamadas_pbkdf2": 0,
+      "tiempos_ms": [
+        0.0012,
+        0.0004,
+        0.0002,
+        0.0001,
+        0.0001,
+        0.0001,
+        0.0001,
+        0.0001,
+        0.0001,
+        0.0001
+      ]
+    },
+    {
+      "version": "seguridad",
+      "repeticiones": 10,
+      "mediana_ms": 69.7011,
+      "minimo_ms": 67.7985,
+      "maximo_ms": 72.8938,
+      "llamadas_pbkdf2": 20,
+      "tiempos_ms": [
+        72.8938,
+        69.1675,
+        69.7602,
+        68.3528,
+        71.7537,
+        69.5809,
+        69.642,
+        71.57,
+        67.7985,
+        70.3965
+      ]
+    },
+    {
+      "version": "eficiencia",
+      "repeticiones": 10,
+      "mediana_ms": 40.1132,
+      "minimo_ms": 36.4389,
+      "maximo_ms": 43.834,
+      "llamadas_pbkdf2": 10,
+      "tiempos_ms": [
+        43.834,
+        40.9658,
+        39.4749,
+        40.4481,
+        38.0512,
+        38.0783,
+        42.5275,
+        36.4389,
+        43.2156,
+        39.7784
+      ]
+    },
+    {
+      "version": "mantenible",
+      "repeticiones": 10,
+      "mediana_ms": 40.1013,
+      "minimo_ms": 36.9638,
+      "maximo_ms": 45.8091,
+      "llamadas_pbkdf2": 10,
+      "tiempos_ms": [
+        39.7031,
+        40.0103,
+        41.0361,
+        40.1654,
+        40.8972,
+        40.145,
+        45.8091,
+        40.0575,
+        36.9638,
+        37.0853
+      ]
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "base_url": "http://127.0.0.1:49814",
+  "comando": [
+    "C:\\Users\\cesar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-m",
+    "uvicorn",
+    "api.producto:app",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "49814",
+    "--log-level",
+    "warning"
+  ],
+  "eventos": [
+    {
+      "etiqueta": "salud",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T02:13:26.442645+00:00",
+      "metodo": "GET",
+      "ruta": "/salud",
+      "solicitud": null,
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 20.94,
+      "respuesta": {
+        "estado": "ok",
+        "llm": "gemini/gemini-3.1-flash-lite",
+        "embeddings": "gemini",
+        "variante": "v2-revisor",
+        "caso_guia": "BM25 + agente de referencia"
+      }
+    },
+    {
+      "etiqueta": "registro",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T02:13:26.489454+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/registro",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 201,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 44.69,
+      "respuesta": {
+        "mensaje": "Registro exitoso"
+      }
+    },
+    {
+      "etiqueta": "login_exitoso",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T02:13:26.539733+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 48.15,
+      "respuesta": {
+        "token": "<oculto>",
+        "tipo": "Bearer",
+        "expira_en_s": 900
+      }
+    },
+    {
+      "etiqueta": "revisor_usuarios.py",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T02:14:21.141017+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "import hashlib\nimport random\n\n\ndef crear_usuario(db, correo, password):\n    h = hashlib.md5(password.encode()).hexdigest()\n    db.insert(\"usuarios\", {\"correo\": correo, \"hash\": h})\n    codigo = random.randint(100000, 999999)\n    return codigo\n\n\ndef verificar(db, correo, password):\n    u = db.find(\"usuarios\", correo=correo)\n    return u and u[\"hash\"] == hashlib.md5(password.encode()).hexdigest()\n"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 54598.49,
+      "respuesta": {
+        "respuesta": "Se encontraron 3 hallazgos: SEC-06 en línea 6; SEC-06 en línea 8; SEC-06 en línea 14. Los parches son propuestas y requieren revisión humana.\n\nH1 · SEC-06 · línea 6: Uso de algoritmo MD5 inseguro para el hashing de contraseñas; se requiere PBKDF2, bcrypt o Argon2 con sal.\n  Explicación: SEC-06, línea 6: el uso de hashlib.md5 es inseguro para el almacenamiento de contraseñas, ya que es vulnerable a colisiones y ataques de fuerza bruta. La política de la empresa requiere algoritmos robustos con sal. NO ESPECIFICADO el uso de sal en la implementación actual.\n  Parche propuesto: Reemplazar hashlib.md5 por bcrypt para el hashing de contraseñas con sal automática.\n  Fuente: sec-06#0\nH2 · SEC-06 · línea 8: Uso del módulo 'random' para generar códigos de un solo uso; se debe utilizar el módulo 'secrets' para garantizar aleatoriedad criptográficamente segura.\n  Explicación: SEC-06, línea 8: el módulo 'random' no es criptográficamente seguro, lo que permite predecir los códigos generados. Se debe migrar al módulo 'secrets' para garantizar la aleatoriedad necesaria en tokens o códigos de un solo uso.\n  Parche propuesto: Migrar de random.randint a secrets.randbelow para generar códigos criptográficamente seguros.\n  Fuente: sec-06#0\nH3 · SEC-06 · línea 14: Comparación de hashes de contraseñas mediante el operador '==' en lugar de 'hmac.compare_digest', lo que puede exponer la aplicación a ataques de temporización.\n  Explicación: SEC-06, línea 14: el operador '==' realiza una comparación que termina al encontrar la primera diferencia, lo que permite inferir información mediante ataques de temporización. Se debe utilizar 'hmac.compare_digest' para asegurar un tiempo de ejecución constante.\n  Parche propuesto: Utilizar hmac.compare_digest para evitar ataques de temporización en la comparación de hashes.\n  Fuente: sec-06#0",
+        "fuentes": [
+          "sec-06#0"
+        ],
+        "abstuvo": false,
+        "errores_citas": [],
+        "artefacto": {
+          "hallazgos": [
+            {
+              "id": "H1",
+              "regla": "SEC-06",
+              "linea": 6,
+              "descripcion": "Uso de algoritmo MD5 inseguro para el hashing de contraseñas; se requiere PBKDF2, bcrypt o Argon2 con sal.",
+              "explicacion": "SEC-06, línea 6: el uso de hashlib.md5 es inseguro para el almacenamiento de contraseñas, ya que es vulnerable a colisiones y ataques de fuerza bruta. La política de la empresa requiere algoritmos robustos con sal. NO ESPECIFICADO el uso de sal en la implementación actual.",
+              "fuente": "sec-06#0"
+            },
+            {
+              "id": "H2",
+              "regla": "SEC-06",
+              "linea": 8,
+              "descripcion": "Uso del módulo 'random' para generar códigos de un solo uso; se debe utilizar el módulo 'secrets' para garantizar aleatoriedad criptográficamente segura.",
+              "explicacion": "SEC-06, línea 8: el módulo 'random' no es criptográficamente seguro, lo que permite predecir los códigos generados. Se debe migrar al módulo 'secrets' para garantizar la aleatoriedad necesaria en tokens o códigos de un solo uso.",
+              "fuente": "sec-06#0"
+            },
+            {
+              "id": "H3",
+              "regla": "SEC-06",
+              "linea": 14,
+              "descripcion": "Comparación de hashes de contraseñas mediante el operador '==' en lugar de 'hmac.compare_digest', lo que puede exponer la aplicación a ataques de temporización.",
+              "explicacion": "SEC-06, línea 14: el operador '==' realiza una comparación que termina al encontrar la primera diferencia, lo que permite inferir información mediante ataques de temporización. Se debe utilizar 'hmac.compare_digest' para asegurar un tiempo de ejecución constante.",
+              "fuente": "sec-06#0"
+            }
+          ],
+          "parches": [
+            {
+              "id": "H1",
+              "regla": "SEC-06",
+              "linea": 6,
+              "cambio": "Reemplazar hashlib.md5 por bcrypt para el hashing de contraseñas con sal automática."
+            },
+            {
+              "id": "H2",
+              "regla": "SEC-06",
+              "linea": 8,
+              "cambio": "Migrar de random.randint a secrets.randbelow para generar códigos criptográficamente seguros."
+            },
+            {
+              "id": "H3",
+              "regla": "SEC-06",
+              "linea": 14,
+              "cambio": "Utilizar hmac.compare_digest para evitar ataques de temporización en la comparación de hashes."
+            }
+          ],
+          "codigo_corregido": "import hashlib\nimport secrets\nimport bcrypt\nimport hmac\n\n\ndef crear_usuario(db, correo, password):\n    h = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()\n    db.insert(\"usuarios\", {\"correo\": correo, \"hash\": h})\n    codigo = secrets.randbelow(900000) + 100000\n    return codigo\n\n\ndef verificar(db, correo, password):\n    u = db.find(\"usuarios\", correo=correo)\n    return u and hmac.compare_digest(u[\"hash\"], bcrypt.hashpw(password.encode(), u[\"hash\"].encode()).decode())\n",
+          "dictamen": {
+            "estado": "con_hallazgos",
+            "total_hallazgos": 3,
+            "hallazgos": [
+              {
+                "id": "H1",
+                "regla": "SEC-06",
+                "linea": 6,
+                "descripcion": "Uso de algoritmo MD5 inseguro para el hashing de contraseñas; se requiere PBKDF2, bcrypt o Argon2 con sal.",
+                "explicacion": "SEC-06, línea 6: el uso de hashlib.md5 es inseguro para el almacenamiento de contraseñas, ya que es vulnerable a colisiones y ataques de fuerza bruta. La política de la empresa requiere algoritmos robustos con sal. NO ESPECIFICADO el uso de sal en la implementación actual.",
+                "fuente": "sec-06#0",
+                "cambio": "Reemplazar hashlib.md5 por bcrypt para el hashing de contraseñas con sal automática."
+              },
+              {
+                "id": "H2",
+                "regla": "SEC-06",
+                "linea": 8,
+                "descripcion": "Uso del módulo 'random' para generar códigos de un solo uso; se debe utilizar el módulo 'secrets' para garantizar aleatoriedad criptográficamente segura.",
+                "explicacion": "SEC-06, línea 8: el módulo 'random' no es criptográficamente seguro, lo que permite predecir los códigos generados. Se debe migrar al módulo 'secrets' para garantizar la aleatoriedad necesaria en tokens o códigos de un solo uso.",
+                "fuente": "sec-06#0",
+                "cambio": "Migrar de random.randint a secrets.randbelow para generar códigos criptográficamente seguros."
+              },
+              {
+                "id": "H3",
+                "regla": "SEC-06",
+                "linea": 14,
+                "descripcion": "Comparación de hashes de contraseñas mediante el operador '==' en lugar de 'hmac.compare_digest', lo que puede exponer la aplicación a ataques de temporización.",
+                "explicacion": "SEC-06, línea 14: el operador '==' realiza una comparación que termina al encontrar la primera diferencia, lo que permite inferir información mediante ataques de temporización. Se debe utilizar 'hmac.compare_digest' para asegurar un tiempo de ejecución constante.",
+                "fuente": "sec-06#0",
+                "cambio": "Utilizar hmac.compare_digest para evitar ataques de temporización en la comparación de hashes."
+              }
+            ],
+            "resumen": "Se encontraron 3 hallazgos: SEC-06 en línea 6; SEC-06 en línea 8; SEC-06 en línea 14. Los parches son propuestas y requieren revisión humana."
+          }
+        },
+        "costo_usd": 0.00411525,
+        "latencia_ms": 54573.3,
+        "demo": false,
+        "alcance": "Cuatro etapas: detectar, explicar, parche y dictamen",
+        "recuperados": [
+          "sec-06#0",
+          "sec-01#0",
+          "sec-02#0",
+          "sec-03#0",
+          "sec-04#0",
+          "sec-10#0"
+        ]
+      }
+    },
+    {
+      "etiqueta": "revisor_limites.py",
+      "proveedor": "gemini",
+      "fecha_utc": "2026-11-26T02:14:44.020956+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "from decimal import Decimal, ROUND_HALF_EVEN\n\nLIMITE_NIVEL_1 = Decimal(\"8000\")\nLIMITE_NIVEL_2 = Decimal(\"50000\")\n\n\ndef validar_monto(monto: Decimal, nivel: int) -> bool:\n    \"\"\"Devuelve True si el monto es válido para el nivel de cuenta.\"\"\"\n    if monto <= 0 or monto != monto.quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_EVEN):\n        return False\n    limite = LIMITE_NIVEL_2 if nivel == 2 else LIMITE_NIVEL_1\n    return monto <= limite\n"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 22878.75,
+      "respuesta": {
+        "respuesta": "sin hallazgos",
+        "fuentes": [],
+        "abstuvo": false,
+        "errores_citas": [],
+        "artefacto": {
+          "hallazgos": [],
+          "parches": [],
+          "codigo_corregido": "from decimal import Decimal, ROUND_HALF_EVEN\n\nLIMITE_NIVEL_1 = Decimal(\"8000\")\nLIMITE_NIVEL_2 = Decimal(\"50000\")\n\n\ndef validar_monto(monto: Decimal, nivel: int) -> bool:\n    \"\"\"Devuelve True si el monto es válido para el nivel de cuenta.\"\"\"\n    if monto <= 0 or monto != monto.quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_EVEN):\n        return False\n    limite = LIMITE_NIVEL_2 if nivel == 2 else LIMITE_NIVEL_1\n    return monto <= limite\n",
+          "dictamen": {
+            "estado": "sin_hallazgos",
+            "total_hallazgos": 0,
+            "hallazgos": [],
+            "resumen": "sin hallazgos"
+          }
+        },
+        "costo_usd": 0.0015155,
+        "latencia_ms": 22861.5,
+        "demo": false,
+        "alcance": "Cuatro etapas: detectar, explicar, parche y dictamen",
+        "recuperados": [
+          "sec-07#0",
+          "sec-10#0",
+          "sec-04#0",
+          "sec-01#0",
+          "sec-06#0",
+          "sec-09#0"
+        ]
+      }
+    }
+  ]
+}

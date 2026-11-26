@@ -1,0 +1,6 @@
+{
+  "fecha_utc": "2026-11-26T02:13:22.666546+00:00",
+  "motivo": "Corrección del cierre del lanzador Windows; fuentes de API y pruebas conservadas",
+  "sha256_script": "57187444eb318f1e10b2e18c56103005313897e157c4d8b9575556761afce540",
+  "pruebas_anteriores_preservadas": true
+}

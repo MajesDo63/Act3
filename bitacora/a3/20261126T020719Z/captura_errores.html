@@ -1,0 +1,25 @@
+<!doctype html><meta charset="utf-8"><style>body{font:16px Arial;margin:35px;background:#f4f6fa;color:#172434}h1{font-size:25px}section{background:white;padding:20px;border:1px solid #ccd3df;margin:15px 0}pre{white-space:pre-wrap;font:13px Consolas;line-height:1.4}small{color:#465565}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}</style><h1>A3 · Evidencias HTTP de autenticación y validación</h1><small>Registro de ejecuciones reales · Cesar Eduardo Valdez Pinto · 20261126T020719Z</small><div class="grid"><section><b>sin_token · HTTP 401</b><pre>{
+  &quot;type&quot;: &quot;https://docs.finnorte.mx/errores/401&quot;,
+  &quot;title&quot;: &quot;No autorizado&quot;,
+  &quot;status&quot;: 401,
+  &quot;detail&quot;: &quot;Falta la cabecera Authorization: Bearer &lt;token&gt;&quot;,
+  &quot;trace_id&quot;: &quot;ea1528b3b7a5&quot;
+}</pre></section><section><b>token_alterado · HTTP 401</b><pre>{
+  &quot;type&quot;: &quot;https://docs.finnorte.mx/errores/401&quot;,
+  &quot;title&quot;: &quot;No autorizado&quot;,
+  &quot;status&quot;: 401,
+  &quot;detail&quot;: &quot;Token inválido&quot;,
+  &quot;trace_id&quot;: &quot;b62ad06c03de&quot;
+}</pre></section><section><b>entrada_invalida · HTTP 422</b><pre>{
+  &quot;type&quot;: &quot;https://docs.finnorte.mx/errores/422&quot;,
+  &quot;title&quot;: &quot;Entrada inválida&quot;,
+  &quot;status&quot;: 422,
+  &quot;detail&quot;: &quot;codigo: Value error, El código debe contener texto y no puede incluir caracteres nulos&quot;,
+  &quot;trace_id&quot;: &quot;180df25151de&quot;
+}</pre></section><section><b>bloqueo · HTTP 429</b><pre>{
+  &quot;type&quot;: &quot;https://docs.finnorte.mx/errores/429&quot;,
+  &quot;title&quot;: &quot;Demasiadas solicitudes&quot;,
+  &quot;status&quot;: 429,
+  &quot;detail&quot;: &quot;Demasiados intentos. Intenta más tarde&quot;,
+  &quot;trace_id&quot;: &quot;214785570450&quot;
+}</pre></section></div>

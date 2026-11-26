@@ -1,0 +1,446 @@
+{
+  "base_url": "http://127.0.0.1:57118",
+  "comando": [
+    "C:\\Users\\cesar\\OneDrive\\Documentos\\ChatGPT\\Estudiar\\actividad3_cesar\\.venv\\Scripts\\python.exe",
+    "-m",
+    "uvicorn",
+    "api.producto:app",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "57118",
+    "--log-level",
+    "warning"
+  ],
+  "eventos": [
+    {
+      "etiqueta": "salud",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:49.957665+00:00",
+      "metodo": "GET",
+      "ruta": "/salud",
+      "solicitud": null,
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 23.59,
+      "respuesta": {
+        "estado": "ok",
+        "llm": "fake/gemini-3.1-flash-lite",
+        "embeddings": "hash",
+        "variante": "v2-revisor",
+        "caso_guia": "BM25 + agente de referencia"
+      }
+    },
+    {
+      "etiqueta": "sin_token",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:49.961190+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "x=1"
+      },
+      "estado_http": 401,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 2.77,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/401",
+        "title": "No autorizado",
+        "status": 401,
+        "detail": "Falta la cabecera Authorization: Bearer <token>",
+        "trace_id": "ea1528b3b7a5"
+      }
+    },
+    {
+      "etiqueta": "registro",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.025040+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/registro",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 201,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 63.14,
+      "respuesta": {
+        "mensaje": "Registro exitoso"
+      }
+    },
+    {
+      "etiqueta": "login_exitoso",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.090908+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 64.22,
+      "respuesta": {
+        "token": "<oculto>",
+        "tipo": "Bearer",
+        "expira_en_s": 900
+      }
+    },
+    {
+      "etiqueta": "correo_duplicado",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.141035+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/registro",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 409,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 49.0,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/409",
+        "title": "Conflicto",
+        "status": 409,
+        "detail": "El correo ya está registrado",
+        "trace_id": "063423175778"
+      }
+    },
+    {
+      "etiqueta": "contrasena_incorrecta",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.200173+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "ana@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 401,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 58.28,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/401",
+        "title": "No autorizado",
+        "status": 401,
+        "detail": "Correo o contraseña incorrectos",
+        "trace_id": "37ffcea6f9d5"
+      }
+    },
+    {
+      "etiqueta": "usuario_inexistente",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.257368+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "nadie@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 401,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 56.21,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/401",
+        "title": "No autorizado",
+        "status": 401,
+        "detail": "Correo o contraseña incorrectos",
+        "trace_id": "382077497e91"
+      }
+    },
+    {
+      "etiqueta": "token_alterado",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.279534+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "x=1"
+      },
+      "estado_http": 401,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 20.47,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/401",
+        "title": "No autorizado",
+        "status": 401,
+        "detail": "Token inválido",
+        "trace_id": "b62ad06c03de"
+      }
+    },
+    {
+      "etiqueta": "token_expirado",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.295093+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "x=1"
+      },
+      "estado_http": 401,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 14.7,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/401",
+        "title": "No autorizado",
+        "status": 401,
+        "detail": "Token expirado",
+        "trace_id": "5a0d1cb5a778"
+      }
+    },
+    {
+      "etiqueta": "entrada_invalida",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.310807+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": " "
+      },
+      "estado_http": 422,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 14.47,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/422",
+        "title": "Entrada inválida",
+        "status": 422,
+        "detail": "codigo: Value error, El código debe contener texto y no puede incluir caracteres nulos",
+        "trace_id": "180df25151de"
+      }
+    },
+    {
+      "etiqueta": "registro_para_bloqueo",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.384506+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/registro",
+      "solicitud": {
+        "email": "bloqueo@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 201,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 70.95,
+      "respuesta": {
+        "mensaje": "Registro exitoso"
+      }
+    },
+    {
+      "etiqueta": "fallo_1",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.428497+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "bloqueo@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 401,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 42.43,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/401",
+        "title": "No autorizado",
+        "status": 401,
+        "detail": "Correo o contraseña incorrectos",
+        "trace_id": "4cdbc9ecec2f"
+      }
+    },
+    {
+      "etiqueta": "fallo_2",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.490422+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "bloqueo@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 401,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 61.02,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/401",
+        "title": "No autorizado",
+        "status": 401,
+        "detail": "Correo o contraseña incorrectos",
+        "trace_id": "b367f5f3e45d"
+      }
+    },
+    {
+      "etiqueta": "fallo_3",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.549460+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "bloqueo@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 401,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 57.98,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/401",
+        "title": "No autorizado",
+        "status": 401,
+        "detail": "Correo o contraseña incorrectos",
+        "trace_id": "1427c84fc3b5"
+      }
+    },
+    {
+      "etiqueta": "fallo_4",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.611355+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "bloqueo@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 401,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 60.44,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/401",
+        "title": "No autorizado",
+        "status": 401,
+        "detail": "Correo o contraseña incorrectos",
+        "trace_id": "08bd35ba84b1"
+      }
+    },
+    {
+      "etiqueta": "fallo_5",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.670210+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "bloqueo@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 401,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": null,
+      "duracion_ms": 57.62,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/401",
+        "title": "No autorizado",
+        "status": 401,
+        "detail": "Correo o contraseña incorrectos",
+        "trace_id": "6f3e6a8a26fd"
+      }
+    },
+    {
+      "etiqueta": "bloqueo",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.706466+00:00",
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "solicitud": {
+        "email": "bloqueo@finnorte.mx",
+        "contrasena": "<oculto>"
+      },
+      "estado_http": 429,
+      "tipo_contenido": "application/problem+json",
+      "retry_after": "900",
+      "duracion_ms": 35.35,
+      "respuesta": {
+        "type": "https://docs.finnorte.mx/errores/429",
+        "title": "Demasiadas solicitudes",
+        "status": 429,
+        "detail": "Demasiados intentos. Intenta más tarde",
+        "trace_id": "214785570450"
+      }
+    },
+    {
+      "etiqueta": "revisor_usuarios.py",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.740843+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "import hashlib\nimport random\n\n\ndef crear_usuario(db, correo, password):\n    h = hashlib.md5(password.encode()).hexdigest()\n    db.insert(\"usuarios\", {\"correo\": correo, \"hash\": h})\n    codigo = random.randint(100000, 999999)\n    return codigo\n\n\ndef verificar(db, correo, password):\n    u = db.find(\"usuarios\", correo=correo)\n    return u and u[\"hash\"] == hashlib.md5(password.encode()).hexdigest()\n"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 31.39,
+      "respuesta": {
+        "respuesta": "REVISIÓN FALLIDA: la etapa detectar no pasó la validación. No se emite dictamen; se requiere revisión humana.",
+        "fuentes": [],
+        "abstuvo": true,
+        "errores_citas": [
+          "(raíz): Additional properties are not allowed ('abstuvo', 'confianza', 'fuentes', 'respuesta' were unexpected)",
+          "(raíz): 'hallazgos' is a required property"
+        ],
+        "artefacto": {},
+        "costo_usd": 0.0,
+        "latencia_ms": 14.1,
+        "demo": true,
+        "alcance": "Cuatro etapas: detectar, explicar, parche y dictamen",
+        "recuperados": [
+          "sec-06#0",
+          "sec-01#0",
+          "sec-03#0",
+          "sec-09#0",
+          "sec-04#0",
+          "sec-10#0"
+        ]
+      }
+    },
+    {
+      "etiqueta": "revisor_limites.py",
+      "proveedor": "fake",
+      "fecha_utc": "2026-11-26T02:07:50.760306+00:00",
+      "metodo": "POST",
+      "ruta": "/v1/revisor",
+      "solicitud": {
+        "codigo": "from decimal import Decimal, ROUND_HALF_EVEN\n\nLIMITE_NIVEL_1 = Decimal(\"8000\")\nLIMITE_NIVEL_2 = Decimal(\"50000\")\n\n\ndef validar_monto(monto: Decimal, nivel: int) -> bool:\n    \"\"\"Devuelve True si el monto es válido para el nivel de cuenta.\"\"\"\n    if monto <= 0 or monto != monto.quantize(Decimal(\"0.01\"), rounding=ROUND_HALF_EVEN):\n        return False\n    limite = LIMITE_NIVEL_2 if nivel == 2 else LIMITE_NIVEL_1\n    return monto <= limite\n"
+      },
+      "estado_http": 200,
+      "tipo_contenido": "application/json",
+      "retry_after": null,
+      "duracion_ms": 18.06,
+      "respuesta": {
+        "respuesta": "REVISIÓN FALLIDA: la etapa detectar no pasó la validación. No se emite dictamen; se requiere revisión humana.",
+        "fuentes": [],
+        "abstuvo": true,
+        "errores_citas": [
+          "(raíz): Additional properties are not allowed ('abstuvo', 'confianza', 'fuentes', 'respuesta' were unexpected)",
+          "(raíz): 'hallazgos' is a required property"
+        ],
+        "artefacto": {},
+        "costo_usd": 0.0,
+        "latencia_ms": 4.2,
+        "demo": true,
+        "alcance": "Cuatro etapas: detectar, explicar, parche y dictamen",
+        "recuperados": [
+          "sec-10#0",
+          "sec-07#0",
+          "sec-04#0",
+          "sec-03#0",
+          "sec-01#0",
+          "sec-08#0"
+        ]
+      }
+    }
+  ]
+}
